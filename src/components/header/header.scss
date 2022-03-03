@@ -13,14 +13,14 @@
     flex-direction: column;
     color: $color-white;
     &__tittle{
-      @include ChicaGogo(bold);
+      @include ChicaGogo();
       max-width: 761px;
       font-size: 64px;
       line-height: 72px;
       letter-spacing: 0.02em;
     }
     &__subtittle{
-      @include Montserrat(normal);
+      @include Montserrat(400);
       max-width: 524px;
       font-size: 14px;
       line-height: 23px;
@@ -33,7 +33,7 @@
       .btn {
         cursor: pointer;
         @include btn();
-        @include Montserrat(bold);
+        @include Montserrat(700);
         &:last-child {
           color: $color-second;
           border: 3px solid $color-second;
