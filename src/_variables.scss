@@ -11,7 +11,7 @@ $color-grean: rgba(0, 157, 82, 1);
   font-style: normal;
   font-weight: $weight;
 }
-@mixin ChicaGogo($weight) {
+@mixin ChicaGogo() {
   font-family: ChicaGogoNFW01-Bold;
   font-style: normal;
   font-weight: bold;
