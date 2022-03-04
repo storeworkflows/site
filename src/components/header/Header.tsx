@@ -24,26 +24,25 @@ const Header = () => {
                 <div className="header__container__socials">
                     <ul className="nav__socials">
                         <li className="socials__item">
-                            <img src={linkedin} alt="youtube"/>
+                            <img src={linkedin} alt="linkedin"/>
                         </li>
                         <li className="socials__item">
                             <img src={youtube} alt="youtube"/>
                         </li>
                         <li className="socials__item">
-                            <img src={instagram} alt="youtube"/>
+                            <img src={instagram} alt="instagram"/>
                         </li>
                         <li className="socials__item">
-                            <img src={facebook} alt="youtube"/>
+                            <img src={facebook} alt="facebook"/>
                         </li>
                         <li className="socials__item">
-                            <img src={twitter} alt="youtube"/>
+                            <img src={twitter} alt="twitter"/>
                         </li>
                     </ul>
                 </div>
                 <div className="badger">
                     <img src={badger} alt="badger"/>
                 </div>
-
             </div>
             <div className="circle"></div>
         </header>

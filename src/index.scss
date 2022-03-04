@@ -17,15 +17,14 @@ a{
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
-.container {
-  padding: 0 15px;
-}
+
 
 @media (min-width: 575.98px){
   .container {
     max-width: 540px;
     margin: auto;
     padding: 0;
+
   }
 }
 
