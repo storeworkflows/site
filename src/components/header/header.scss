@@ -6,8 +6,8 @@
 
   &__container {
     position: relative;
-    height: calc(100vh - 120px);
-    //padding-top: 176px;
+    height: calc(100% - 100px);
+
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -44,12 +44,14 @@
       }
     }
     .nav__socials{
-
         display: flex;
-      //margin-top: 160px;
-
     }
-
+    @media (max-width: 767.98px){
+      padding: 0 10px;
+      &__tittle {
+        font-size: 48px;
+      }
+    }
   }
   .badger {
     position: absolute;
@@ -75,4 +77,9 @@
   z-index: -100;
   border-radius: 50%;
   background: linear-gradient(148.28deg, #5200FF 14.79%, rgba(255, 92, 0, 0.5) 85.83%);
+
+  @media (max-width: 575.98px){
+    width: 300px;
+    height: 300px;
+  }
 }
