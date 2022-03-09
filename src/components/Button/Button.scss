@@ -1,10 +1,5 @@
 @import "../../variables";
 
-$violet: #5200FF;
-$orange: #FF5C00;
-$green: #009D52;
-$dark: #0D0916;
-
 .button{
     color: white;
     border-radius: 15px;
@@ -35,7 +30,7 @@ $dark: #0D0916;
         padding: var(--paddingV) var(--paddingH);
 
         &.orange{
-            background: linear-gradient(251.68deg, $violet -14.63%, $orange 101.51%);
+            background: linear-gradient(251.68deg, $blue -14.63%, $orange 101.51%);
         }
 
         &.green{
@@ -43,7 +38,7 @@ $dark: #0D0916;
         }
 
         &.violet{
-            background: linear-gradient(106.31deg, $violet -7.17%, $orange 108.68%);
+            background: linear-gradient(106.31deg, $blue -7.17%, $orange 108.68%);
         }
     }
 
