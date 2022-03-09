@@ -8,6 +8,7 @@ import badger from "../../assets/img/Honey_badger.png"
 
 import Navigation from "./Navigation";
 import "./header.scss";
+import Carousel from "../carousel/Carousel";
 const Header = () => {
 
     return (
