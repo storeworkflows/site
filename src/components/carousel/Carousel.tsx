@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent } from "react";
+import React, { useState, MouseEvent, createRef, Ref, RefObject, useRef, useEffect } from "react";
 import "./carousel.scss";
 import face1 from '../../assets/img/face1.jpg'
 import face2 from '../../assets/img/face2.jpg'
@@ -44,25 +44,41 @@ const slides: Array<Slide> = [
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [transitionDistance, setTransitionDistance] = useState(30)
+  const [transitionDistance, setTransitionDistance] = useState(0)
   const length: number = slides.length;
-  const nextSlide = (event:MouseEvent) => {
+
+  let containerRef = useRef<HTMLElement>(null)
+  useEffect(() => {
+    if (currentSlide === 0) {
+      const containerSize = containerRef.current?.offsetWidth || 0
+      setTransitionDistance(containerSize / length / 2)
+    }
+    function handleResize() {
+      setCurrentSlide(0)
+    }
+    window.addEventListener('resize', handleResize)
+  }, [transitionDistance, length, currentSlide])
+  const nextSlide = (event: MouseEvent) => {
     const slideNumber: number = currentSlide === length - 1 ? 0 : currentSlide + 1
+    const containerSize = containerRef.current?.offsetWidth || 0
     setCurrentSlide(slideNumber)
-    setTransitionDistance(transitionDistance - 30)
+    setTransitionDistance(transitionDistance - containerSize / length)
+    console.log(transitionDistance + containerSize / length)
   }
-  const prevSlide = (event: MouseEvent) =>{
-    const slideNumber: number = currentSlide === 0? length - 1: currentSlide - 1
+  const prevSlide = (event: MouseEvent) => {
+    const slideNumber: number = currentSlide === 0 ? length - 1 : currentSlide - 1
     setCurrentSlide(slideNumber)
-    setTransitionDistance(transitionDistance + 30)
+    const containerSize = containerRef.current?.offsetWidth || 0
+    setTransitionDistance(transitionDistance + containerSize / length)
+    console.log(transitionDistance + containerSize / length)
   }
 
 
 
 
   return (
-    <section className="container">
-      <div className="carousel" style={{transform: `translateX(${transitionDistance}rem)`}}>
+    <section ref={containerRef} className="container">
+      <div className="carousel" style={{ transform: `translateX(${transitionDistance}px)` }}>
         {
           slides.map((slide, index) =>
             <div key={index} className={`slide ${index === currentSlide ? 'active' : ''}`}>
@@ -76,8 +92,8 @@ const Carousel = () => {
 
       </div>
       <div className="controls">
-        <button className="control" onClick={prevSlide} disabled={currentSlide===0}>prev</button>
-        <button className="control" onClick={nextSlide} disabled={currentSlide===length-1}>next</button>
+        <button className="control" onClick={prevSlide} disabled={currentSlide === 0}>prev</button>
+        <button className="control" onClick={nextSlide} disabled={currentSlide === length - 1}>next</button>
       </div>
     </section>
 
