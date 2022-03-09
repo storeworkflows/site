@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
-import {IconName, IconPrefix} from "@fortawesome/fontawesome-common-types";
+import {IconName} from "@fortawesome/fontawesome-common-types";
 
 import {IIcon} from "../../types/interphases/IIcon";
 import {findIcon} from "./utils";

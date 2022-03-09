@@ -4,14 +4,12 @@ import {usedIconPrefixes} from "../../constants";
 
 
 export const findIcon = (icon: IconName, prefix?: IconPrefix): IconDefinition | undefined => {
-    console.log(prefix)
     if(prefix)
         return findIconDefinition({ prefix: prefix, iconName: icon })
 
     const prefixes: IconPrefix[] = Object.values<IconPrefix>(usedIconPrefixes);
     for(let p of prefixes){
         let iconDef = findIconDefinition({ prefix: p, iconName: icon });
-        console.log(p, iconDef)
         if(iconDef)
             return iconDef
     }

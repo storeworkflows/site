@@ -1,0 +1,49 @@
+@import "../../variables";
+
+.user-card{
+  --mainColor: var(--half-green);
+
+  &.blue{
+    --mainColor: var(--half-blue);
+  }
+
+  &.orange{
+    --mainColor: var(--half-orange);
+  }
+
+  background: var(--mainColor);
+  display: inline-flex;
+  flex-flow: column;
+  border-radius: 15px;
+  width: 275px;
+
+  align-items: center;
+
+  @include Montserrat(600);
+  font-size: 18px;
+  line-height: 22px;
+
+  margin: 10px;
+  padding: 42px 20px 20px;
+
+  .user-name{
+    margin-top: 30px;
+  }
+
+  .user-description{
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: normal;
+
+    min-height: 17px;
+  }
+
+  p{
+    margin-bottom: 10px;
+  }
+
+  .card-button{
+    --paddingV: 15px;
+    --paddingH: 30px;
+  }
+}

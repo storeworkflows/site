@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import {IconName} from "@fortawesome/fontawesome-common-types";
 
 import './IconLink.scss'
 import {IIconLink} from "../../types/interphases/IIconLink";
@@ -9,9 +8,7 @@ import Icon from "../Icon/Icon";
 import classnames from "classnames";
 import {TargetAttr} from "../../types/enums/TargetAttr";
 
-const defaultIcon: IconName = 'twitter';
 const defaultProps = {
-    icon: defaultIcon,
     color: MainColors.green,
     target: TargetAttr.blank
 };

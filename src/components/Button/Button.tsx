@@ -21,7 +21,8 @@ const Button: FC<IButton> = ({
     type,
     color,
     onClick,
-    size
+    size,
+    className
 }) => {
     if(!text && !icon)
         return null;
@@ -30,6 +31,7 @@ const Button: FC<IButton> = ({
     const buttonClasses = classnames(
         'button',
         {
+            [`${className}`]: className,
             [`${size}`]: true,
             [`${type}`]: true,
             [`${color}`]: true,

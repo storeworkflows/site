@@ -12,5 +12,6 @@ export interface IButton {
     type?: ButtonTypes,
     color?: ButtonColors,
     onClick?: (arg0: MouseEvent) => void,
-    size?: ButtonSizes
+    size?: ButtonSizes,
+    className?: string
 }
