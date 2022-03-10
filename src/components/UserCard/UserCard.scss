@@ -46,4 +46,45 @@
     --paddingV: 15px;
     --paddingH: 30px;
   }
+
+  &.big{
+    padding: 3rem;
+    //height: 90vh;
+    //width: 70vw;
+    height: 34rem;
+    width: 56rem;
+    flex-flow: row;
+    gap: 3rem;
+
+    background: linear-gradient(137.02deg, var(--half-blue) 7.74%, var(--half-orange) 89.36%);
+
+    &.green{
+      background: linear-gradient(137.02deg, var(--half-green) 7.74%, var(--half-orange) 89.36%);
+    }
+
+    &.orange{
+      background: linear-gradient(137.02deg, var(--half-orange) 7.74%, var(--half-blue) 89.36%);
+    }
+
+    .content{
+      height: 100%;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .user-name{
+      margin: 10% 0 0;
+    }
+
+    img{
+      height: 100%;
+    }
+
+    .card-button{
+      align-self: flex-end;
+      margin: 10% 0 0;
+    }
+  }
 }
