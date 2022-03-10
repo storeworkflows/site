@@ -1,3 +1,4 @@
+@import "./variables";
 ul{
   li{
     list-style: none;
@@ -11,20 +12,32 @@ ul{
 }
 body {
   background: linear-gradient(232.64deg, #07040C -2.74%, #100B1A 106.48%);
-  color: rgb(255, 255, 255);
 }
 a{
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
+h1{
+  @include ChicaGogo();
+  font-size: 64px;
+  line-height: 72px;
+  letter-spacing: 0.02em;
+  color: $color-white;
+}
+
+p{
+  @include Montserrat(400);
+  font-size: 14px;
+  line-height: 23px;
+  letter-spacing: 0.3px;
+}
 
 @media (min-width: 575.98px){
   .container {
     max-width: 540px;
     margin: auto;
     padding: 0;
-
   }
 }
 

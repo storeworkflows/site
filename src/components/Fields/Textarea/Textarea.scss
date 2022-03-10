@@ -1,0 +1,22 @@
+@import "../../../variables";
+
+.textarea {
+  width: 100% !important;
+  height: 200px !important;
+  padding: 18px 18px 0 30px;
+  color: $color-white;
+  background: transparent;
+  border: 2px solid #C4C4C4;
+  border-radius: 15px;
+  overflow-y: hidden;
+  outline: none !important;
+
+  &.visited {
+    border:2px solid $color-second;
+    box-shadow: 0 0 10px $color-second;
+  }
+  &.error {
+    border-color: red !important;
+    box-shadow: 0 0 10px red;
+  }
+}

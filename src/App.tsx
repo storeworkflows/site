@@ -15,8 +15,7 @@ import {
 
 import Header from "./components/header/Header";
 import Discover from "./components/discover/Discover";
-import Avatar from "./components/Avatar/Avatar";
-
+import ContactUs from "./components/contactUs/ContactUs";
 import avatar from "./assets/img/avatar.webp"
 import UserCard from "./components/UserCard/UserCard";
 import {MainColors} from "./types/enums/MainColors";
@@ -30,6 +29,7 @@ function App() {
     <div className="App">
      <Header />
      <Discover />
+        <ContactUs />
         <UserCard img={avatar} id={"1"}
                   firstName={"Corgi"}
                   secondName={"Happy"}

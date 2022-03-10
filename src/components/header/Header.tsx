@@ -12,8 +12,11 @@ import Button from "../Button/Button";
 import {ButtonTypes} from "../../types/enums/Button/ButtonTypes";
 import {ButtonColors} from "../../types/enums/Button/ButtonColors";
 
-const Header = () => {
 
+type HeaderProps = {
+
+}
+const Header:React.FC<HeaderProps> = ({}): JSX.Element => {
     return (
         <header className="header">
             <Navigation />
