@@ -12,8 +12,13 @@
 
   &.visited {
     border:2px solid $color-second;
-    box-shadow: 0 0 10px $color-second;
+    box-shadow: 0 0 5px $color-second !important;
   }
+  &.active {
+    border:2px solid $color-second;
+    box-shadow: 0 0 10px $color-second !important;
+  }
+
   &.error {
     border-color: red !important;
     box-shadow: 0 0 10px red;

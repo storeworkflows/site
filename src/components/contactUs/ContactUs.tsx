@@ -29,33 +29,33 @@ const ContactUs:React.FC = (): JSX.Element => {
     const onSubmit = (values:IValues) => {
         const {firstName,lastName,businessemail,message} = values
 
-        instance.post('/api/1.0/tasks', {
-            "data": {
-                "approval_status": "pending",
-                "assignee": "1201472437093173",
-                "completed": false,
-                //"due_at": '',
-                "due_on": new Date().toISOString().slice(0, 10),
-                "followers": [
-                    "1201472437093173"
-                ],
-                //"html_notes": "<body>Mittens <em>really</em> likes the stuff from Humboldt.</body>",
-                "name": `${firstName} ${lastName} Email: ${businessemail}`,
-                "notes": `${message} `,
-                "projects": [
-                    "1201830403108446"
-                ],
-                "resource_subtype": "default_task",
-                "start_on": null,
+                return instance.post('/api/1.0/tasks', {
+                    "data": {
+                        "approval_status": "pending",
+                        "assignee": "1201472437093173",
+                        "completed": false,
+                        //"due_at": '',
+                        "due_on": new Date().toISOString().slice(0, 10),
+                        "followers": [
+                            "1201472437093173"
+                        ],
+                        //"html_notes": "<body>Mittens <em>really</em> likes the stuff from Humboldt.</body>",
+                        "name": `${firstName} ${lastName} Email: ${businessemail}`,
+                        "notes": `${message} `,
+                        "projects": [
+                            "1201830403108446"
+                        ],
+                        "resource_subtype": "default_task",
+                        "start_on": null,
 
-                "workspace": "1129246741893412"
-            }
-        }).then(res=>{
-            const personse = res.data;
-            console.log(personse)
-        })
+                        "workspace": "1129246741893412"
+                    }
+                }).then(res=>{
+                    const response = res.data;
+                })
+        }
 
-    }
+
 
     return (
         <section className="section contact-us container">
@@ -67,15 +67,24 @@ const ContactUs:React.FC = (): JSX.Element => {
                     <h1>Contact Us</h1>
                     <Form
                         onSubmit={onSubmit}
-                        render={({ handleSubmit, form, submitting, pristine }) => (
-                            <form onSubmit={handleSubmit}>
+                        render={({ handleSubmit, form, submitting, pristine,values }) => (
+                            <form onSubmit={event => {
+                                handleSubmit(event)?.then(() => {
+                                    form.reset()
+                                    for (const key in values) {
+                                        // @ts-ignore
+                                        form.resetFieldState(key)
+                                    }
+                                })
+
+                                }}
+                            >
                                 <div className="field">
                                     <Field<string>
                                         name="firstName"
                                         validate={required}
                                         placeholder="First Name"
                                         component={Input}
-                                        hover={'aasd'}
                                     />
                                 </div>
                                 <div className="field">
@@ -89,6 +98,7 @@ const ContactUs:React.FC = (): JSX.Element => {
                                 </div>
                                 <div className="field">
                                     <Field<string>
+                                        type="email"
                                         name="businessemail"
                                         placeholder="Business e-mail"
                                         validate={composeValidators(required,email)}
@@ -104,7 +114,7 @@ const ContactUs:React.FC = (): JSX.Element => {
                                     />
                                 </div>
                                 <div style={{textAlign: "right"}}>
-                                    <Button text={"Send"}
+                                    <Button text={!submitting ? "Send" : "Disable"}
                                         // disabled={submitting || pristine}
                                     />
                                 </div>

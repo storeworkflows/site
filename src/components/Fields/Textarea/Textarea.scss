@@ -8,15 +8,37 @@
   background: transparent;
   border: 2px solid #C4C4C4;
   border-radius: 15px;
-  overflow-y: hidden;
+  overflow-y: auto;
   outline: none !important;
-
+  resize: none;
   &.visited {
     border:2px solid $color-second;
-    box-shadow: 0 0 10px $color-second;
+    box-shadow: 0 0 5px $color-second !important;
+  }
+  &.active {
+    border:2px solid $color-second;
+    box-shadow: 0 0 10px $color-second !important;
   }
   &.error {
     border-color: red !important;
     box-shadow: 0 0 10px red;
+  }
+}
+
+textarea {
+  cursor: auto;
+  &::-webkit-scrollbar-track {
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 9999px;
+    background-color: #aaaaaa;
   }
 }

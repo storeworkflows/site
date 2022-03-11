@@ -14,13 +14,14 @@ interface IInput extends FieldRenderProps<string, HTMLElement, string> {
 
 const Input: React.FC<IInput> = ({ label, input,placeholder, required, meta }) => {
     const { name , type} = input;
-    const { invalid, error, touched,visited } = meta;
+    const { invalid, error, touched,visited, active } = meta;
     const localError = !!invalid && !!touched;
 
     const inputClasses = classnames(
         'input',
         {
-            [`error`] : localError,
+            [`error`] : localError ,
+            [`active`] : active && !localError && visited,
             [`visited`] : visited && !localError,
         },
     )
