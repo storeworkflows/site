@@ -49,7 +49,7 @@ const Carousel = () => {
   const [transitionDistance, setTransitionDistance] = useState(0)
   const length: number = slides.length;
 
-  let containerRef = useRef<HTMLElement>(null)
+  let containerRef = useRef<HTMLDivElement>(null)
   let carouselRef = useRef<HTMLDivElement>(null)
   const slideRefs = useRef<(HTMLDivElement | null)[]>([])
   useEffect(() => {
