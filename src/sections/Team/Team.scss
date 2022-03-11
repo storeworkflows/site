@@ -1,0 +1,21 @@
+.user-cards{
+  margin: 3rem auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+
+}
+
+.description{
+  width: 80%;
+  margin-bottom: 3rem;
+}
+
+
+@media (max-width: 767.98px){
+  .description{
+    width: 100%;
+  }
+}
+

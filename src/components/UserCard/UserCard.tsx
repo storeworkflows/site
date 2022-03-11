@@ -16,17 +16,14 @@ const defaultProps = {
 };
 
 const UserCard: FC<IUserCard> = ({
-    img,
-    id,
-    firstName,
-    secondName,
-    description,
+    user,
     color,
     onButtonClick,
     buttonColor,
     type
 }) => {
-
+    console.log("render", color, user.id)
+    const {id, firstName, secondName, img, shortDescription, description} = user
     const buttonBg = buttonColor || getRandomColor();
     const name = secondName ? `${firstName} ${secondName}` : firstName
 
@@ -38,13 +35,26 @@ const UserCard: FC<IUserCard> = ({
     const imgType = isBigCard ? AvatarImgTypes.big : AvatarImgTypes.small
     const btnText = isBigCard ? "Close" : "Details"
 
+    const currentDescription = isBigCard
+        ? (description || shortDescription || " ")
+        : (shortDescription || " ")
+
+    const onClick = () => {
+        const toReturn: IUserCard = {
+            user: user,
+            color: color,
+            buttonColor: buttonBg
+        };
+        onButtonClick && onButtonClick(toReturn);
+    }
+
     const renderContent = () => <>
         <p className={"user-name"}>{name}</p>
-        <p className={"user-description"}>{description || " "}</p>
+        <p className={"user-description"}>{currentDescription}</p>
         <Button text={btnText}
                 color={buttonBg}
                 className={"card-button"}
-                onClick={onButtonClick}
+                onClick={onClick}
         />
     </>
 

@@ -1,16 +1,12 @@
 import {MainColors} from "../enums/MainColors";
-import {MouseEvent} from "react";
 import {ButtonColors} from "../enums/Button/ButtonColors";
 import {UserCardType} from "../enums/UserCardType";
+import {IUser} from "./IUser";
 
 export interface IUserCard{
-    img: string,
-    id: string,
-    firstName: string,
-    secondName?: string,
-    description?: string,
+    user: IUser,
     color?: MainColors,
-    onButtonClick?: (arg0: MouseEvent) => void,
+    onButtonClick?: (arg0: IUserCard) => void,
     buttonColor?: ButtonColors,
     type?: UserCardType
 }

@@ -15,22 +15,23 @@
   display: inline-flex;
   flex-flow: column;
   border-radius: 15px;
-  width: 275px;
+  width: 100%;
 
   align-items: center;
 
-  @include Montserrat(600);
-  font-size: 18px;
-  line-height: 22px;
-
-  margin: 10px;
   padding: 42px 20px 20px;
 
   .user-name{
+    @include Montserrat(700);
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+
     margin-top: 30px;
   }
 
   .user-description{
+    @include Montserrat(400);
     font-size: 14px;
     line-height: 17px;
     font-weight: normal;
@@ -52,7 +53,6 @@
     //height: 90vh;
     //width: 70vw;
     height: 34rem;
-    width: 56rem;
     flex-flow: row;
     gap: 3rem;
 
