@@ -4,12 +4,12 @@ import "./havigation.scss";
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
     const handleOpen = useCallback(() => setIsOpen(!isOpen),[isOpen])
-    const closeMobileMenu = useCallback(() => setIsOpen(false),[])
+    const closeMobileMenu = useCallback(() => setIsOpen(false),[setIsOpen])
 
 
     return (
-        <nav className="nav">
-            <div className="nav__logo">
+        <nav className="header__nav">
+            <div className="header__nav-logo">
                 <a href="#">
                     <span>Store</span>Workflows
                 </a>
@@ -27,13 +27,13 @@ const Navigation = () => {
                 <li className="nav-link" onClick={closeMobileMenu}>
                     <a href="#">Proucts</a>
                 </li>
-                <li className=" nav-link" onClick={closeMobileMenu}>
+                <li className="nav-link" onClick={closeMobileMenu}>
                     <a href="#" >Reviews</a>
                 </li>
-                <li className=" nav-link" onClick={closeMobileMenu}>
+                <li className="nav-link" onClick={closeMobileMenu}>
                     <a href="#" >FAQ</a>
                 </li>
-                <li className=" nav-link" onClick={closeMobileMenu}>
+                <li className="nav-link" onClick={closeMobileMenu}>
                     <a href="#" >Team</a>
                 </li>
             </ul>

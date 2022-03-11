@@ -1,0 +1,25 @@
+
+
+.icon-link{
+  --mainColor: var(--green);
+
+  &.blue{
+    --mainColor: var(--blue);
+  }
+
+  &.orange{
+    --mainColor: var(--orange);
+  }
+
+  color: var(--mainColor);
+  border: var(--mainColor) solid 4px;
+  border-radius: 50%;
+  padding: 8px;
+  margin: 8px;
+
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
