@@ -1,5 +1,5 @@
-ul{
-  li{
+ul {
+  li {
     list-style: none;
   }
 }
@@ -10,25 +10,35 @@ ul{
   box-sizing: border-box;
 }
 body {
-  background: linear-gradient(232.64deg, #07040C -2.74%, #100B1A 106.48%);
+  background: linear-gradient(232.64deg, #07040c -2.74%, #100b1a 106.48%);
   color: rgb(255, 255, 255);
 }
-a{
+a {
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
+p,h1,h2 {
+  font-family: "Montserrat"; 
+}
+p{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 165%;
+}
+h1{
 
+}
 
-@media (min-width: 575.98px){
+@media (min-width: 575.98px) {
   .container {
     max-width: 540px;
     margin: auto;
     padding: 0;
-
   }
 }
 
-@media (min-width: 767.98px){
+@media (min-width: 767.98px) {
   .container {
     max-width: 720px;
   }
@@ -40,7 +50,7 @@ a{
   }
 }
 
-@media (min-width: 1199.98px){
+@media (min-width: 1199.98px) {
   .container {
     max-width: 1160px;
   }
