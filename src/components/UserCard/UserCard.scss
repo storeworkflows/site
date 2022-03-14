@@ -15,11 +15,14 @@
   display: inline-flex;
   flex-flow: column;
   border-radius: 15px;
-  width: 100%;
-
+  margin: auto;
   align-items: center;
 
-  padding: 42px 20px 20px;
+  padding: 3rem 3rem 1.5rem;
+
+  @media (max-width: 1300px){
+    padding: 2em 2rem 1.5rem;
+  }
 
   .user-name{
     @include Montserrat(700);
