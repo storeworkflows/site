@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import './IconLinkGroup.scss'
-import { IIconLinkGroup} from "../../types/interphases/IIconLink";
+import { IIconLinkGroup} from "../../types/interfaces/IIconLink";
 import {MainColors} from "../../types/enums/MainColors";
 
 import {TargetAttr} from "../../types/enums/TargetAttr";

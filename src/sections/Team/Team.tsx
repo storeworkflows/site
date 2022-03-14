@@ -1,9 +1,9 @@
 import React, {FC, useEffect, useMemo, useState} from 'react';
 
 import "./Team.scss"
-import {ITeam} from "../../types/interphases/ITeam";
+import {ITeam} from "../../types/interfaces/ITeam";
 import UserCard from "../../components/UserCard/UserCard";
-import {IUserCard} from "../../types/interphases/IUserCard";
+import {IUserCard} from "../../types/interfaces/IUserCard";
 import {UserCardType} from "../../types/enums/UserCardType";
 import {getColorsArr} from "./utils";
 import {MainColors} from "../../types/enums/MainColors";

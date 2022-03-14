@@ -25,7 +25,7 @@ import { MainColors } from "./types/enums/MainColors";
 import { AvatarImgTypes } from "./types/enums/AvatarImgTypes";
 import { UserCardType } from "./types/enums/UserCardType";
 import Team from "./sections/Team/Team";
-import { IUser } from "./types/interphases/IUser";
+import { IUser } from "./types/interfaces/IUser";
 import FAQ from './sections/FAQ';
 import Advantages from './sections/Advantages/Advantages';
 

@@ -1,56 +1,21 @@
-import React, { useState, MouseEvent, useRef, useEffect } from "react";
+import React, { useState, MouseEvent, useRef, useEffect, FC } from "react";
 import "./Carousel.scss";
-import face1 from '../../assets/img/face1.jpg'
-import face2 from '../../assets/img/face2.jpg'
-import face3 from '../../assets/img/face3.jpg'
-import face4 from '../../assets/img/face4.jpg'
-import face5 from '../../assets/img/face5.jpg'
-interface Slide {
-  img: string,
-  alt?: string,
-  header: string,
-  text: string
-}
-
-const slides: Array<Slide> = [
-  {
-    img: face1,
-    header: 'Person Persons',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eum autem architecto, provident laudantium incidunt placeat eligendi et eaque beatae ad alias voluptates? Tempora aliquid exercitationem autem optio eum cumque, molestias eius recusandae repellat. Nisi ex ratione reprehenderit iure quisquam illum fuga, voluptate veniam tempora suscipit ea eaque at nam.'
-  },
-  {
-    img: face2,
-    header: 'Dabudi Dabudai',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eum autem architecto, provident laudantium incidunt placeat eligendi et eaque beatae ad alias voluptates? Tempora aliquid exercitationem autem optio eum cumque, molestias eius recusandae repellat. Nisi ex ratione reprehenderit iure quisquam illum fuga, voluptate veniam tempora suscipit ea eaque at nam.'
-  },
-  {
-    img: face3,
-    header: 'Somebody Tolove',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eum autem architecto, provident laudantium incidunt placeat eligendi et eaque beatae ad alias voluptates? Tempora aliquid exercitationem autem optio eum cumque, molestias eius recusandae repellat. Nisi ex ratione reprehenderit iure quisquam illum fuga, voluptate veniam tempora suscipit ea eaque at nam.'
-  },
-  {
-    img: face4,
-    header: 'Nevermind Ifind',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eum autem architecto, provident laudantium incidunt placeat eligendi et eaque beatae ad alias voluptates? Tempora aliquid exercitationem autem optio eum cumque, molestias eius recusandae repellat. Nisi ex ratione reprehenderit iure quisquam illum fuga, voluptate veniam tempora suscipit ea eaque at nam.'
-  },
-  {
-    img: face5,
-    header: 'Someone Likeyou',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eum autem architecto, provident laudantium incidunt placeat eligendi et eaque beatae ad alias voluptates? Tempora aliquid exercitationem autem optio eum cumque, molestias eius recusandae repellat. Nisi ex ratione reprehenderit iure quisquam illum fuga, voluptate veniam tempora suscipit ea eaque at nam.'
-  }
-]
+import Button from "../Button/Button";
+import { ButtonTypes } from "../../types/enums/Button/ButtonTypes";
+import { ButtonColors } from "../../types/enums/Button/ButtonColors";
+import { ICarousel } from "../../types/interfaces/ICarousel";
 
 function getInactiveSlideWidth(slidesRefs: Array<HTMLDivElement | null>): number {
-  return Math.min(...slidesRefs.map(slide=>{return slide?.offsetWidth||0}))
+  return Math.min(...slidesRefs.map(slide => { return slide?.offsetWidth || 0 }))
 }
-
-const Carousel = () => {
+const defaultProps = { slides: [] }
+const Carousel: FC<ICarousel> = ({
+  slides
+}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [transitionDistance, setTransitionDistance] = useState(0)
   const length: number = slides.length;
 
-  let containerRef = useRef<HTMLDivElement>(null)
-  let carouselRef = useRef<HTMLDivElement>(null)
   const slideRefs = useRef<(HTMLDivElement | null)[]>([])
   useEffect(() => {
     if (currentSlide === 0) {
@@ -81,15 +46,13 @@ const Carousel = () => {
     setTransitionDistance(transitionDistance)
   }
 
-
-
   return (
-    <div ref={containerRef} className="outer-container">
-      <div ref={carouselRef} className="carousel" style={{ transform: `translateX(${transitionDistance}px)` }}>
+    <div className="outer-container">
+      <div className="carousel" style={{ transform: `translateX(${transitionDistance}px)` }}>
         {
           slides.map((slide, index) =>
             <div ref={el => { slideRefs.current[index] = el }} key={index} className={`slide ${index === currentSlide ? 'active' : ''}`}>
-              <div className="slide__image" onClick={()=>setActiveSlide(index)}>
+              <div className="slide__image" onClick={() => setActiveSlide(index)}>
                 <img src={slide.img} alt={slide.alt} />
               </div>
               <div className="slide__info">
@@ -101,12 +64,20 @@ const Carousel = () => {
 
       </div>
       <div className="controls">
-        <button className="control" onClick={prevSlide} disabled={currentSlide === 0}>prev</button>
-        <button className="control" onClick={nextSlide} disabled={currentSlide === length - 1}>next</button>
+        <Button
+          type={ButtonTypes.additional}
+          color={currentSlide === 0 ? ButtonColors.dark : ButtonColors.green}
+          icon="angle-left"
+          onClick={prevSlide} />
+        <Button
+          type={ButtonTypes.additional}
+          color={currentSlide === length - 1 ? ButtonColors.dark : ButtonColors.green}
+          icon="angle-right"
+          onClick={nextSlide} />
       </div>
     </div>
 
   );
 };
-
+Carousel.defaultProps = defaultProps
 export default Carousel;

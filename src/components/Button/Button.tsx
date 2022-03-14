@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import classnames from 'classnames'
 
-import {IButton} from "../../types/interphases/IButton";
+import {IButton} from "../../types/interfaces/IButton";
 import {ButtonTypes} from "../../types/enums/Button/ButtonTypes";
 import {ButtonColors} from "../../types/enums/Button/ButtonColors";
 import Icon from "../Icon/Icon";
