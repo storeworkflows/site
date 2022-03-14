@@ -3,4 +3,11 @@
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
+
+  &.big{
+    width: 50vh;
+    height: 80vh;
+
+    border-radius: 15px;
+  }
 }

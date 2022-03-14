@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 ul {
   li {
+=======
+@import "./variables";
+
+ul{
+  li{
+>>>>>>> base-components
     list-style: none;
   }
 }
@@ -8,7 +15,27 @@ ul {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  @include Montserrat(600);
 }
+
+p{
+  @include Montserrat(400);
+  font-size: 14px;
+  line-height: 165%;
+
+  letter-spacing: 0.02em;
+}
+
+h2{
+  @include ChicaGogo();
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 72px;
+  letter-spacing: 0.02em;
+
+  margin: 3rem 0;
+}
+
 body {
   background: linear-gradient(232.64deg, #07040c -2.74%, #100b1a 106.48%);
   color: rgb(255, 255, 255);
@@ -55,3 +82,30 @@ h1{
     max-width: 1160px;
   }
 }
+//
+//@media (min-width: 575.98px){
+//  .container {
+//    max-width: 540px;
+//    margin: auto;
+//    padding: 0;
+//
+//  }
+//}
+//
+//@media (min-width: 767.98px){
+//  .container {
+//    max-width: 720px;
+//  }
+//}
+//
+//@media (min-width: 991.98px) {
+//  .container {
+//    max-width: 960px;
+//  }
+//}
+//
+//@media (min-width: 1199.98px){
+//  .container {
+//    max-width: 1160px;
+//  }
+//}
