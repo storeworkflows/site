@@ -3,7 +3,6 @@ import badger from "../../assets/img/Honey_badger.png"
 
 import Navigation from "./Navigation";
 import "./header.scss";
-import Carousel from "../carousel/Carousel";
 import Button from "../Button/Button";
 import {ButtonTypes} from "../../types/enums/Button/ButtonTypes";
 import {ButtonColors} from "../../types/enums/Button/ButtonColors";

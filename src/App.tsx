@@ -15,7 +15,7 @@ import {
 
 import Header from "./components/header/Header";
 import Discover from "./components/discover/Discover";
-import CustomerReviews from './components/customerReviews/CustomerReviews';
+import CustomerReviews from './sections/CustomerReviews/CustomerReviews';
 import Avatar from "./components/Avatar/Avatar";
 
 import avatar from "./assets/img/avatar.webp"
@@ -55,7 +55,8 @@ function App() {
     <div className="App">
      <Header />
      <Discover />
-        <Team users={arr}/>
+     <Team users={arr}/>
+     
     </div>
   );
 }

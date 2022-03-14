@@ -1,6 +1,6 @@
 import React from "react";
-import './customerReviews.scss'
-import Carousel from "../carousel/Carousel";
+import './CustomerReviews.scss'
+import Carousel from "../../components/Carousel/Carousel";
 const CustomerReviews = () =>{
     return (
         <section className="container">

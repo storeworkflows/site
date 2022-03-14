@@ -1,5 +1,5 @@
 import React, { useState, MouseEvent, useRef, useEffect } from "react";
-import "./carousel.scss";
+import "./Carousel.scss";
 import face1 from '../../assets/img/face1.jpg'
 import face2 from '../../assets/img/face2.jpg'
 import face3 from '../../assets/img/face3.jpg'
