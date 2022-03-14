@@ -26,6 +26,7 @@ import { AvatarImgTypes } from "./types/enums/AvatarImgTypes";
 import { UserCardType } from "./types/enums/UserCardType";
 import Team from "./sections/Team/Team";
 import { IUser } from "./types/interphases/IUser";
+import FAQ from './sections/FAQ';
 
 library.add(faAngleDown, faAngleUp, faAngleLeft, faAngleRight,
   faTwitter, faYoutube, faInstagram, faLinkedin, faFacebook, faLinkedinIn, faFacebookSquare)
@@ -59,7 +60,7 @@ function App() {
       <Team users={arr} />
       <CustomerReviews />
       <ContactUs />
-      
+      <FAQ/>
     </div>
   );
 }
