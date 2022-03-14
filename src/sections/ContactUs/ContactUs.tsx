@@ -1,5 +1,5 @@
 import React from "react";
-import "./contactUs.scss";
+import "./ContactUs.scss";
 
 import { Form, Field } from 'react-final-form'
 import axios, {AxiosResponse} from "axios";

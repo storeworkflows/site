@@ -27,6 +27,7 @@ import { UserCardType } from "./types/enums/UserCardType";
 import Team from "./sections/Team/Team";
 import { IUser } from "./types/interphases/IUser";
 import FAQ from './sections/FAQ';
+import Advantages from './sections/Advantages/Advantages';
 
 library.add(faAngleDown, faAngleUp, faAngleLeft, faAngleRight,
   faTwitter, faYoutube, faInstagram, faLinkedin, faFacebook, faLinkedinIn, faFacebookSquare)
@@ -57,6 +58,7 @@ function App() {
     <div className="App">
       <Header />
       <Discover />
+      <Advantages />
       <Team users={arr} />
       <CustomerReviews />
       <ContactUs />
