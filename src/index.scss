@@ -68,7 +68,9 @@ p{
   line-height: 23px;
   letter-spacing: 0.3px;
 }
-
+.container{
+  min-height: 600px;
+}
 @media (min-width: 575.98px) {
   .container {
     max-width: 540px;
@@ -105,30 +107,4 @@ p{
     margin: 3rem 0;
   }
 }
-//
-//@media (min-width: 575.98px){
-//  .container {
-//    max-width: 540px;
-//    margin: auto;
-//    padding: 0;
-//
-//  }
-//}
-//
-//@media (min-width: 767.98px){
-//  .container {
-//    max-width: 720px;
-//  }
-//}
-//
-//@media (min-width: 991.98px) {
-//  .container {
-//    max-width: 960px;
-//  }
-//}
-//
-//@media (min-width: 1199.98px){
-//  .container {
-//    max-width: 1160px;
-//  }
-//}
+
