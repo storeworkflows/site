@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "./discover.scss";
+import "./Discover.scss";
 const Discover = () => {
 
     return (

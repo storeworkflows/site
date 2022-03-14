@@ -11,3 +11,10 @@
     border-radius: 15px;
   }
 }
+
+@media (max-width: 1300px){
+  .avatar-img{
+    width: 160px;
+    height: 160px;
+  }
+}
