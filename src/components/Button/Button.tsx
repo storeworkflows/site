@@ -7,12 +7,15 @@ import {ButtonColors} from "../../types/enums/Button/ButtonColors";
 import Icon from "../Icon/Icon";
 import "./Button.scss"
 import {ButtonSizes} from "../../types/enums/Button/ButtonSizes";
+import {SizeProp} from "@fortawesome/fontawesome-svg-core";
 
+const defaultIconSize: SizeProp = "lg";
 const defaultProps = {
     type: ButtonTypes.primary,
     color: ButtonColors.orange,
     size: ButtonSizes.md,
-    onClick: () => 0
+    onClick: () => 0,
+    iconSize: defaultIconSize
 };
 
 const Button: FC<IButton> = ({
@@ -22,7 +25,8 @@ const Button: FC<IButton> = ({
     color,
     onClick,
     size,
-    className
+    className,
+    iconSize
 }) => {
     if(!text && !icon)
         return null;
@@ -42,7 +46,7 @@ const Button: FC<IButton> = ({
     return (
         <button className={buttonClasses} onClick={onClick}>
             {text && text}
-            {icon && <Icon icon={icon} size={"lg"}/>}
+            {icon && <Icon icon={icon} size={iconSize}/>}
         </button>
     )
 }
