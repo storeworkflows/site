@@ -1,6 +1,6 @@
-@import './_variables.scss';
-ul {
-  li {
+@import "./variables";
+ul{
+  li{
     list-style: none;
   }
 }
@@ -20,7 +20,7 @@ p{
   letter-spacing: 0.02em;
 }
 
-h2{
+h1{
   @include ChicaGogo();
   font-weight: 700;
   font-size: 64px;
@@ -47,8 +47,26 @@ p{
   font-size: 14px;
   line-height: 165%;
 }
-h1{
 
+
+h1{
+  @include ChicaGogo();
+  font-size: 64px;
+  line-height: 72px;
+  letter-spacing: 0.02em;
+  color: $color-white;
+}
+h2{
+  @include ChicaGogo();
+  font-size: 14pt;
+  letter-spacing: 0.02em;
+  color: $color-white;
+}
+p{
+  @include Montserrat(400);
+  font-size: 14px;
+  line-height: 23px;
+  letter-spacing: 0.3px;
 }
 
 @media (min-width: 575.98px) {

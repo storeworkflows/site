@@ -7,24 +7,15 @@
   &__container {
     position: relative;
     height: calc(100% - 100px);
-
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     color: $color-white;
     &__tittle{
-      @include ChicaGogo();
       max-width: 761px;
-      font-size: 64px;
-      line-height: 72px;
-      letter-spacing: 0.02em;
     }
     &__subtittle{
-      @include Montserrat(400);
       max-width: 524px;
-      font-size: 14px;
-      line-height: 23px;
-      letter-spacing: 0.02em;
       padding: 49px 0 60px;
       opacity: 0.75;
     }

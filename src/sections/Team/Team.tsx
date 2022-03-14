@@ -21,7 +21,7 @@ const Team: FC<ITeam> = ({users}) => {
     }, users)
 
     return <section className={"container"}>
-        <h2>Our Creative Team</h2>
+        <h1>Our Creative Team</h1>
         <p className={"description"}>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
         { selectedUserCard &&
             <UserCard

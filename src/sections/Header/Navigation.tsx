@@ -1,10 +1,12 @@
 import React, {useCallback, useEffect, useState} from "react";
 import "./havigation.scss";
+import {NavigationProps, TCloseMobileMenuType, THandleOpen} from "./typing/typing";
 
-const Navigation = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const handleOpen = useCallback(() => setIsOpen(!isOpen),[isOpen])
-    const closeMobileMenu = useCallback(() => setIsOpen(false),[setIsOpen])
+
+const Navigation:React.FC<NavigationProps> = ({}): JSX.Element => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const handleOpen = useCallback<THandleOpen>(() => setIsOpen(!isOpen),[isOpen])
+    const closeMobileMenu = useCallback<TCloseMobileMenuType>(() => setIsOpen(false),[setIsOpen])
 
 
     return (

@@ -1,3 +1,4 @@
+@import '../../variables';
 $containerSizeXS: 540px;
 $containerSizeS: 720px;
 $containerSizeM: 960px;
@@ -64,6 +65,10 @@ $activeInfoPercentage: 50%;
   visibility: hidden;
   transition: opacity 0.2s ease 0ms, width 0.2s ease 0.2s, padding-inline 0.2s ease 0.2s;
   font-size: 10pt;
+  h2{
+    color: $green;
+    margin-block: 1rem;
+  }
 }
 .controls {
   position: absolute;

@@ -3,11 +3,11 @@ import badger from "../../assets/img/Honey_badger.png"
 
 import Navigation from "./Navigation";
 import "./header.scss";
-import Button from "../Button/Button";
+import Button from "../../components/Button/Button";
 import {ButtonTypes} from "../../types/enums/Button/ButtonTypes";
 import {ButtonColors} from "../../types/enums/Button/ButtonColors";
 import {IIconLink} from "../../types/interphases/IIconLink";
-import IconLinkGroup from "../IconLinkGroup/IconLinkGroup";
+import IconLinkGroup from "../../components/IconLinkGroup/IconLinkGroup";
 import {MainColors} from "../../types/enums/MainColors";
 
 const iconLinks: IIconLink[] = [
@@ -32,8 +32,11 @@ const iconLinks: IIconLink[] = [
         link: "https://twitter.com/"
     },
 ]
-const Header = () => {
 
+type HeaderProps = {
+
+}
+const Header:React.FC<HeaderProps> = ({}): JSX.Element => {
     return (
         <header className="header">
             <Navigation />
