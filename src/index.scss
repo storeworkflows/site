@@ -68,7 +68,9 @@ p{
   line-height: 23px;
   letter-spacing: 0.3px;
 }
-
+.container{
+  min-height: 600px;
+}
 @media (min-width: 575.98px) {
   .container {
     max-width: 540px;
