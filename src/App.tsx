@@ -18,8 +18,7 @@ import avatar from "./assets/img/avatar.webp"
 import Team from "./sections/Team/Team";
 import {IUser} from "./types/interphases/IUser";
 import Discover from "./sections/Discover/Discover";
-import List from "./components/List/List";
-import {advantages} from "./constants";
+import Advantages from "./sections/Advantages/Advantages";
 
 library.add(faAngleDown, faAngleUp, faAngleLeft, faAngleRight,
     faTwitter, faYoutube, faInstagram, faLinkedin, faFacebook, faLinkedinIn, faFacebookSquare)
@@ -50,7 +49,7 @@ function App() {
     <div className="App">
      <Header />
      <Discover />
-        <List listOptions={advantages}/>
+     <Advantages/>
      <Team users={arr}/>
     </div>
   );
