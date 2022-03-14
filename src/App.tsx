@@ -14,16 +14,10 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 
 import Header from "./components/header/Header";
-import Discover from "./components/discover/Discover";
-import Avatar from "./components/Avatar/Avatar";
-
 import avatar from "./assets/img/avatar.webp"
-import UserCard from "./components/UserCard/UserCard";
-import {MainColors} from "./types/enums/MainColors";
-import {AvatarImgTypes} from "./types/enums/AvatarImgTypes";
-import {UserCardType} from "./types/enums/UserCardType";
 import Team from "./sections/Team/Team";
 import {IUser} from "./types/interphases/IUser";
+import Discover from "./sections/Discover/Discover";
 
 library.add(faAngleDown, faAngleUp, faAngleLeft, faAngleRight,
     faTwitter, faYoutube, faInstagram, faLinkedin, faFacebook, faLinkedinIn, faFacebookSquare)

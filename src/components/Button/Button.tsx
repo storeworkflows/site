@@ -42,7 +42,7 @@ const Button: FC<IButton> = ({
     return (
         <button className={buttonClasses} onClick={onClick}>
             {text && text}
-            {icon && <Icon icon={icon} size={"2x"}/>}
+            {icon && <Icon icon={icon} size={"lg"}/>}
         </button>
     )
 }
