@@ -3,4 +3,18 @@
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
+
+  &.big{
+    width: 50vh;
+    height: 80vh;
+
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 1300px){
+  .avatar-img{
+    width: 160px;
+    height: 160px;
+  }
 }

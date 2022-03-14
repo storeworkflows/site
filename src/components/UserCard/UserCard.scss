@@ -15,22 +15,26 @@
   display: inline-flex;
   flex-flow: column;
   border-radius: 15px;
-  width: 275px;
-
+  margin: auto;
   align-items: center;
 
-  @include Montserrat(600);
-  font-size: 18px;
-  line-height: 22px;
+  padding: 3rem 3rem 1.5rem;
 
-  margin: 10px;
-  padding: 42px 20px 20px;
+  @media (max-width: 1300px){
+    padding: 2.5em 2.75rem 1.5rem;
+  }
 
   .user-name{
+    @include Montserrat(700);
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+
     margin-top: 30px;
   }
 
   .user-description{
+    @include Montserrat(400);
     font-size: 14px;
     line-height: 17px;
     font-weight: normal;
@@ -45,5 +49,45 @@
   .card-button{
     --paddingV: 15px;
     --paddingH: 30px;
+  }
+
+  &.big{
+    padding: 3rem;
+    //height: 90vh;
+    //width: 70vw;
+    height: 34rem;
+    flex-flow: row;
+    gap: 3rem;
+
+    background: linear-gradient(137.02deg, var(--half-blue) 7.74%, var(--half-orange) 89.36%);
+
+    &.green{
+      background: linear-gradient(137.02deg, var(--half-green) 7.74%, var(--half-orange) 89.36%);
+    }
+
+    &.orange{
+      background: linear-gradient(137.02deg, var(--half-orange) 7.74%, var(--half-blue) 89.36%);
+    }
+
+    .content{
+      height: 100%;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .user-name{
+      margin: 10% 0 0;
+    }
+
+    img{
+      height: 100%;
+    }
+
+    .card-button{
+      align-self: flex-end;
+      margin: 10% 0 0;
+    }
   }
 }

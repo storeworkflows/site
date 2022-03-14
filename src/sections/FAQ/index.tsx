@@ -1,7 +1,7 @@
 import React from 'react';
 import Accordion from "./accordion/Accordion";
 import {accordionItems} from "./mockedData";
-
+import './faq.scss'
 const FAQ = () => {
 
 	return (

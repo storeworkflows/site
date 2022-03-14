@@ -1,7 +1,7 @@
 import React, {FC, useState, MouseEvent, useRef} from 'react';
 import classnames from 'classnames'
 import {IAccordionContent} from "../typings/interfaces";
-
+import './accordion.scss'
 const Accordion: FC<IAccordionContent> = ({
 	  count = 0,
 	  title,

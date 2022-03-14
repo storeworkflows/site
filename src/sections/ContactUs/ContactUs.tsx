@@ -4,10 +4,10 @@ import "./contactUs.scss";
 import { Form, Field } from 'react-final-form'
 import axios, {AxiosResponse} from "axios";
 
-import Button from "../Button/Button";
-import Input from "../Fields/Input/Input";
-import Textarea from "../Fields/Textarea/Textarea";
-import {composeValidators, email, required} from "./utils";
+import Button from "../../components/Button/Button";
+import Input from "../../components/Fields/Input/Input";
+import Textarea from "../../components/Fields/Textarea/Textarea";
+import {composeValidators, email, required} from './utils'
 
 
 const token = '1/1201472437093173:891f86e59c48144f242d26887b76062f'

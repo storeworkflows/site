@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-import "./discover.scss";
+import "./Discover.scss";
 const Discover = () => {
 
     return (
         <section className="container">
-            discover
+            <h1>Discover</h1>
         </section>
 
     );

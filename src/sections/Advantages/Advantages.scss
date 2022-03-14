@@ -1,0 +1,22 @@
+.advantages-section{
+  padding: 0 0 0 7%;
+  width: 100%;
+  background: linear-gradient(232.64deg, #07040C -2.74%, #100B1A 106.48%);
+
+  h2{
+    text-align: center;
+  }
+
+
+  .advantage-content{
+    display: inline-flex;
+
+    .paw-img{
+      display: inline-flex;
+      object-fit: contain;
+      height: 560px;
+      width: 50%;
+    }
+  }
+
+}

@@ -9,14 +9,45 @@ ul{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  @include Montserrat(600);
 }
+
+p{
+  @include Montserrat(400);
+  font-size: 14px;
+  line-height: 165%;
+
+  letter-spacing: 0.02em;
+}
+
+h1{
+  @include ChicaGogo();
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 72px;
+  letter-spacing: 0.02em;
+
+  margin: 3rem 0;
+}
+
 body {
-  background: linear-gradient(232.64deg, #07040C -2.74%, #100B1A 106.48%);
+  background: linear-gradient(232.64deg, #07040c -2.74%, #100b1a 106.48%);
+  color: rgb(255, 255, 255);
 }
-a{
+a {
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
+p,h1,h2 {
+  font-family: "Montserrat"; 
+}
+p{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 165%;
+}
+
 
 h1{
   @include ChicaGogo();
@@ -25,7 +56,12 @@ h1{
   letter-spacing: 0.02em;
   color: $color-white;
 }
-
+h2{
+  @include ChicaGogo();
+  font-size: 14pt;
+  letter-spacing: 0.02em;
+  color: $color-white;
+}
 p{
   @include Montserrat(400);
   font-size: 14px;
@@ -33,7 +69,7 @@ p{
   letter-spacing: 0.3px;
 }
 
-@media (min-width: 575.98px){
+@media (min-width: 575.98px) {
   .container {
     max-width: 540px;
     margin: auto;
@@ -41,7 +77,7 @@ p{
   }
 }
 
-@media (min-width: 767.98px){
+@media (min-width: 767.98px) {
   .container {
     max-width: 720px;
   }
@@ -53,8 +89,46 @@ p{
   }
 }
 
-@media (min-width: 1199.98px){
+@media (min-width: 1199.98px) {
   .container {
     max-width: 1160px;
   }
 }
+
+@media (max-width: 1300px){
+  h2{
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: 0.02em;
+
+    margin: 3rem 0;
+  }
+}
+//
+//@media (min-width: 575.98px){
+//  .container {
+//    max-width: 540px;
+//    margin: auto;
+//    padding: 0;
+//
+//  }
+//}
+//
+//@media (min-width: 767.98px){
+//  .container {
+//    max-width: 720px;
+//  }
+//}
+//
+//@media (min-width: 991.98px) {
+//  .container {
+//    max-width: 960px;
+//  }
+//}
+//
+//@media (min-width: 1199.98px){
+//  .container {
+//    max-width: 1160px;
+//  }
+//}
