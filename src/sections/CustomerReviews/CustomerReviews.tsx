@@ -5,7 +5,7 @@ import { slides } from "./mock";
 const CustomerReviews = () =>{
     return (
         <section className="container">
-            <h2>Customer Reviews</h2>
+            <h2 id="CustomerReviews">Customer Reviews</h2>
             <Carousel slides={slides}/>
         </section>
         

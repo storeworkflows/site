@@ -20,7 +20,7 @@ p{
   letter-spacing: 0.02em;
 }
 
-h1{
+h1,h2{
   @include ChicaGogo();
   font-weight: 700;
   font-size: 64px;
@@ -38,7 +38,7 @@ a {
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
-p,h1,h2 {
+p{
   font-family: "Montserrat"; 
 }
 p{
@@ -48,20 +48,6 @@ p{
   line-height: 165%;
 }
 
-
-h1{
-  @include ChicaGogo();
-  font-size: 64px;
-  line-height: 72px;
-  letter-spacing: 0.02em;
-  color: $color-white;
-}
-h2{
-  @include ChicaGogo();
-  font-size: 14pt;
-  letter-spacing: 0.02em;
-  color: $color-white;
-}
 p{
   @include Montserrat(400);
   font-size: 14px;
