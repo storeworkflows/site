@@ -14,20 +14,15 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 
 import Header from './sections/Header/Header';
-import Discover from "./sections/Discover/Discover";
 import CustomerReviews from './sections/CustomerReviews/CustomerReviews';
-import Avatar from "./components/Avatar/Avatar";
 
 import ContactUs from "./sections/ContactUs/ContactUs";
 import avatar from "./assets/img/avatar.webp"
-import UserCard from "./components/UserCard/UserCard";
-import { MainColors } from "./types/enums/MainColors";
-import { AvatarImgTypes } from "./types/enums/AvatarImgTypes";
-import { UserCardType } from "./types/enums/UserCardType";
 import Team from "./sections/Team/Team";
 import { IUser } from "./types/interfaces/IUser";
 import FAQ from './sections/FAQ';
 import Advantages from './sections/Advantages/Advantages';
+import Discover from "./sections/Discover/Discover";
 
 library.add(faAngleDown, faAngleUp, faAngleLeft, faAngleRight,
   faTwitter, faYoutube, faInstagram, faLinkedin, faFacebook, faLinkedinIn, faFacebookSquare)
