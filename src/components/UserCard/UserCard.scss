@@ -20,10 +20,6 @@
 
   padding: 3rem 3rem 1.5rem;
 
-  @media (max-width: 1300px){
-    padding: 2.5em 2.75rem 1.5rem;
-  }
-
   .user-name{
     @include Montserrat(700);
     font-size: 18px;
@@ -46,18 +42,14 @@
     margin-bottom: 10px;
   }
 
-  .card-button{
-    --paddingV: 15px;
-    --paddingH: 30px;
-  }
+
 
   &.big{
     padding: 3rem;
-    //height: 90vh;
-    //width: 70vw;
     height: 34rem;
     flex-flow: row;
     gap: 3rem;
+    margin-bottom: 4rem;
 
     background: linear-gradient(137.02deg, var(--half-blue) 7.74%, var(--half-orange) 89.36%);
 
@@ -90,4 +82,41 @@
       margin: 10% 0 0;
     }
   }
+
+
+
 }
+
+@media (max-width: 1300px){
+  .user-card {
+    padding: 2.5rem 2.75rem 1.5rem;
+
+    .card-button{
+      --paddingV: 15px;
+      --paddingH: 30px;
+    }
+  }
+}
+
+@media (min-width: 1300px) {
+  .user-card.big {
+    height: 45rem;
+    padding: 4rem 6rem 4rem 5rem;
+    gap: 5rem;
+    margin-bottom: 4rem;
+
+    .user-name{
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: 0.02em;
+
+      margin-top: 6rem;
+    }
+
+
+    img {
+      width: 30rem;
+    }
+  }
+}
+

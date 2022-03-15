@@ -31,6 +31,19 @@
   }
 }
 
+@media (max-width: 1600px) {
+
+  .discover-section .discover-button{
+      align-self: flex-end;
+      margin: 2.5rem 0;
+
+      --paddingV: 15px;
+      --paddingH: 30px;
+  }
+
+}
+
+
 @media (min-width: 1600px) {
   .discover-section {
     gap: 6rem;
