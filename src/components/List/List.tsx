@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import "./List.scss"
-import {IList} from "../../types/interphases/IList";
+import {IList} from "../../types/interfaces/IList";
 import classnames from "classnames";
 
 const List: FC<IList> = ({listOptions}) => {

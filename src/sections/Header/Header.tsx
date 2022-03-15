@@ -6,7 +6,7 @@ import "./header.scss";
 import Button from "../../components/Button/Button";
 import {ButtonTypes} from "../../types/enums/Button/ButtonTypes";
 import {ButtonColors} from "../../types/enums/Button/ButtonColors";
-import {IIconLink} from "../../types/interphases/IIconLink";
+import {IIconLink} from "../../types/interfaces/IIconLink";
 import IconLinkGroup from "../../components/IconLinkGroup/IconLinkGroup";
 import {MainColors} from "../../types/enums/MainColors";
 

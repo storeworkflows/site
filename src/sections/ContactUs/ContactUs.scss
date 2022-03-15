@@ -1,0 +1,37 @@
+@import "../../variables";
+
+.contact-us{
+
+  &__wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  &__image {
+    height: 640px;
+    width: 432px;
+    flex: 0 1 auto;
+    background-image: url("../../assets/img/contactUs_human.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+  }
+  &__form {
+    max-width: 570px;
+    flex: 1 1 auto;
+    margin: 0 10px;
+
+    .field {
+      margin: 35px 0;
+      flex-grow: 1;
+    }
+    .buttons {
+      text-align: right;
+    }
+  }
+}
+
+
+

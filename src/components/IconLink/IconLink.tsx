@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import './IconLink.scss'
-import { IIconLinkComponent} from "../../types/interphases/IIconLink";
+import { IIconLinkComponent} from "../../types/interfaces/IIconLink";
 import {MainColors} from "../../types/enums/MainColors";
 
 import Icon from "../Icon/Icon";

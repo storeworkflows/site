@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {IAvatar} from "../../types/interphases/IAvatar";
+import {IAvatar} from "../../types/interfaces/IAvatar";
 import "./Avatar.scss"
 import {AvatarImgTypes} from "../../types/enums/AvatarImgTypes";
 import classnames from "classnames";

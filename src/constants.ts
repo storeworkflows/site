@@ -1,4 +1,4 @@
-import {IIconPrefixes} from "./types/interphases/IIconPrefixes";
+import {IIconPrefixes} from "./types/interfaces/IIconPrefixes";
 
 export const usedIconPrefixes: IIconPrefixes = {
     fas: "fas",

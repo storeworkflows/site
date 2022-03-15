@@ -1,12 +1,12 @@
 import React from "react";
 import './CustomerReviews.scss'
 import Carousel from "../../components/Carousel/Carousel";
+import { slides } from "./mock";
 const CustomerReviews = () =>{
     return (
         <section className="container">
-            <h1>Customer Reviews</h1>
-
-            <Carousel/>
+            <h2>Customer Reviews</h2>
+            <Carousel slides={slides}/>
         </section>
         
         

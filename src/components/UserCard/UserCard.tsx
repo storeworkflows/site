@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import "./UserCard.scss"
 import Avatar from "../Avatar/Avatar";
-import {IUserCard} from "../../types/interphases/IUserCard";
+import {IUserCard} from "../../types/interfaces/IUserCard";
 import Button from "../Button/Button";
 import {MainColors} from "../../types/enums/MainColors";
 import {getRandomColor} from "./utils";
