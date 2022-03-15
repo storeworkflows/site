@@ -1,11 +1,10 @@
 import React, {FC} from 'react';
 
-import "./Discover.scss"
 import Button from "../../components/Button/Button";
 import {ButtonColors} from "../../types/enums/Button/ButtonColors";
 
 import avatar from "../../assets/img/avatar.webp"
-
+import "./discover.scss";
 
 const Discover: FC = () => {
 
