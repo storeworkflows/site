@@ -58,9 +58,13 @@ h1{
 }
 h2{
   @include ChicaGogo();
-  font-size: 14pt;
+  font-size: 64px;
+  line-height: 72px;
   letter-spacing: 0.02em;
   color: $color-white;
+  //font-size: 14pt;
+  //letter-spacing: 0.02em;
+  //color: $color-white;
 }
 p{
   @include Montserrat(400);
@@ -94,6 +98,12 @@ p{
 @media (min-width: 1199.98px) {
   .container {
     max-width: 1160px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1500px;
   }
 }
 
