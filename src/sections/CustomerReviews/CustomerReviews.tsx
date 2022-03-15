@@ -1,6 +1,6 @@
 import React from "react";
 import './CustomerReviews.scss'
-import Carousel from "../../components/carousel/Carousel";
+import Carousel from "../../components/Carousel/Carousel";
 import { slides } from "./mock";
 const CustomerReviews = () =>{
     return (
