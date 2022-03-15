@@ -1,40 +1,41 @@
+.advantages-wrapper{
+  background: linear-gradient(232.64deg, #07040C -2.74%, #100B1A 106.48%);
+  position: relative;
 
+  .paw-img{
+    position: absolute;
+    display: inline-flex;
+    object-fit: contain;
+
+    max-width: 40%;
+    max-height: 600px;
+    right: 0;
+
+    top: 50% ;
+    transform: translateY( -40%);
+  }
+}
 
 .advantages-section{
-  padding: 5rem 0 4rem 4rem;
+  padding-right: 0;
   width: 100%;
-  background: linear-gradient(232.64deg, #07040C -2.74%, #100B1A 106.48%);
+
+  .advantage-list{
+    width: 55%;
+  }
 
   h2{
     text-align: center;
-    margin: 0;
-    padding: 0 0 1.5rem;
   }
 
 
   .advantage-content{
     display: inline-flex;
-
-    .paw-img{
-      display: inline-flex;
-      object-fit: contain;
-      height: 500px;
-      width: 50%;
-    }
   }
 
 }
 
+
 @media (min-width: 1600px) {
-  .advantages-section {
-    padding: 8rem 0 8rem 8rem;
 
-    h2{
-      padding: 0 0 3rem;
-    }
-
-    .advantage-content .paw-img{
-      height: 650px;
-    }
-  }
 }

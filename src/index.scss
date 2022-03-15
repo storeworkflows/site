@@ -1,15 +1,24 @@
 @import "./variables";
-ul{
-  li{
-    list-style: none;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   @include Montserrat(600);
+}
+
+body {
+  background: linear-gradient(232.64deg, #07040c -2.74%, #100b1a 106.48%);
+  color: rgb(255, 255, 255);
+}
+
+h1, h2{
+  @include ChicaGogo();
+    font-weight: 600;
+    font-size: 36pt;
+    line-height: 56px;
+    letter-spacing: 0.02em;
+
+    margin: 3rem 0;
 }
 
 p{
@@ -20,58 +29,30 @@ p{
   letter-spacing: 0.02em;
 }
 
-h1,h2{
-  @include ChicaGogo();
-  font-weight: 700;
-  font-size: 64px;
-  line-height: 72px;
-  letter-spacing: 0.02em;
-
-  margin: 3rem 0;
-}
-
-body {
-  background: linear-gradient(232.64deg, #07040c -2.74%, #100b1a 106.48%);
-  color: rgb(255, 255, 255);
-}
 a {
   color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
-
-h1{
-  @include ChicaGogo();
-  font-size: 64px;
-  line-height: 72px;
-  letter-spacing: 0.02em;
-  color: $color-white;
-}
-h2{
-  @include ChicaGogo();
-  font-size: 64px;
-  line-height: 72px;
-  letter-spacing: 0.02em;
-  color: $color-white;
-  //font-size: 14pt;
-  //letter-spacing: 0.02em;
-  //color: $color-white;
+ul{
+  li{
+    list-style: none;
+  }
 }
 
-p{
-  @include Montserrat(400);
-  font-size: 14px;
-  line-height: 23px;
-  letter-spacing: 0.3px;
-}
 .container{
   min-height: 600px;
+  padding: 3rem 0;
 }
+
+.full-width-wrapper{
+  width: 100%;
+}
+
 @media (min-width: 575.98px) {
   .container {
     max-width: 540px;
     margin: auto;
-    padding: 0;
   }
 }
 
@@ -91,6 +72,15 @@ p{
   .container {
     max-width: 1160px;
   }
+
+  h1, h2{
+    font-size: 48pt;
+    line-height: 72px;
+    letter-spacing: 0.02em;
+    color: $color-white;
+
+    margin: 3rem 0;
+  }
 }
 
 @media (min-width: 1600px) {
@@ -99,14 +89,4 @@ p{
   }
 }
 
-@media (max-width: 1300px){
-  h2{
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 56px;
-    letter-spacing: 0.02em;
-
-    margin: 3rem 0;
-  }
-}
 

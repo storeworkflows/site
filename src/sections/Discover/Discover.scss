@@ -1,3 +1,10 @@
+.discover{
+  width: 100%;
+  background: rgba(34, 6, 94, 0.1);
+  backdrop-filter: blur(30px);
+}
+
+
 .discover-section{
   display: flex;
   flex-flow: row;
@@ -5,10 +12,6 @@
 
   height: 450px;
   min-height: 450px;
-  padding: 0 3rem 0 0;
-
-  background: rgba(34, 6, 94, 0.1);
-  backdrop-filter: blur(30px);
 
   img{
     width: 450px;
@@ -48,15 +51,6 @@
   .discover-section {
     gap: 6rem;
     height: 35rem;
-    padding: 0 8rem 0 0;
-
-    img{
-      width: 30rem;
-    }
-
-    h2{
-      padding: 4rem 0;
-    }
   }
 
 }

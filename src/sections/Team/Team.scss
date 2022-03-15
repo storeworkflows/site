@@ -1,5 +1,4 @@
 .team-section {
-  padding: 3rem 0;
 
   .user-cards {
     margin: 0 auto;
@@ -23,13 +22,11 @@
 
   .team-section__header {
     width: 100%;
-    padding: 0 0 3rem 0;
   }
 }
 
 @media (min-height: 600px) {
   .team-section {
-    padding: 8rem 0;
 
     .description {
       width: 70%;
