@@ -18,7 +18,7 @@ const Head: FC = (): JSX.Element => {
                 <p className="header__container__subtittle">Retail operations can be complicated and difficult to track. With StoreWorkflows, you can boost productivity and increase accountability by digitizing workflows on the ServiceNow platform.</p>
                 <div className="header__container__actions">
                     <Button text={"Let`s talk"} />
-                    <Button text={"Learn more"} type={ButtonTypes.secondary} color={ButtonColors.violet}/>
+                    <Button text={"Learn more"} type={ButtonTypes.secondary} color={ButtonColors.orange}/>
                 </div>
                 <div className="header__container__socials">
                     <IconLinkGroup iconLinks={socialLinks} color={MainColors.green}/>
