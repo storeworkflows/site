@@ -26,6 +26,9 @@ const Discover: FC = () => {
                 />
             </div>
         </section>
+        <div className={"blue-oval decoration"}/>
+        <div className={"green-oval decoration"}/>
+        <div className={"green-oval second decoration"}/>
     </div>;
 
 }
