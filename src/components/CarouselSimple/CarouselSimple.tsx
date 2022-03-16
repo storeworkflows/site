@@ -1,11 +1,11 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import { ButtonColors } from "../../types/enums/Button/ButtonColors";
 import { ButtonTypes } from "../../types/enums/Button/ButtonTypes";
-import { ICarousel } from "../../types/interfaces/ICarousel";
+import { ISlider } from "../../types/interfaces/ISlider";
 import Button from "../Button/Button";
 import './CarouselSimple.scss'
 const defaultProps = {slides: []}
-const CarouselSimple: FC<ICarousel> = ({slides}) => {
+const CarouselSimple: FC<ISlider> = ({slides}) => {
   const slideRefs = useRef<(HTMLDivElement|null)[]>([])
   const length = slides.length
   const [currentSlide, setCurrentSlide] = useState(0)

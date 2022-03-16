@@ -1,5 +1,5 @@
 
-export enum CarouselType{
+export enum SliderType{
   simple = "simple",
   square = "square",
   round = "round"

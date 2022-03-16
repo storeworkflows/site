@@ -1,15 +1,15 @@
 import React, { useState, MouseEvent, useRef, useEffect, FC } from "react";
-import "./Carousel.scss";
+import "./carousel.scss";
 import Button from "../Button/Button";
 import { ButtonTypes } from "../../types/enums/Button/ButtonTypes";
 import { ButtonColors } from "../../types/enums/Button/ButtonColors";
-import { ICarousel } from "../../types/interfaces/ICarousel";
+import { ISlider } from "../../types/interfaces/ISlider";
 
 function getInactiveSlideWidth(slidesRefs: Array<HTMLDivElement | null>): number {
   return Math.min(...slidesRefs.map(slide => { return slide?.offsetWidth || 0 }))
 }
 const defaultProps = { slides: [] }
-const Carousel: FC<ICarousel> = ({
+const Carousel: FC<ISlider> = ({
   slides
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);

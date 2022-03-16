@@ -1,9 +1,9 @@
 import React, { FC, useEffect, useRef, useState } from "react";
-import { ICarousel } from "../../types/interfaces/ICarousel";
+import { ISlider } from "../../types/interfaces/ISlider";
 import CarouselDots from "./CarouselDots/CarouselDots";
 import './CarouselSquare.scss'
 const defaultProps = {slides: []}
-const CarouselFlat: FC<ICarousel> = ({slides}) => {
+const CarouselFlat: FC<ISlider> = ({slides}) => {
   const slideRefs = useRef<(HTMLDivElement|null)[]>([])
   
   const [currentSlide, setCurrentSlide] = useState(0)
