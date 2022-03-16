@@ -1,7 +1,28 @@
-.advantages-section{
-  padding: 0 0 0 7%;
-  width: 100%;
+.advantages-wrapper{
   background: linear-gradient(232.64deg, #07040C -2.74%, #100B1A 106.48%);
+  position: relative;
+
+  .paw-img{
+    position: absolute;
+    display: inline-flex;
+    object-fit: contain;
+
+    max-width: 40%;
+    max-height: 600px;
+    right: 0;
+
+    top: 50% ;
+    transform: translateY( -40%);
+  }
+}
+
+.advantages-section{
+  padding-right: 0;
+  width: 100%;
+
+  .advantage-list{
+    width: 55%;
+  }
 
   h2{
     text-align: center;
@@ -10,13 +31,11 @@
 
   .advantage-content{
     display: inline-flex;
-
-    .paw-img{
-      display: inline-flex;
-      object-fit: contain;
-      height: 560px;
-      width: 50%;
-    }
   }
+
+}
+
+
+@media (min-width: 1600px) {
 
 }

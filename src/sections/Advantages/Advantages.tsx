@@ -8,13 +8,14 @@ import {advantages} from "../../constants";
 
 const Advantages: FC = () => {
 
-    return <section className={"advantages-section container"}>
-        <h2>Our Advantages</h2>
-        <div className={"advantage-content"}>
-            <List listOptions={advantages}/>
+    return <div className={"advantages-wrapper full-width-wrapper"} id={"advantages"}>
+        <section className={"advantages-section container"}>
+            <h2>Our Advantages</h2>
+            <List listOptions={advantages} className={"advantage-list"}/>
             <img src={paw} alt={"paw"} className={"paw-img"}/>
-        </div>
-    </section>;
+        </section>
+
+    </div>;
 
 }
 

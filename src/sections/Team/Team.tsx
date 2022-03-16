@@ -20,8 +20,8 @@ const Team: FC<ITeam> = ({users}) => {
         setColorArr( getColorsArr(users.length))
     }, users)
 
-    return <section className={"container"}>
-        <h1>Our Creative Team</h1>
+    return <section className={"container team-section"} id={"team"}>
+        <h2 className={"team-section__header"}>Our Creative Team</h2>
         <p className={"description"}>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
         { selectedUserCard &&
             <UserCard

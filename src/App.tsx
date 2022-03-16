@@ -23,6 +23,7 @@ import { IUser } from "./types/interfaces/IUser";
 import FAQ from './sections/FAQ';
 import Advantages from './sections/Advantages/Advantages';
 import Discover from "./sections/Discover/Discover";
+import ProductsAndServices from './sections/ProductsAndServices/ProductsAndServices';
 
 library.add(faAngleDown, faAngleUp, faAngleLeft, faAngleRight,
   faTwitter, faYoutube, faInstagram, faLinkedin, faFacebook, faLinkedinIn, faFacebookSquare)
@@ -56,6 +57,7 @@ function App() {
       <Advantages />
       <Team users={arr} />
       <CustomerReviews />
+      <ProductsAndServices />
       <ContactUs />
       <FAQ/>
     </div>
