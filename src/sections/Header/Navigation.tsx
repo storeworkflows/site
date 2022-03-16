@@ -21,10 +21,10 @@ const Navigation:React.FC<NavigationProps> = ({}): JSX.Element => {
                     <a href="#">Home</a>
                 </li>
                 <li className="nav-link" onClick={closeMobileMenu}>
-                    <a href="#">About</a>
+                    <a href="#discover">About</a>
                 </li>
                 <li className="nav-link" onClick={closeMobileMenu}>
-                    <a href="#">Advetages</a>
+                    <a href="#advantages">Advetages</a>
                 </li>
                 <li className="nav-link" onClick={closeMobileMenu}>
                     <a href="#">Proucts</a>
@@ -36,7 +36,7 @@ const Navigation:React.FC<NavigationProps> = ({}): JSX.Element => {
                     <a href="#" >FAQ</a>
                 </li>
                 <li className="nav-link" onClick={closeMobileMenu}>
-                    <a href="#" >Team</a>
+                    <a href="#team" >Team</a>
                 </li>
             </ul>
             <div className="mobile-menu" onChange={handleOpen} >

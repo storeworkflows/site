@@ -21,6 +21,15 @@ h1, h2{
     margin: 3rem 0;
 }
 
+h3{
+  @include ChicaGogo();
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: 0.02em;
+
+  margin: 1.5rem 0;
+}
+
 p{
   @include Montserrat(400);
   font-size: 14px;
@@ -73,6 +82,10 @@ ul{
     max-width: 1160px;
   }
 
+
+}
+
+@media (min-width: 1400px) {
   h1, h2{
     font-size: 48pt;
     line-height: 72px;
