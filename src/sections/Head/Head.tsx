@@ -1,45 +1,17 @@
-import React from "react";
+import React, {FC} from "react";
 import badger from "../../assets/img/Honey_badger.png"
 
-import Navigation from "./Navigation";
-import "./header.scss";
+import "./Head.scss";
 import Button from "../../components/Button/Button";
 import {ButtonTypes} from "../../types/enums/Button/ButtonTypes";
 import {ButtonColors} from "../../types/enums/Button/ButtonColors";
-import {IIconLink} from "../../types/interfaces/IIconLink";
 import IconLinkGroup from "../../components/IconLinkGroup/IconLinkGroup";
 import {MainColors} from "../../types/enums/MainColors";
+import {socialLinks} from "../../constants";
 
-const iconLinks: IIconLink[] = [
-    {
-        icon: "linkedin-in",
-        link: "https://linkedin.com/"
-    },
-    {
-        icon: "youtube",
-        link: "https://youtube.com/"
-    },
-    {
-        icon: "instagram",
-        link: "https://instagram.com/"
-    },
-    {
-        icon: "facebook-square",
-        link: "https://facebook.com/"
-    },
-    {
-        icon: "twitter",
-        link: "https://twitter.com/"
-    },
-]
-
-type HeaderProps = {
-
-}
-const Header:React.FC<HeaderProps> = ({}): JSX.Element => {
+const Head: FC = (): JSX.Element => {
     return (
-        <header className="header">
-            <Navigation />
+        <div className="header">
             <div className="header__container container">
 
                 <h1 className="header__container__tittle">Digitize Store Workflows on ServiceNow</h1>
@@ -49,16 +21,16 @@ const Header:React.FC<HeaderProps> = ({}): JSX.Element => {
                     <Button text={"Learn more"} type={ButtonTypes.secondary} color={ButtonColors.violet}/>
                 </div>
                 <div className="header__container__socials">
-                    <IconLinkGroup iconLinks={iconLinks} color={MainColors.green}/>
+                    <IconLinkGroup iconLinks={socialLinks} color={MainColors.green}/>
                 </div>
                 <div className="badger">
                     <img src={badger} alt="badger"/>
                 </div>
             </div>
-            <div className="circle"></div>
-        </header>
+            <div className="circle"/>
+        </div>
 
     );
 };
 
-export default Header;
+export default Head;

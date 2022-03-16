@@ -1,7 +1,6 @@
 @import "../../variables";
 
 .header {
-  height: calc(100vh);
   position: relative;
 
   &__container {
@@ -36,7 +35,7 @@
       }
     }
     .nav__socials{
-        display: flex;
+      display: flex;
     }
     @media (max-width: 767.98px){
       padding: 0 10px;
@@ -50,7 +49,7 @@
     //background: url("../../assets/img/Honey_badger.png")no-repeat;
 
     height: 800px;
-     width: 856px;
+    width: 856px;
     background-size: contain;
     background-position: right;
     right: 0px;
