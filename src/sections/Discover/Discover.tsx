@@ -21,7 +21,7 @@ const Discover: FC = () => {
                 <Button
                     text={"More"}
                     icon={"angle-right"}
-                    color={ButtonColors.violet}
+                    color={ButtonColors.orange}
                     className={"discover-button"}
                 />
             </div>
