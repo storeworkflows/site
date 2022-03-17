@@ -1,5 +1,5 @@
 import React ,{FC} from "react";
-import "./ContactUs.scss";
+
 
 import axios, {AxiosResponse} from "axios";
 

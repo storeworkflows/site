@@ -20,7 +20,7 @@ const Head: FC = (): JSX.Element => {
             <Button
                 text={"Learn more"}
                 type={ButtonTypes.secondary}
-                color={ButtonColors.violet}
+                color={ButtonColors.orange}
                 className={"head-button"}
             />
         </div>

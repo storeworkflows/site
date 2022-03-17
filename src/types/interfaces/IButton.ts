@@ -16,4 +16,5 @@ export interface IButton {
     size?: ButtonSizes,
     className?: string,
     iconSize?: SizeProp
+    disabled?: boolean
 }
