@@ -1,5 +1,4 @@
 import React from "react";
-import CarouselFlat from "../../components/CarouselSquare/CarouselSquare";
 import Slider from "../../components/Slider/Slider";
 import { SliderType } from "../../types/enums/Slider/SliderTypes";
 import { slides } from "./mock";
