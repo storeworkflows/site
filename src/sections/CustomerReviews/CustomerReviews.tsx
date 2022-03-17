@@ -1,12 +1,20 @@
 import React from "react";
 import './CustomerReviews.scss'
 import { slides } from "./mock";
-import Carousel from "../../components/Carousel/Carousel";
+import Slider from "../../components/Slider/Slider";
+import { SliderType } from "../../types/enums/Slider/SliderTypes";
 const CustomerReviews = () =>{
     return (
-        <section className="container">
+        <section className="container--fluid">
             <h2 id="CustomerReviews">Customer Reviews</h2>
-            <Carousel slides={slides}/>
+            
+            <Slider 
+              slides={slides} 
+              variant={SliderType.round}
+              useControls
+              />
+            
+            
         </section>
         
         

@@ -1,9 +1,7 @@
 import React, { FC } from "react";
-import { ICarouselDots } from "../../../types/interfaces/ICarouselDots";
+import { ISliderDots } from "../../../types/interfaces/ISliderDots";
 import './CarouselDots.scss'
-const CarouselDots: FC<ICarouselDots> = ({ length, active, clickable, onClick }) => {
-
-console.log('Dots?',length) //?
+const SliderDots: FC<ISliderDots> = ({ length, active, clickable, onClick }) => {
 
   return (
     <div className="dots">
@@ -16,4 +14,4 @@ console.log('Dots?',length) //?
     </div>
   )
 }
-export default CarouselDots
+export default SliderDots

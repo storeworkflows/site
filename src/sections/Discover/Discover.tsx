@@ -3,9 +3,9 @@ import React, {FC} from 'react';
 import "./Discover.scss"
 import Button from "../../components/Button/Button";
 import {ButtonColors} from "../../types/enums/Button/ButtonColors";
-
-import CarouselSimple from '../../components/CarouselSimple/CarouselSimple';
 import { slides } from '../CustomerReviews/mock';
+import { SliderType } from '../../types/enums/Slider/SliderTypes';
+import Slider from '../../components/Slider/Slider';
 
 
 const Discover: FC = () => {
@@ -13,7 +13,7 @@ const Discover: FC = () => {
     return <div className={"discover full-width-wrapper"} id={"discover"}>
         <section className={"discover-section container"}>
             <div className={"discover__carousel-container"}>
-                <CarouselSimple slides={slides}/>
+                <Slider slides={slides} useControls variant={SliderType.simple}/>
             </div>
             <div className={"discover-content"}>
                 <h2>Discover <br/> who we are</h2>
