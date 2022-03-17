@@ -26,7 +26,8 @@ const Button: FC<IButton> = ({
     onClick,
     size,
     className,
-    iconSize
+    iconSize,
+    disabled
 }) => {
     if(!text && !icon)
         return null;
@@ -44,7 +45,7 @@ const Button: FC<IButton> = ({
     )
 
     return (
-        <button className={buttonClasses} onClick={onClick}>
+        <button className={buttonClasses} onClick={onClick} disabled={disabled}>
             {text && text}
             {icon && <Icon icon={icon} size={iconSize}/>}
         </button>

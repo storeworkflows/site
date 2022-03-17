@@ -44,6 +44,7 @@ const Carousel: FC<ICarousel> = ({
     const slideWidth = getInactiveSlideWidth(slideRefs.current)
     const transitionDistance = (slideWidth / 2) + (slideWidth) * -slideIndex
     setTransitionDistance(transitionDistance)
+    
   }
 
   return (
@@ -56,7 +57,7 @@ const Carousel: FC<ICarousel> = ({
                 <img src={slide.img} alt={slide.alt} />
               </div>
               <div className="slide__info">
-                <h2 className="slide__header">{slide.header}</h2>
+                <h3 className="slide__header">{slide.header}</h3>
                 <p className="slide__text">{slide.text}</p>
               </div>
             </div>

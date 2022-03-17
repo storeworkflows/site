@@ -19,5 +19,6 @@ export interface IIconLinkGroup {
     color?: MainColors,
     iconLinks: IIconLink[],
     target?: TargetAttr,
-    direction?: Direction
+    direction?: Direction,
+    className?: string
 }

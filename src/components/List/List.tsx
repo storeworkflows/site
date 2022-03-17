@@ -3,9 +3,12 @@ import "./List.scss"
 import {IList} from "../../types/interfaces/IList";
 import classnames from "classnames";
 
-const List: FC<IList> = ({listOptions}) => {
+const List: FC<IList> = ({listOptions, className}) => {
 
-    return <ol className={"list"}>
+    const classes = classnames("list", {
+        [`${className}`]: className
+    })
+    return <ol className={classes}>
         {listOptions.map((text, index) => {
             const classes = classnames({"with-zero": index<9})
             return <li className={classes}>{text}</li>

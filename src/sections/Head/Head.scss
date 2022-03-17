@@ -1,0 +1,150 @@
+@import "../../variables";
+
+.header {
+
+  &__container {
+    position: relative;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    color: $color-white;
+
+    &__tittle{
+      max-width: 761px;
+    }
+    &__subtittle{
+      max-width: 524px;
+      padding: 0 0 3rem 0;
+      opacity: 0.75;
+    }
+
+    &__actions{
+      .head-button{
+        --paddingV: 15px;
+        --paddingH: 30px;
+
+        margin: 0 1.5rem 0 0;
+      }
+    }
+
+    &__socials{
+      padding-top: 4rem;
+    }
+
+    @media (max-width: 767.98px){
+      padding: 0 10px;
+      &__tittle {
+        font-size: 48px;
+      }
+    }
+  }
+}
+
+.header__container {
+  .badger {
+    position: absolute;
+    max-height: 140%;
+    background-position: right;
+    right: 0;
+    z-index: -1;
+
+    top: 50% ;
+    transform: translateY( -50%);
+
+    filter: drop-shadow(0px 0 100px rgba( 82, 0, 255, 0.5));
+  }
+
+  .circle {
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    left: -10vw;
+    top: -18vw;
+    z-index: -100;
+    border-radius: 50%;
+    background: linear-gradient(148.28deg, #5200FF 14.79%, rgba(255, 92, 0, 0.5) 85.83%);
+
+    @media (max-width: 575.98px) {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  .elliptic {
+    position: absolute;
+    width: 40vw;
+    height: 27vw;
+    bottom: 0;
+    z-index: -100;
+
+    border-radius: 50%;
+    transform: translate(-10vw, 16vw);
+    background: linear-gradient(20.56deg, #5200FF 41.12%, rgba(82, 0, 255, 0) 116.55%);
+  }
+}
+
+
+
+@media (min-width: 1281px) {
+  .header {
+
+    &__container {
+      padding-top: 3rem;
+
+      &__actions{
+        .head-button{
+          --paddingV: 19px;
+          --paddingH: 46px;
+
+          margin: 0 2rem 0 0;
+        }
+
+        padding: 0.5rem 0 3rem;
+
+      }
+
+    }
+  }
+}
+
+@media (min-width: 1601px) {
+  .header {
+    &__container {
+      padding-top: 8rem;
+
+      &__actions{
+        padding: 2rem 0 8rem;
+      }
+
+      .circle {
+        left: -12vw;
+      }
+
+      .elliptic {
+        transform: translate(-12vw, 16vw);
+      }
+    }
+  }
+
+}
+
+@media (min-width: 1921px) {
+  .header {
+    &__container {
+      padding-top: 9rem;
+
+      &__actions{
+        padding: 4rem 0 10rem;
+      }
+
+      .circle {
+        left: -15vw;
+      }
+
+      .elliptic {
+        transform: translate(-15vw, 16vw);
+      }
+    }
+  }
+
+}
