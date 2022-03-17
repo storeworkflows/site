@@ -1,4 +1,4 @@
-export interface ICarouselDots{
+export interface ISliderDots{
   length: number,
   active: number,
   clickable: boolean,

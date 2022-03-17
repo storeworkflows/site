@@ -15,7 +15,7 @@ const Discover: FC = () => {
 
     return <section className={"discover-section container"}>
         
-        <Slider slides={slides} variant={SliderType.simple}/>
+        <Slider slides={slides} variant={SliderType.simple} useControls/>
         <div className={"discover-content"}>
             <h2>Discover <br/> who we are</h2>
             <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>

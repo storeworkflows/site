@@ -13,7 +13,7 @@ const SliderControls: FC<ISliderControls> = ({
 
 
   return (
-    <div className={`controls--${variant}`}>
+    <div className={`controls controls--${variant}`}>
       <Button className="slider-control" type={ButtonTypes.additional} icon="angle-left" onClick={onClickPrev}/>
       <Button className="slider-control" type={ButtonTypes.additional} icon="angle-right" onClick={onClickNext}/>
     </div>

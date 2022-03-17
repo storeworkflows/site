@@ -5,8 +5,9 @@
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+  gap:.5rem;
   &--simple{
-
+    height: 50vh;
   }
   &--round{
     height: 80vh;

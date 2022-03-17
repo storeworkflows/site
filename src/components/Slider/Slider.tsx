@@ -2,7 +2,7 @@ import classnames from "classnames";
 import React, {FC, useState, useRef, useEffect} from "react";
 import { SliderType } from "../../types/enums/Slider/SliderTypes";
 import { ISlider } from "../../types/interfaces/ISlider";
-import CarouselDots from "../CarouselSquare/CarouselDots/CarouselDots";
+import SliderDots from "./SliderDots/SliderDots";
 import Slide from "./Slide/Slide";
 import SliderControls from "./SliderControls/SliderControls";
 import './Slider.scss'
@@ -12,7 +12,7 @@ function getInactiveSlideWidth(slidesRefs: Array<HTMLDivElement | null>): number
 function getTransitionDistance(slideWidth: number, slideIndex: number, variant: SliderType): number{
   switch(variant){
     case SliderType.round: return (slideWidth / 2) + slideWidth * -slideIndex;break;
-    case SliderType.square: return (slideWidth / 2) + slideWidth * -slideIndex;
+    case SliderType.square: return (slideWidth / 1.35) + slideWidth * -slideIndex;
     case SliderType.simple: return slideWidth * -slideIndex;
   }
 }
@@ -67,11 +67,11 @@ const Slider: FC<ISlider> = ({slides, variant, useDots, useControls}) => {
         }
       </div>
       {useDots? 
-        <CarouselDots 
+        <SliderDots 
         length={length} 
         active={currentSlide} 
         clickable 
-        onClick={setCurrentSlide}
+        onClick={setActiveSlide}
         />
         : null}
       {useControls? 

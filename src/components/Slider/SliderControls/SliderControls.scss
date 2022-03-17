@@ -1,12 +1,15 @@
 .controls {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  pointer-events: none;
   &--round {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    justify-content: space-between;
-    pointer-events: none;
+  }
+  &--square{
+    padding-top: 10%
   }
 }
 .slider-control {
