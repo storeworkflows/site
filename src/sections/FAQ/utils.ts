@@ -1,0 +1,1 @@
+export const getCount = (index: number):string => String(index + 1 < 10 ? '0' + index : index);
