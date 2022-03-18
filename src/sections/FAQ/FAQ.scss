@@ -1,7 +1,6 @@
 @import "../../variables";
 
 .faq {
-
   &__wrapper {
     background-image: url("../../assets/img/faq/background.png");
     height: 100vh;
@@ -13,10 +12,10 @@
   }
 
   &__title {
-    //@include ChicaGogo();
+    @include ChicaGogo();
     text-align: center;
-    //color: $color-white;
-    //font-size: 64px;
-    //font-weight: 700;
+    color: $color-white;
+    font-size: 64px;
+    font-weight: 700;
   }
 }
