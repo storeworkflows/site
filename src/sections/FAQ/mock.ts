@@ -1,6 +1,6 @@
-import {IAccordionItems} from "./typings/interfaces";
+import {IAccordionItems} from "./typings/IFaq";
 
-export const accordionItems: IAccordionItems = [
+export const mockedAccordionItems: IAccordionItems = [
 	{
 		title: "Amet minim mollit",
 		content: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."

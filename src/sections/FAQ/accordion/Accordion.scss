@@ -1,5 +1,7 @@
 @import "../../../variables";
 
+$transition: all .2s ease-out;
+
 .accordion {
   display: inline-grid;
   grid-template-columns: 8rem 1fr auto;
@@ -19,9 +21,9 @@
     text-align: center;
     align-self: center;
     justify-self: center;
-    color: $color-second;
+    color: var(--blue);
     font-weight: bold;
-    transition: all .2s ease-out;
+    transition: $transition;
 
     &.--active {
       font-size: 96px;
@@ -37,8 +39,7 @@
     @include Montserrat(500);
     font-size: 24px;
     line-height: 40px;
-    text-align: left;
-    transition: all 0.2s ease-out ;
+    transition: $transition;
 
     &.--active {
       color: $color-grean;
@@ -50,17 +51,22 @@
   &__text {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    transition: $transition;
+  }
+
+  .button::before, .button.primary.green::before, .button.primary.orange::before {
+    border-radius: 50%;
   }
 
   &__button {
-    align-self: end;
-    height: fit-content;
+    align-self: flex-start;
+    margin: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 
     &-wrapper {
       display: flex;
-
     }
   }
-
 }
