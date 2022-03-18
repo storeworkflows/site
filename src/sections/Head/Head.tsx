@@ -13,7 +13,7 @@ import Navigation from "../../components/Navigation/Navigation";
 const Head: FC = (): JSX.Element => {
 	return <React.Fragment>
 		<div className="header__nav">
-			<Navigation mobile={true} navLinks={navLinks} />
+			<Navigation mobile={false} navLinks={navLinks} />
 		</div>
 		<div className="header__container container" id={"head"}>
 
