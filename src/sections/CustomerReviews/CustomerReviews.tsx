@@ -6,19 +6,15 @@ import { SliderType } from "../../types/enums/Slider/SliderTypes";
 const CustomerReviews = () => {
   return (
     <>
-    <div className="container container__customer-reviews">
-    <h2 id="CustomerReviews">Customer Reviews</h2>
+    <div id="reviews" className="container container__customer-reviews">
+    <h2>Customer Reviews</h2>
     </div>
       <section className="container--fluid">
-        
-
         <Slider
           slides={slides}
           variant={SliderType.round}
           useControls
         />
-
-
       </section>
 
     </>
