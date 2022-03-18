@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, {FC, useEffect, useState} from "react";
 import badger from "../../assets/img/Honey_badger.png"
 
 import "./Head.scss";
@@ -11,9 +11,19 @@ import {navLinks, socialLinks} from "../../constants";
 import Navigation from "../../components/Navigation/Navigation";
 
 const Head: FC = (): JSX.Element => {
+
+	const [mobile, setMobile] = useState(false);
+	const handleResize = () => {
+		(window.innerWidth > 1200) ? setMobile(false) : setMobile(true);
+	}
+	useEffect(() => {
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
 	return <React.Fragment>
 		<div className="header__nav">
-			<Navigation mobile={false} navLinks={navLinks} />
+			<Navigation mobile={mobile} navLinks={navLinks} />
 		</div>
 		<section className="header__container container" id={"head"}>
 
