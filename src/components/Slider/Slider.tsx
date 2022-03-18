@@ -25,7 +25,7 @@ const Slider: FC<ISlider> = (
     useControls,
     infinite
   }) => {
-  const [currentSlide, setCurrentSlide] = useState(1)
+  const [currentSlide, setCurrentSlide] = useState(0)
   const [transitionDistance, setTransitionDistance] = useState(0)
   const length: number = slides.length;
   const slideRefs = useRef<(HTMLDivElement | null)[]>([])
@@ -34,7 +34,7 @@ const Slider: FC<ISlider> = (
       setActiveSlide(0)
     }
     function handleResize() {
-      setActiveSlide(1)
+      setActiveSlide(0)
     }
     window.addEventListener('resize', handleResize)
   })

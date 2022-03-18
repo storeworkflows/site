@@ -7,8 +7,8 @@ import './ProductsAndServices.scss'
 const ProductsAndServices = ()=>{
 
   return (
-    <div className="container--fluid">
-      <h2 id="ProductsAndServices">Products <span className="green">&</span> Services</h2>
+    <div id="products" className="container--fluid">
+      <h2 >Products <span className="green">&</span> Services</h2>
       <Slider slides={slides} variant={SliderType.square} useControls useDots/>
     </div>
   )

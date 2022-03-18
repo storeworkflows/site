@@ -5,8 +5,8 @@ import Slider from "../../components/Slider/Slider";
 import { SliderType } from "../../types/enums/Slider/SliderTypes";
 const CustomerReviews = () =>{
     return (
-        <section className="container--fluid">
-            <h2 id="CustomerReviews">Customer Reviews</h2>
+        <section id="reviews" className="container--fluid">
+            <h2 >Customer Reviews</h2>
             
             <Slider 
               slides={slides} 

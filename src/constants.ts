@@ -53,12 +53,12 @@ export const navLinks: INavLink[]  = [
         href: "#advantages"
     },
     {
-        title: "Proucts",
-        href: "#"
+        title: "Products",
+        href: "#products"
     },
     {
         title: "Reviews",
-        href: "#"
+        href: "#reviews"
     },
     {
         title: "FAQ",
