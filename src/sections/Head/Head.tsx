@@ -15,7 +15,7 @@ const Head: FC = (): JSX.Element => {
 		<div className="header__nav">
 			<Navigation mobile={false} navLinks={navLinks} />
 		</div>
-		<div className="header__container container" id={"head"}>
+		<section className="header__container container" id={"head"}>
 
 			<h1 className="header__container__tittle">Digitize Store Workflows on ServiceNow</h1>
 			<p className="header__container__subtittle">Retail operations can be complicated and difficult to track. With
@@ -38,7 +38,7 @@ const Head: FC = (): JSX.Element => {
 			<img src={badger} alt="badger" className={"badger"}/>
 			<div className="circle"/>
 			<div className={"elliptic"}/>
-		</div>
+		</section>
 	</React.Fragment>
 };
 

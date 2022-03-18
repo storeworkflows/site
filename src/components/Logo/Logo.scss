@@ -1,11 +1,18 @@
+@import "../../variables";
+
 .logo {
-	font-family: ChicaGogoNFW01-Bold;
+	@include ChicaGogo();
 	font-style: normal;
 	font-weight: bold;
 	font-size: 2rem;
 	line-height: 40px;
 	letter-spacing: 0.02em;
+
+	a{
+		@include ChicaGogo();
+	}
 	span{
+		@include ChicaGogo();
 		color: #009D52;
 	}
 	@media (max-width: 500.98px){

@@ -49,7 +49,7 @@ export const navLinks: INavLink[]  = [
         href: "#discover"
     },
     {
-        title: "Advetages",
+        title: "Advantages",
         href: "#advantages"
     },
     {
