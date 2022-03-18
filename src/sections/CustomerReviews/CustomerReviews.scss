@@ -1,3 +1,9 @@
-h1{
-    float:right
+.container{
+  &__customer-reviews{
+    min-height: 0;
+    padding: 0;
+    h2{
+      float:right
+  }
+  }
 }
