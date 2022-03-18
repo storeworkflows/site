@@ -1,4 +1,4 @@
-import {IAccordionItems} from "./typings/IFaq";
+import {IAccordionItems} from "../../types/interfaces/IFaq";
 
 export const mockedAccordionItems: IAccordionItems = [
 	{

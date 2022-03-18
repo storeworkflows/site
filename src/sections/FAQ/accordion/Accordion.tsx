@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import React, {FC, useState, useRef} from 'react';
 import './Accordion.scss';
-import {IAccordionProperties} from "../typings/IFaq";
+import {IAccordionProperties} from "../../../types/interfaces/IFaq";
 import Button from "../../../components/Button/Button";
 
 const Accordion: FC<IAccordionProperties> = ({

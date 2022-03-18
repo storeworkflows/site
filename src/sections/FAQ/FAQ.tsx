@@ -3,7 +3,7 @@ import './FAQ.scss';
 import {getCount} from "./utils";
 import {mockedAccordionItems} from "./mock";
 import Accordion from "./accordion/Accordion";
-import {IAccordionItems} from "./typings/IFaq";
+import {IAccordionItems} from "../../types/interfaces/IFaq";
 
 const FAQ = () => {
 	const [accordionItems, setAccordionItems] = useState<IAccordionItems>(mockedAccordionItems);
