@@ -5,5 +5,6 @@ export interface ISlider{
   slides: ISlideContent[],
   variant: SliderType,
   useDots?: boolean,
-  useControls?: boolean
+  useControls?: boolean,
+  infinite?: boolean
 }

@@ -82,6 +82,7 @@
       transition: opacity .5s ease-in-out 0s;
     }
     .slide__info-heading{
+      
       font-size: 18pt;
       color: $blue;
     }
@@ -134,5 +135,6 @@
   overflow: hidden;
   flex-shrink: 0;
 }
-.slide__frame-image {
+.slide__info-heading {
+  @include Montserrat(600)
 }

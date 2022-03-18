@@ -11,12 +11,20 @@ function getInactiveSlideWidth(slidesRefs: Array<HTMLDivElement | null>): number
 }
 function getTransitionDistance(slideWidth: number, slideIndex: number, variant: SliderType): number{
   switch(variant){
-    case SliderType.round: return (slideWidth / 2) + slideWidth * -slideIndex;break;
+    case SliderType.round: return (slideWidth / 2) + slideWidth * -slideIndex;
     case SliderType.square: return (slideWidth / 1.35) + slideWidth * -slideIndex;
     case SliderType.simple: return slideWidth * -slideIndex;
+    default: return 0;
   }
 }
-const Slider: FC<ISlider> = ({slides, variant, useDots, useControls}) => {
+const Slider: FC<ISlider> = (
+  {
+    slides, 
+    variant, 
+    useDots, 
+    useControls,
+    infinite
+  }) => {
   const [currentSlide, setCurrentSlide] = useState(1)
   const [transitionDistance, setTransitionDistance] = useState(0)
   const length: number = slides.length;
@@ -32,12 +40,10 @@ const Slider: FC<ISlider> = ({slides, variant, useDots, useControls}) => {
   })
 
   const nextSlide = () => {
-    console.log('NEXT SLIDE')
     const slideIndex: number = currentSlide === length - 1 ? 0 : currentSlide + 1
     setActiveSlide(slideIndex)
   }
   const prevSlide = () => {
-    console.log('PREV  SLIDE')
     const slideIndex: number = currentSlide === 0 ? length - 1 : currentSlide - 1
     setActiveSlide(slideIndex)
   }
@@ -76,8 +82,8 @@ const Slider: FC<ISlider> = ({slides, variant, useDots, useControls}) => {
         : null}
       {useControls? 
         <SliderControls 
-          prevDisabled={currentSlide === 0 }
-          nextDisabled={currentSlide === length - 1}
+          prevDisabled={currentSlide === 0 && !infinite }
+          nextDisabled={currentSlide === length - 1 && !infinite}
           variant={variant}
           onClickPrev={prevSlide}
           onClickNext={nextSlide}

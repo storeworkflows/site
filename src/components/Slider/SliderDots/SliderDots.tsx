@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { ISliderDots } from "../../../types/interfaces/ISliderDots";
-import './CarouselDots.scss'
+import './SliderDots.scss'
 const SliderDots: FC<ISliderDots> = ({ length, active, clickable, onClick }) => {
 
   return (

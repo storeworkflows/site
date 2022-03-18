@@ -13,7 +13,11 @@ const Discover: FC = () => {
     return <div className={"discover full-width-wrapper"} id={"discover"}>
         <section className={"discover-section container"}>
             <div className={"discover__carousel-container"}>
-                <Slider slides={slides} useControls variant={SliderType.simple}/>
+                <Slider 
+                  slides={slides} 
+                  useControls
+                  infinite 
+                  variant={SliderType.simple}/>
             </div>
             <div className={"discover-content"}>
                 <h2>Discover <br/> who we are</h2>
