@@ -1,6 +1,8 @@
- export interface ISlide {
-  img: string,
-  alt?: string,
-  header: string,
-  text: string
+import { SliderType } from "../enums/Slider/SliderTypes";
+import { ISlideContent } from "./ISlideContent";
+
+export interface ISlide {
+  slide: ISlideContent,
+  active: boolean,
+  variant: SliderType
 }

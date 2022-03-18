@@ -1,0 +1,140 @@
+@import "../../../variables";
+
+.slide {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  &--simple {
+    width: 100%;
+    .slide__info {
+      position: absolute;
+      bottom: 0;
+      display: none;
+    }
+    .slide__frame {
+      min-width: 100%;
+    }
+    .slide__frame-image{
+      width:100%;
+    }
+  }
+  &--round {
+    padding-inline: 0.5rem;
+    width: 20%;
+    transition: width 0.5s ease-in-out;
+    
+    .slide__frame {
+      width: 100%;
+      transition: width 0.5s ease-in-out;
+    }
+    .slide__frame-image {
+      max-width: 100%;
+      border-radius: 50%;
+    }
+    .slide__info {
+      overflow: hidden;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      height: 100%;
+      opacity: 0;
+      width: 100%;
+      padding-left: 2.5rem;
+      transition: width 0.5s ease-in-out 0.2s, opacity 0.2s ease-in-out 0s;
+    }
+    .slide__info-heading{
+      font-size: 24pt;
+      color: $green
+    }
+    .slide__info-paragraph {
+      font-size: 9pt;
+      width: 50ch;
+      color: #ccc
+    }
+  }
+  &--square {
+    flex-direction: column-reverse;
+    width: calc(100%/2.5);
+    padding-inline: .5rem;
+    gap:1rem;
+    .slide__frame {
+      height: 70%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .slide__frame-image {
+      transform: scale(1.05);
+      height: 60%;
+      width: 100%;
+      object-fit: cover;
+      transition: all .5s ease-in-out 0s;
+    }
+    .slide__info {
+      gap: 1rem;
+      text-align: center;
+      opacity: 0;
+      height: 30%;
+      padding-inline: 1rem;
+      transition: opacity .5s ease-in-out 0s;
+    }
+    .slide__info-heading{
+      
+      font-size: 18pt;
+      color: $blue;
+    }
+    .slide__info-paragraph{
+      font-size: 9pt;
+      color: #ccc
+    }
+  }
+}
+
+.slide--active {
+  &.slide--simple {
+    width: 100%;
+  }
+
+  &.slide--round {
+    width: 80%;
+    .slide__info {
+      opacity: 1;
+      width: 50%;
+      transition: width 0.5s ease-in-out 0s, opacity 0.2s ease-in-out 0.5s;
+    }
+    .slide__frame {
+      width: 50%;
+    }
+  }
+
+  &.slide--square {
+    .slide__frame-image {
+      transform: scale(1.1);
+      height: 100%;
+    }
+    .slide__info {
+      opacity: 1;
+      
+    }
+  }
+}
+.slide__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+.slide__frame {
+  display: flex;
+
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.slide__info-heading {
+  @include Montserrat(600)
+}

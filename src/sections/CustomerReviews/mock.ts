@@ -1,11 +1,11 @@
-import { ISlide } from "../../types/interfaces/ISlide";
+import { ISlideContent } from "../../types/interfaces/ISlideContent";
 import face1 from '../../assets/img/face1.jpg'
 import face2 from '../../assets/img/face2.jpg'
 import face3 from '../../assets/img/face3.jpg'
 import face4 from '../../assets/img/face4.jpg'
 import face5 from '../../assets/img/face5.jpg'
 
-export const slides: Array<ISlide> = [
+export const slides: Array<ISlideContent> = [
   {
     img: face1,
     header: 'Person Persons',

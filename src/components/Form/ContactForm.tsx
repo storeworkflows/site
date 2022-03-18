@@ -61,9 +61,7 @@ const ContactForm: FC<IContactForm> = ({onSubmit}): JSX.Element=>{
                         />
                     </div>
                     <div style={{textAlign: "right"}}>
-                        <Button text={!submitting ? "Send" : "Disable"}
-                            // disabled={submitting || pristine}
-                        />
+                        <Button text={"Send"} disabled={submitting}/>
                     </div>
                 </form>
             )}

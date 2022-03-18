@@ -42,13 +42,32 @@ const getNearColors = (
     return nearColors;
 }
 
-export const getColorsArr = (length: number, numberInRow: number = 4) : MainColors[] => {
+const getColumnsByWidth = () => {
+    let width = window.innerWidth;
+
+    switch (true) {
+        case width>=1700:
+            return 5;
+        case width >=1200:
+            return 4;
+        case width >= 975:
+            return 3;
+        case width >= 600:
+            return 2;
+        default:
+            return 1;
+    }
+}
+
+export const getColorsArr = (length: number, numberInRow?: number) : MainColors[] => {
+    const numbers = numberInRow || getColumnsByWidth();
+
     const colorArr: MainColors[] = [];
     let nearColors: MainColors[] = [];
     let currentColor: MainColors = MainColors.orange;
 
     for(let i = 0; i<length; i++){
-        nearColors = getNearColors(colorArr, i, numberInRow)
+        nearColors = getNearColors(colorArr, i, numbers)
         currentColor = getRandomBgColor(nearColors)
         colorArr.push(currentColor)
     }
