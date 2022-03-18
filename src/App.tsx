@@ -24,7 +24,7 @@ import FAQ from './sections/FAQ/FAQ';
 import Advantages from './sections/Advantages/Advantages';
 import Discover from "./sections/Discover/Discover";
 import ProductsAndServices from './sections/ProductsAndServices/ProductsAndServices';
-import Navigation from "./components/Navigation/Navigation";
+import Footer from "./sections/Footer/Footer";
 
 library.add(faAngleDown, faAngleUp, faAngleLeft, faAngleRight,
   faTwitter, faYoutube, faInstagram, faLinkedin, faFacebook, faLinkedinIn, faFacebookSquare)
@@ -53,7 +53,6 @@ function App() {
 
   return (
     <div className="App">
-      <Navigation/>
       <Head/>
       <Discover />
       <Advantages />
@@ -62,6 +61,7 @@ function App() {
       <ProductsAndServices />
       <ContactUs />
       <FAQ/>
+      <Footer/>
     </div>
   );
 }
