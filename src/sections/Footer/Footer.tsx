@@ -8,7 +8,7 @@ import {MainColors} from "../../types/enums/MainColors";
 const Footer = () => {
   return (
     <footer className="footer">
-      <Navigation mobile={true} navLinks={navLinks} position="bottom"/>
+      <Navigation navLinks={navLinks} position="bottom"/>
       <div className="footer__container container">
         <div>E-mail</div>
         <div>Phone number</div>

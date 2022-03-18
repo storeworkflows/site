@@ -11,32 +11,35 @@ import {navLinks, socialLinks} from "../../constants";
 import Navigation from "../../components/Navigation/Navigation";
 
 const Head: FC = (): JSX.Element => {
-    return <div className="header__container container" id={"head"}>
-        <div className="header__nav">
-            <Navigation mobile={true} navLinks={navLinks} />
-        </div>
-        <h1 className="header__container__tittle">Digitize Store Workflows on ServiceNow</h1>
-        <p className="header__container__subtittle">Retail operations can be complicated and difficult to track. With
-            StoreWorkflows, you can boost productivity and increase accountability by digitizing workflows on the
-            ServiceNow platform.</p>
-        <div className="header__container__actions">
-            <Button text={"Let`s talk"} className={"head-button"}/>
-            <Button
-                text={"Learn more"}
-                type={ButtonTypes.secondary}
-                color={ButtonColors.orange}
-                className={"head-button"}
-            />
-        </div>
-        <IconLinkGroup
-            iconLinks={socialLinks}
-            color={MainColors.green}
-            className="header__container__socials"
-        />
-        <img src={badger} alt="badger" className={"badger"}/>
-        <div className="circle"/>
-        <div className={"elliptic"}/>
-    </div>
+	return <React.Fragment>
+		<div className="header__nav">
+			<Navigation mobile={true} navLinks={navLinks} />
+		</div>
+		<div className="header__container container" id={"head"}>
+
+			<h1 className="header__container__tittle">Digitize Store Workflows on ServiceNow</h1>
+			<p className="header__container__subtittle">Retail operations can be complicated and difficult to track. With
+				StoreWorkflows, you can boost productivity and increase accountability by digitizing workflows on the
+				ServiceNow platform.</p>
+			<div className="header__container__actions">
+				<Button text={"Let`s talk"} className={"head-button"}/>
+				<Button
+					text={"Learn more"}
+					type={ButtonTypes.secondary}
+					color={ButtonColors.orange}
+					className={"head-button"}
+				/>
+			</div>
+			<IconLinkGroup
+				iconLinks={socialLinks}
+				color={MainColors.green}
+				className="header__container__socials"
+			/>
+			<img src={badger} alt="badger" className={"badger"}/>
+			<div className="circle"/>
+			<div className={"elliptic"}/>
+		</div>
+	</React.Fragment>
 };
 
 export default Head;
