@@ -14,6 +14,7 @@ const CustomerReviews = () => {
           slides={slides}
           variant={SliderType.round}
           useControls
+          defaultIndex={1}
         />
       </section>
 

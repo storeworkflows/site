@@ -17,7 +17,8 @@ const Discover: FC = () => {
                   slides={slides} 
                   useControls
                   infinite 
-                  variant={SliderType.simple}/>
+                  variant={SliderType.simple}
+                  defaultIndex={0}/>
             </div>
             <div className={"discover-content"}>
                 <h2>Discover <br/> who we are</h2>

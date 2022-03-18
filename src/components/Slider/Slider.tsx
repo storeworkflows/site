@@ -23,18 +23,19 @@ const Slider: FC<ISlider> = (
     variant, 
     useDots, 
     useControls,
-    infinite
+    infinite,
+    defaultIndex
   }) => {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(defaultIndex)
   const [transitionDistance, setTransitionDistance] = useState(0)
   const length: number = slides.length;
   const slideRefs = useRef<(HTMLDivElement | null)[]>([])
   useEffect(() => {
-    if (currentSlide === 0) {
-      setActiveSlide(0)
+    if (currentSlide === defaultIndex) {
+      setActiveSlide(defaultIndex)
     }
     function handleResize() {
-      setActiveSlide(0)
+      setActiveSlide(defaultIndex)
     }
     window.addEventListener('resize', handleResize)
   })

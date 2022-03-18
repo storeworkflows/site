@@ -9,7 +9,13 @@ const ProductsAndServices = ()=>{
   return (
     <section id="products" className="container--fluid">
       <h2 >Products <span className="green">&</span> Services</h2>
-      <Slider slides={slides} variant={SliderType.square} useControls useDots/>
+      <Slider 
+        slides={slides} 
+        variant={SliderType.square} 
+        useControls 
+        useDots
+        defaultIndex={1}
+        />
     </section>
   )
 }
