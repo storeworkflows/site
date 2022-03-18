@@ -27,8 +27,8 @@ const IconLinkGroup: FC<IIconLinkGroup> = ({
             [`${className}`] : className
         })
     return <div className={classes}>
-        {iconLinks.map((el) =>
-            <IconLink iconLink={el} color={color} target={target}/>
+        {iconLinks.map((el,index) =>
+            <IconLink key={index} iconLink={el} color={color} target={target}/>
         )}
     </div>
 }
