@@ -7,10 +7,16 @@ import './ProductsAndServices.scss'
 const ProductsAndServices = ()=>{
 
   return (
-    <div id="products" className="container--fluid">
+    <section id="products" className="container--fluid">
       <h2 >Products <span className="green">&</span> Services</h2>
-      <Slider slides={slides} variant={SliderType.square} useControls useDots/>
-    </div>
+      <Slider 
+        slides={slides} 
+        variant={SliderType.square} 
+        useControls 
+        useDots
+        defaultIndex={1}
+        />
+    </section>
   )
 }
 export default ProductsAndServices

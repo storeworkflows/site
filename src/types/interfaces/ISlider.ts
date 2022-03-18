@@ -6,5 +6,6 @@ export interface ISlider{
   variant: SliderType,
   useDots?: boolean,
   useControls?: boolean,
-  infinite?: boolean
+  infinite?: boolean,
+  defaultIndex: number
 }
