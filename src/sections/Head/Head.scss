@@ -2,10 +2,30 @@
 
 .header {
   position: relative;
+  height: 100%;
+  &__nav{
+    background: rgba(34, 6, 94, 0.1);
+    backdrop-filter: blur(30px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    & .nav {
+
+      padding: 0px 60px;
+      min-height: 100px;
+      @media (max-width: 767.98px) {
+        min-height: 70px;
+        padding: 0px 50px;
+      }
+      @media (max-width: 575.98px) {
+        padding: 0px 30px;
+      }
+    }
+  }
 
   &__container {
+    //height: 100%;
     position: relative;
-    height: calc(100% - 100px);
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -18,24 +38,8 @@
       padding: 49px 0 60px;
       opacity: 0.75;
     }
-    &__actions{
-
-      .btn {
-        color: $color-white;
-        cursor: pointer;
-        @include btn();
-        @include Montserrat(700);
-        &:last-child {
-          color: $color-second;
-          border: 3px solid $color-second;
-          border-radius: 15px;
-          background: transparent;
-          margin-left: 20px;
-        }
-      }
-    }
-    .nav__socials{
-      display: flex;
+    &__socials{
+      padding-top: 3.5rem;
     }
     @media (max-width: 767.98px){
       padding: 0 10px;
@@ -45,12 +49,18 @@
     }
   }
   .badger {
+    //position: absolute;
+    //display: inline-flex;
+    //object-fit: contain;
+    //max-width: 40%;
+    //max-height: 600px;
     position: absolute;
     //background: url("../../assets/img/Honey_badger.png")no-repeat;
 
     height: 800px;
     width: 856px;
     background-size: contain;
+    object-fit: contain;
     background-position: right;
     right: 0px;
     top: -200px;

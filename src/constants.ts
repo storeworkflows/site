@@ -1,5 +1,6 @@
 import {IIconPrefixes} from "./types/interfaces/IIconPrefixes";
 import {IIconLink} from "./types/interfaces/IIconLink";
+import {INavLink} from "./types/interfaces/INavLink";
 
 export const usedIconPrefixes: IIconPrefixes = {
     fas: "fas",
@@ -35,5 +36,36 @@ export const socialLinks: IIconLink[] = [
     {
         icon: "twitter",
         link: "https://twitter.com/"
+    },
+]
+
+export const navLinks: INavLink[]  = [
+    {
+        title: "Home",
+        href: "#"
+    },
+    {
+        title: "About",
+        href: "#discover"
+    },
+    {
+        title: "Advetages",
+        href: "#advantages"
+    },
+    {
+        title: "Proucts",
+        href: "#"
+    },
+    {
+        title: "Reviews",
+        href: "#"
+    },
+    {
+        title: "FAQ",
+        href: "#"
+    },
+    {
+        title: "Team",
+        href: "#team"
     },
 ]
