@@ -10,7 +10,7 @@
   &.orange{
     --mainColor: var(--half-orange);
   }
-
+  position: relative;
   background: var(--mainColor);
   display: inline-flex;
   flex-flow: column;
@@ -41,8 +41,6 @@
   p{
     margin-bottom: 10px;
   }
-
-
 
   &.big{
     padding: 3rem;
@@ -83,9 +81,10 @@
     }
   }
 
-
-
 }
+
+
+
 
 @media (max-width: 1300px){
   .user-card {

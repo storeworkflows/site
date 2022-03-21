@@ -6,7 +6,8 @@ import {IUser} from "./IUser";
 export interface IUserCard{
     user: IUser,
     color?: MainColors,
-    onButtonClick?: (arg0: IUserCard) => void,
+    onButtonClick?: (arg0: IUserCard, arg1: HTMLDivElement | null) => void | Promise<void>,
     buttonColor?: ButtonColors,
-    type?: UserCardType
+    type?: UserCardType,
+    className?: string
 }

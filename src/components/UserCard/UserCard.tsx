@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useRef} from 'react';
+import React, {FC, useEffect, useRef, useState} from 'react';
 import "./UserCard.scss"
 import Avatar from "../Avatar/Avatar";
 import {IUserCard} from "../../types/interfaces/IUserCard";
@@ -8,10 +8,11 @@ import {getRandomColor} from "./utils";
 import classnames from "classnames";
 import {UserCardType} from "../../types/enums/UserCardType";
 import {AvatarImgTypes} from "../../types/enums/AvatarImgTypes";
+import {ButtonColors} from "../../types/enums/Button/ButtonColors";
 
 const defaultProps = {
     color: MainColors.orange,
-    onButtonClick: () => 0,
+    onButtonClick: () => {},
     type: UserCardType.small
 };
 
@@ -20,8 +21,11 @@ const UserCard: FC<IUserCard> = ({
     color,
     onButtonClick,
     buttonColor,
-    type
+    type,
+    className
 }) => {
+
+    const [buttonBg, setButtonBg] = useState<ButtonColors>(getRandomColor())
     const cardRef = useRef<HTMLDivElement>(null);
     const isBigCard = type === UserCardType.big
 
@@ -34,12 +38,15 @@ const UserCard: FC<IUserCard> = ({
         isBigCard && cardRef.current && cardRef.current.scrollIntoView(scrollIntoViewOptions);
     }, [user])
 
+    useEffect(() => setButtonBg(buttonColor || getRandomColor()), [])
+
     const {id, firstName, secondName, img, shortDescription, description} = user
-    const buttonBg = buttonColor || getRandomColor();
     const name = secondName ? `${firstName} ${secondName}` : firstName
 
     const cardClasses = classnames(
-        'user-card', [`${color}`], [`${type}`]
+        'user-card', [`${color}`], [`${type}`], {
+            [`${className}`]: className
+        }
     )
 
     const imgType = isBigCard ? AvatarImgTypes.big : AvatarImgTypes.small
@@ -55,7 +62,7 @@ const UserCard: FC<IUserCard> = ({
             color: color,
             buttonColor: buttonBg
         };
-        onButtonClick && onButtonClick(toReturn);
+        onButtonClick && onButtonClick(toReturn, cardRef.current);
     }
 
     const renderContent = () => <>
