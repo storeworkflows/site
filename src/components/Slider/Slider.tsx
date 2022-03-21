@@ -54,7 +54,7 @@ const Slider: FC<ISlider> = (
   }
   const translateCarousel = (slideIndex: number) => {
     const slideWidth = getInactiveSlideWidth(slideRefs.current)
-    console.log('translateCarousel', slideIndex, slideWidth)
+    //console.log('translateCarousel', slideIndex, slideWidth)
     const transitionDistance = getTransitionDistance(slideWidth, slideIndex, variant)
     setTransitionDistance(transitionDistance)
     
