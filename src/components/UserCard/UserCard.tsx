@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect, useRef} from 'react';
 import "./UserCard.scss"
 import Avatar from "../Avatar/Avatar";
 import {IUserCard} from "../../types/interfaces/IUserCard";
@@ -22,7 +22,18 @@ const UserCard: FC<IUserCard> = ({
     buttonColor,
     type
 }) => {
-    console.log("render", color, user.id)
+    const cardRef = useRef<HTMLDivElement>(null);
+    const isBigCard = type === UserCardType.big
+
+    useEffect(() => {
+        const scrollIntoViewOptions: ScrollIntoViewOptions = {
+            block: "center",
+            inline: "nearest",
+            behavior: "smooth"
+        }
+        isBigCard && cardRef.current && cardRef.current.scrollIntoView(scrollIntoViewOptions);
+    }, [user])
+
     const {id, firstName, secondName, img, shortDescription, description} = user
     const buttonBg = buttonColor || getRandomColor();
     const name = secondName ? `${firstName} ${secondName}` : firstName
@@ -31,7 +42,6 @@ const UserCard: FC<IUserCard> = ({
         'user-card', [`${color}`], [`${type}`]
     )
 
-    const isBigCard = type === UserCardType.big
     const imgType = isBigCard ? AvatarImgTypes.big : AvatarImgTypes.small
     const btnText = isBigCard ? "Close" : "Details"
 
@@ -58,7 +68,7 @@ const UserCard: FC<IUserCard> = ({
         />
     </>
 
-    return <div className={cardClasses}>
+    return <div className={cardClasses} ref={cardRef}>
         <Avatar img={img} alt={id} type={imgType}/>
         {isBigCard
             ? <div className={"content"}>
