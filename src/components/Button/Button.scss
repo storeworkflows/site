@@ -21,6 +21,8 @@
 	--paddingH: 46px;
 	--border-width: 3px;
 
+	transition: all .2s linear;
+
 	&.icon-button{
 		--paddingH: 26px;
 	}
@@ -31,7 +33,7 @@
 		padding: var(--paddingV) var(--paddingH);
 
 		&.orange{
-			background: linear-gradient(251.68deg, $blue -14.63%, $orange 101.51%);
+			background: linear-gradient(251.68deg, #6C2FEC -14.63%, #FF7C33 101.51%);
 			&::before {
 				border-radius: 15px;
 				position: absolute;
@@ -40,7 +42,7 @@
 				right: 0;
 				bottom: 0;
 				left: 0;
-				background: linear-gradient(251.68deg, #1914FF -14.63%, #FFBD14 101.51%);
+				background: linear-gradient(251.68deg, #5200FF -14.63%, #FF5C00 101.51%);
 				box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.25), inset 4px 6px 4px rgba(255, 255, 255, 0.15), inset -3px -5px 6px rgba(0, 0, 0, 0.25);
 				z-index: -1;
 				transition: opacity 0.1s linear;
@@ -66,7 +68,7 @@
 		}
 
 		&.green{
-			background: linear-gradient(257.07deg, $orange -10.83%, $green 104.11%);
+			background: linear-gradient(257.07deg, #FF7C32 -10.83%, #2BC179 104.11%);
 			&::before {
 				border-radius: 15px;
 				position: absolute;
@@ -75,7 +77,7 @@
 				right: 0;
 				bottom: 0;
 				left: 0;
-				background: linear-gradient(251.68deg, #FFA800 -14.63%, #00B2CA 101.51%);
+				background: linear-gradient(251.68deg, #FF5C00 -14.63%, #009D52 101.51%);
 				box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.25), inset 4px 6px 4px rgba(255, 255, 255, 0.15), inset -3px -5px 6px rgba(0, 0, 0, 0.25);
 				z-index: -1;
 				transition: opacity 0.1s linear;
@@ -111,15 +113,15 @@
 		}
 
 		&.orange{
-			--mainColor: #FF5C00;
+			--mainColor: #FF7E36;
 			&:hover{
-				--mainColor:  #FF8A00;
+				--mainColor:  #FF5C00;
 			}
 			&:active{
-				--mainColor: #5200FF;
+				--mainColor: #BF360B;
 			}
 			&:disabled{
-				--mainColor: #4F3487;
+				--mainColor: #824D2F;
 			}
 		}
 
@@ -140,73 +142,35 @@
 		}
 
 		&.green{
-			background: linear-gradient(251.68deg, #FF5C00 -14.63%, #009D52 101.51%);
-			box-shadow: 4px 11px 30px rgba(0, 0, 0, 0.2), inset 4px 6px 6px rgba(255, 255, 255, 0.35), inset -3px -4px 6px rgba(0, 0, 0, 0.25);
-			&::before {
-				border-radius: 50%;
-				position: absolute;
-				content: "";
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				background: linear-gradient(251.68deg, #FFA800 -14.63%, #00B2CA 101.51%);
-				box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.25), inset 4px 6px 4px rgba(255, 255, 255, 0.15), inset -3px -5px 6px rgba(0, 0, 0, 0.25);
-				z-index: -1;
-				transition: opacity 0.1s linear;
-				opacity: 0;
-			}
-			&:hover::before{
-				opacity: 1;
+			background: #0FC16C;
+			box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.25), inset 4px 6px 4px rgba(255, 255, 255, 0.15), inset -3px -5px 6px rgba(0, 0, 0, 0.25);
+			&:hover{
+				background: #009D52;
 			}
 			&:active{
-				&::before{
-					background: linear-gradient(251.68deg, #D04B00 -14.63%, #046637 101.51%);
-					box-shadow: inset -3px -5px 4px rgba(255, 255, 255, 0.15), inset 4px 6px 6px rgba(0, 0, 0, 0.25);
-				}
+				background: #036536;
+				box-shadow: inset -3px -5px 4px rgba(255, 255, 255, 0.15), inset 4px 6px 6px rgba(0, 0, 0, 0.25);
 			}
 			&:disabled{
-				background: linear-gradient(251.68deg, #7B3812 -14.63%, #13412B 101.51%);
-				box-shadow: 4px 11px 30px rgba(0, 0, 0, 0.2), inset 4px 6px 6px rgba(255, 255, 255, 0.35), inset -3px -4px 6px rgba(0, 0, 0, 0.25);
-				&::before{
-					background: linear-gradient(251.68deg, #7B3812 -14.63%, #13412B 101.51%);
-					box-shadow: 4px 11px 30px rgba(0, 0, 0, 0.2), inset 4px 6px 6px rgba(255, 255, 255, 0.35), inset -3px -4px 6px rgba(0, 0, 0, 0.25);
-				}
+				background: #28553F;
+				box-shadow: inset -3px -5px 4px rgba(255, 255, 255, 0.15), inset 4px 6px 6px rgba(0, 0, 0, 0.25);
 			}
 		}
 
-		&.orange{
-			background: linear-gradient(251.68deg, $blue -14.63%, $orange 101.51%);
-			&::before {
-				border-radius: 50%;
-				position: absolute;
-				content: "";
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				background: linear-gradient(251.68deg, #1914FF -14.63%, #FFBD14 101.51%);
-				box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.25), inset 4px 6px 4px rgba(255, 255, 255, 0.15), inset -3px -5px 6px rgba(0, 0, 0, 0.25);
-				z-index: -1;
-				transition: opacity 0.1s linear;
-				opacity: 0;
-			}
-			&:hover::before{
-				opacity: 1;
+		&.violet{
+			background: #7636FF;
+			box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.25), inset 4px 6px 4px rgba(255, 255, 255, 0.15), inset -3px -5px 6px rgba(0, 0, 0, 0.25);
+
+			&:hover{
+				background: #5200FF;
 			}
 			&:active{
-				&::before{
-					background: linear-gradient(251.68deg, #0500E7 -14.63%, #C75F00 101.51%);
-					box-shadow: inset -3px -5px 4px rgba(255, 255, 255, 0.15), inset 4px 6px 6px rgba(0, 0, 0, 0.25);
-				}
+				background: #3900B1;
+				box-shadow: inset -3px -5px 4px rgba(255, 255, 255, 0.15), inset 4px 6px 6px rgba(0, 0, 0, 0.25);
 			}
 			&:disabled{
-				background: linear-gradient(251.68deg, #2D0C73 -14.63%, #6F3717 101.51%);
-				box-shadow: 4px 11px 30px rgba(0, 0, 0, 0.2), inset 4px 6px 6px rgba(255, 255, 255, 0.35), inset -3px -4px 6px rgba(0, 0, 0, 0.25);
-				&::before{
-					background: linear-gradient(251.68deg, #2D0C73 -14.63%, #6F3717 101.51%);
-					box-shadow: 4px 11px 30px rgba(0, 0, 0, 0.2), inset 4px 6px 6px rgba(255, 255, 255, 0.35), inset -3px -4px 6px rgba(0, 0, 0, 0.25);
-				}
+				background: #413067;
+				box-shadow: inset -3px -5px 4px rgba(255, 255, 255, 0.15), inset 4px 6px 6px rgba(0, 0, 0, 0.25);
 			}
 		}
 

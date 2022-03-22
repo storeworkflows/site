@@ -1,5 +1,6 @@
 export enum ButtonColors {
     orange = 'orange',
     green = 'green',
-    dark = 'dark'
+    violet = 'violet',
+    dark = 'dark',
 }
