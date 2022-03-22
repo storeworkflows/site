@@ -27,13 +27,11 @@ const Slider: FC<ISlider> = (
     defaultIndex
   }) => {
   const [currentSlide, setCurrentSlide] = useState(defaultIndex)
-  const [transitionDistance, setTransitionDistance] = useState(0)
+  const [transitionStyle, setTransitionStyle] = useState({transform: 'translateX(0)'})
   const length: number = slides.length;
   const slideRefs = useRef<(HTMLDivElement | null)[]>([])
   useEffect(() => {
-    if (currentSlide === defaultIndex) {
-      setActiveSlide(defaultIndex)
-    }
+    
     function handleResize() {
       setActiveSlide(defaultIndex)
     }
@@ -54,14 +52,14 @@ const Slider: FC<ISlider> = (
   }
   const translateCarousel = (slideIndex: number) => {
     const slideWidth = getInactiveSlideWidth(slideRefs.current)
-    //console.log('translateCarousel', slideIndex, slideWidth)
     const transitionDistance = getTransitionDistance(slideWidth, slideIndex, variant)
-    setTransitionDistance(transitionDistance)
-    
+    setTransitionStyle({transform: `translateX(${transitionDistance}px)`})
   }
   return (
     <div className={`slider slider--${variant}`}>
-      <div className={`slider__carousel slider__carousel--${variant}`} style={{transform: `translateX(${transitionDistance}px)`}}>
+      <div 
+        className={`slider__carousel slider__carousel--${variant}`} 
+        style={transitionStyle}>
         {
           slides.map((slide, index)=>(   
             <Slide 
