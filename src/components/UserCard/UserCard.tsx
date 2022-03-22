@@ -4,7 +4,7 @@ import Avatar from "../Avatar/Avatar";
 import {IUserCard} from "../../types/interfaces/IUserCard";
 import Button from "../Button/Button";
 import {MainColors} from "../../types/enums/MainColors";
-import {getRandomColor} from "./utils";
+import {getRandomColor, scrollIntoView} from "./utils";
 import classnames from "classnames";
 import {UserCardType} from "../../types/enums/UserCardType";
 import {AvatarImgTypes} from "../../types/enums/AvatarImgTypes";
@@ -22,7 +22,8 @@ const UserCard: FC<IUserCard> = ({
     onButtonClick,
     buttonColor,
     type,
-    className
+    className,
+    isIntoView
 }) => {
 
     const [buttonBg, setButtonBg] = useState<ButtonColors>(getRandomColor())
@@ -30,13 +31,8 @@ const UserCard: FC<IUserCard> = ({
     const isBigCard = type === UserCardType.big
 
     useEffect(() => {
-        const scrollIntoViewOptions: ScrollIntoViewOptions = {
-            block: "center",
-            inline: "nearest",
-            behavior: "smooth"
-        }
-        isBigCard && cardRef.current && cardRef.current.scrollIntoView(scrollIntoViewOptions);
-    }, [user])
+        (isBigCard || isIntoView) && scrollIntoView(cardRef.current)
+    }, [user, isIntoView])
 
     useEffect(() => setButtonBg(buttonColor || getRandomColor()), [])
 

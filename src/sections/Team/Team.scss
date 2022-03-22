@@ -3,25 +3,42 @@
   .user-cards {
     margin: 0 auto;
     width: 100%;
+    max-width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 1.5rem;
   }
 
+  .big-card{
+    &.appear{
+      animation: big-card-appear ;
+      animation-duration: 0.3s;
+      animation-timing-function: linear;
+     // animation-fill-mode: forwards;
+    }
+
+    &.disappear{
+      animation: big-card-disappear ;
+      animation-duration: 0.3s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+  }
+
   .small-card{
+    overflow-x: hidden;
     &.appear{
       top: -20%;
       opacity: 0;
       animation: small-card-appear, from-zero-opacity ;
-      animation-delay: 0s, 0s;
-      animation-duration: 0.4s, 0.4s;
+      animation-duration: 0.3s, 0.3s;
       animation-timing-function: linear, linear;
       animation-fill-mode: forwards;
     }
 
     &.disappear{
       animation: small-card-disappear, to-zero-opacity ;
-      animation-duration: 0.3s, 0.5s;
+      animation-duration: 0.2s, 0.2s;
       animation-timing-function: linear, linear;
       animation-fill-mode: forwards, forwards;
     }
@@ -54,9 +71,6 @@
   0%{
     opacity: 1;
   }
-  60%{
-    opacity: 0;
-  }
 
   100%{
     opacity: 0;
@@ -68,12 +82,32 @@
     opacity: 0;
   }
 
-
   100%{
     opacity: 1;
   }
 }
 
+@keyframes big-card-appear {
+  0% {
+    height: 0;
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes big-card-disappear {
+  100% {
+    height: 0;
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+    opacity: 0;
+  }
+}
 
 @keyframes small-card-appear {
   0%{

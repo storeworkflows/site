@@ -124,17 +124,18 @@ const addAnimationTo = (elToMove: ICardsToMove, delay: number, moveDuration: num
     const {indexes, isMoveLeft} = elToMove;
 
     let classToAdd = `move-${isMoveLeft ? "left" : "right"}`;
-    let currentDelay = !isMoveLeft ? (-1 * delay) : (indexes.length * delay);
+    let currentDelay = !isMoveLeft ? delay : (indexes.length * delay);
     let delayDif = !isMoveLeft ? delay : (-1 * delay);
 
     let currentCard;
     indexes.forEach((i) => {
-        currentDelay += delayDif
         currentCard = cardsArr[i];
 
         currentCard.classList.add(classToAdd)
         currentCard.style.animationDelay = `${currentDelay}ms`
         currentCard.style.animationDuration = `${moveDuration}ms`
+
+        currentDelay += delayDif
     })
 }
 
@@ -153,6 +154,8 @@ export const animateRemoving = async (
         return;
 
     let cardsArr = Array.from(cardContainer.children as HTMLCollectionOf<HTMLElement>);
+    let bigCard = cardContainer.parentElement?.querySelector(".big-card");
+    console.log(bigCard)
 
     const toMove = getIndexesToMove(usersArr, currentId, prevId);
     let moveDuration = 300;
@@ -161,12 +164,16 @@ export const animateRemoving = async (
 
     toMove && addAnimationTo(toMove, delay, moveDuration, cardsArr);
 
-    currentCard && currentCard.classList.add("disappear");
+    currentCard?.classList.add("disappear");
+    bigCard?.classList.remove("appear");
+    !currentId && bigCard?.classList.add("disappear");
 
-    const awaitMoving = numberOfMovingEl * delay + moveDuration;
-    const awaitMs = awaitMoving > 500 ? awaitMoving : 500
+    const awaitMoving = numberOfMovingEl * delay + moveDuration + delay;
+    const awaitMs = awaitMoving > 300 ? awaitMoving : 300
 
     await new Promise(r => setTimeout(r, awaitMs))
+
+    bigCard?.classList.remove("disappear");
 
     let classToRemove = `move-${toMove?.isMoveLeft ? "left" : "right"}`;
     toMove?.indexes.forEach((i) => {

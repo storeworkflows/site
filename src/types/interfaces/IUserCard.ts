@@ -9,5 +9,6 @@ export interface IUserCard{
     onButtonClick?: (arg0: IUserCard, arg1: HTMLDivElement | null) => void | Promise<void>,
     buttonColor?: ButtonColors,
     type?: UserCardType,
-    className?: string
+    className?: string,
+    isIntoView?: boolean
 }
