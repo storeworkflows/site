@@ -10,14 +10,12 @@
     top: 0;
     z-index: 20;
     & .nav {
-
       padding: 0px 60px;
-      min-height: 100px;
+
       @media (max-width: 767.98px) {
-        min-height: 70px;
         padding: 0px 50px;
       }
-      @media (max-width: 575.98px) {
+      @media (max-width: 500px) {
         padding: 0px 30px;
       }
     }
@@ -63,6 +61,7 @@
 
 .header__container {
   .badger {
+    display: block;
     position: absolute;
     max-height: 140%;
     background-position: right;
@@ -73,6 +72,9 @@
     transform: translateY( -50%);
 
     filter: drop-shadow(0px 0 100px rgba( 82, 0, 255, 0.5));
+    @media (max-width: 400px){
+     display: none;
+    }
   }
 
   .circle {

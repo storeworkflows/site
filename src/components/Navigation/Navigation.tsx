@@ -1,4 +1,4 @@
-import React, {FC, useCallback, useState} from "react";
+import React, {FC, useCallback, useEffect, useState} from "react";
 import "./Navigation.scss";
 import classnames from "classnames";
 import {INavigation} from "../../types/interfaces/INavigation";
@@ -9,6 +9,40 @@ const Navigation: FC<INavigation> = ({mobile,navLinks,className,position}): JSX.
 	const [isOpen, setIsOpen] = useState(false);
 	const handleOpen = useCallback(() => setIsOpen(!isOpen),[isOpen])
 	const closeMobileMenu = useCallback(() => setIsOpen(false),[isOpen])
+	const [resizeHeight, setResizeHeight] = useState(false);
+
+
+	useEffect(() => {
+		const resizeHeight = () =>
+			setResizeHeight((isShrunk) => {
+				if (
+					(document.body.scrollTop > 200 ||
+						document.documentElement.scrollTop > 200)
+				) {
+					return true;
+				}
+
+				if (
+					isShrunk &&
+					document.body.scrollTop < 100 &&
+					document.documentElement.scrollTop < 100
+				) {
+					return false;
+				}
+				return isShrunk
+			})
+
+		window.addEventListener("scroll", resizeHeight)
+		return () => window.removeEventListener("scroll", resizeHeight)
+
+	}, []);
+
+	const navClasses = classnames(
+		'nav',
+		{
+			[`resize`]: resizeHeight
+		},
+	)
 
 	const menuBurgerClasses = classnames(
 		'menu-burger',
@@ -28,7 +62,7 @@ const Navigation: FC<INavigation> = ({mobile,navLinks,className,position}): JSX.
 	)
 
 	return (
-		<nav className="nav">
+		<nav className={navClasses}>
 			<Logo/>
 			<ul  className={navLinksClasses}>
 				{
