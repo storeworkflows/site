@@ -124,7 +124,7 @@ const addAnimationTo = (elToMove: ICardsToMove, delay: number, moveDuration: num
     const {indexes, isMoveLeft} = elToMove;
 
     let classToAdd = `move-${isMoveLeft ? "left" : "right"}`;
-    let currentDelay = !isMoveLeft ? delay : (indexes.length * delay);
+    let currentDelay = !isMoveLeft ? (delay + 200) : (indexes.length * delay + 200);
     let delayDif = !isMoveLeft ? delay : (-1 * delay);
 
     let currentCard;
@@ -168,11 +168,12 @@ export const animateRemoving = async (
     bigCard?.classList.remove("appear");
     !currentId && bigCard?.classList.add("disappear");
 
-    const awaitMoving = numberOfMovingEl * delay + moveDuration + delay;
+    const awaitMoving = numberOfMovingEl * delay + moveDuration  + 200;
     const awaitMs = awaitMoving > 300 ? awaitMoving : 300
 
     await new Promise(r => setTimeout(r, awaitMs))
 
+    currentCard?.classList.remove("disappear");
     bigCard?.classList.remove("disappear");
 
     let classToRemove = `move-${toMove?.isMoveLeft ? "left" : "right"}`;

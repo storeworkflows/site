@@ -28,8 +28,8 @@
   .small-card{
     overflow-x: hidden;
     &.appear{
-      top: -20%;
-      opacity: 0;
+      //top: -20%;
+      //opacity: 0;
       animation: small-card-appear, from-zero-opacity ;
       animation-duration: 0.3s, 0.3s;
       animation-timing-function: linear, linear;
@@ -38,7 +38,7 @@
 
     &.disappear{
       animation: small-card-disappear, to-zero-opacity ;
-      animation-duration: 0.2s, 0.2s;
+      animation-duration: 0.3s, 0.3s;
       animation-timing-function: linear, linear;
       animation-fill-mode: forwards, forwards;
     }
