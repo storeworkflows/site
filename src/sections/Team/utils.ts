@@ -131,9 +131,9 @@ const addAnimationTo = (elToMove: ICardsToMove, delay: number, moveDuration: num
     indexes.forEach((i) => {
         currentCard = cardsArr[i];
 
-        currentCard.classList.add(classToAdd)
         currentCard.style.animationDelay = `${currentDelay}ms`
         currentCard.style.animationDuration = `${moveDuration}ms`
+        currentCard.classList.add(classToAdd)
 
         currentDelay += delayDif
     })
@@ -179,6 +179,7 @@ export const animateRemoving = async (
     let classToRemove = `move-${toMove?.isMoveLeft ? "left" : "right"}`;
     toMove?.indexes.forEach((i) => {
         cardsArr[i].classList.remove(classToRemove)
+        cardsArr[i].style.animationDelay = "0s"
     })
 
 }
