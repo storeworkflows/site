@@ -29,34 +29,24 @@
 
   .small-card{
     overflow-x: hidden;
-    &.appear{
-      //top: -20%;
-      //opacity: 0;
-      animation: small-card-appear, from-zero-opacity ;
-      animation-duration: 0.3s, 0.3s;
-      animation-timing-function: linear, linear;
-      animation-fill-mode: forwards;
-    }
 
-    &.disappear{
-      animation: small-card-disappear, to-zero-opacity ;
-      animation-duration: 0.3s, 0.3s;
-      animation-timing-function: linear, linear;
-      animation-fill-mode: forwards, forwards;
-    }
-
-
-    &.move-left{
-      animation: move-left ;
+    &.selected{
+      animation: small-card-disappear;
+      animation-duration: 0.2s;
       animation-timing-function: linear;
       animation-fill-mode: forwards;
     }
 
-    &.move-right{
-      animation: move-right;
+    &.previous{
+      transform: scale(0.9);
+      opacity: 0.7;
+
+      animation: small-card-appear;
+      animation-duration: 0.2s;
       animation-timing-function: linear;
       animation-fill-mode: forwards;
     }
+
   }
 
   .description {
@@ -69,25 +59,7 @@
   }
 }
 
-@keyframes to-zero-opacity {
-  0%{
-    opacity: 1;
-  }
 
-  100%{
-    opacity: 0;
-  }
-}
-
-@keyframes from-zero-opacity {
-  0%{
-    opacity: 0;
-  }
-
-  100%{
-    opacity: 1;
-  }
-}
 
 @keyframes big-card-appear {
   0% {
@@ -112,41 +84,19 @@
 }
 
 @keyframes small-card-appear {
-  0%{
-    top: -20%;
-  }
   100%{
-    top: 0
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
 @keyframes small-card-disappear {
-  0%{
-    top: 0
-  }
+
   100%{
-    top: -20%;
+    transform: scale(0.9);
+    opacity: 0.7;
   }
 }
-
-@keyframes move-left{
-  0%{
-    left: 0
-  }
-  100%{
-    left: 110%;
-  }
-}
-
-@keyframes move-right{
-  0%{
-    left: 0
-  }
-  100%{
-    left: -110%;
-  }
-}
-
 
 
 @media (min-width: 600px) {
