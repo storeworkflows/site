@@ -25,3 +25,10 @@
   transition: transform .5s ease-in-out 0s;
   
 }
+@media (min-width: 767.98px) {
+  .slider{
+    &--round{
+      height: 70vh;
+    }
+  }
+}

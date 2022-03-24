@@ -97,3 +97,13 @@
   }
 
 }
+@media(max-width: 575.98px ){
+  .discover-section{
+    flex-direction: column-reverse;
+    height: 100%;
+    .discover__carousel-container{
+      width: 100vw;
+    }
+  }
+  
+}
