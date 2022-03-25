@@ -22,7 +22,7 @@
   flex-direction: row;
   transform: translateX(0);
   -webkit-transition: -webkit-transform .5s ease-in-out 0s;
-  transition: transform .5s ease-in-out 0s;
+  transition: transform 0.3s ease-out 0s;
   
 }
 @media (min-width: 767.98px) {
