@@ -6,22 +6,31 @@ import {ButtonColors} from "../../types/enums/Button/ButtonColors";
 import { slides } from '../CustomerReviews/mock';
 import { SliderType } from '../../types/enums/Slider/SliderTypes';
 import Slider from '../../components/Slider/Slider';
+import classnames from "classnames";
 
 
 const Discover: FC = () => {
 
+    const isTablet = window.innerWidth < 992;
+
+    const renderHeader = () => <h2>Discover <br/> who we are</h2>
+    const sectionClasses = classnames("discover-section", {"container" : !isTablet})
+    const contentClasses = classnames("discover-content", {"container" : isTablet})
+
     return <div className={"discover full-width-wrapper"} id={"discover"}>
-        <section className={"discover-section container"}>
+        <section className={sectionClasses}>
+            {isTablet && <div className={"container"}>{renderHeader()}</div>}
             <div className={"discover__carousel-container"}>
                 <Slider 
                   slides={slides} 
-                  useControls
-                  infinite 
+                  useControls = {!isTablet}
+                  infinite
+                  useDots={isTablet}
                   variant={SliderType.simple}
                   defaultIndex={0}/>
             </div>
-            <div className={"discover-content"}>
-                <h2>Discover <br/> who we are</h2>
+            <div className={contentClasses}>
+                {!isTablet && renderHeader()}
                 <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
                 <Button
                     text={"More"}
