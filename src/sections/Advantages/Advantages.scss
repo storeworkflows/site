@@ -42,12 +42,19 @@
       max-height: 60%;
     top: calc(50% + 56px);
     transform: translateY(-48%);
+
+
   }
 
   .advantages-section .advantage-list{
       width: 60%;
+
+    li{
+     padding: 1.5rem 0;
+    }
   }
 }
+
 
 @media (max-width: 1199.98px){
  .advantages-wrapper .paw-img{

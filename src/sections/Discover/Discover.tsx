@@ -23,8 +23,8 @@ const Discover: FC = () => {
             <div className={"discover__carousel-container"}>
                 <Slider
                     slides={slides}
-                    useControls
-                    useDots
+                    useControls={!isTablet}
+                    useDots={isTablet}
                     infinite
                     variant={SliderType.simple}
                     defaultIndex={0} />
@@ -44,6 +44,6 @@ const Discover: FC = () => {
         <div className={"green-oval decoration"}/>
         <div className={"green-oval second decoration"}/>
     </div>;
-}
+};
 
 export default Discover
