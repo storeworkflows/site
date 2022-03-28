@@ -8,3 +8,13 @@
     }
   }
 }
+@media (min-width: 767.98px) {
+  .container {
+    &__customer-reviews {
+      h2 {
+        float: none;
+        text-align: center;
+      }
+    }
+  }
+}

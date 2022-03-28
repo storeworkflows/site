@@ -6,6 +6,10 @@
   align-items: center;
   gap: 1rem;
   align-self: center;
+  &--simple{
+    position: absolute;
+    bottom: 20px;
+  }
 }
 .dot{
   width: 10px;

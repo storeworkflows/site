@@ -1,8 +1,8 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 
 import "./Discover.scss"
 import Button from "../../components/Button/Button";
-import {ButtonColors} from "../../types/enums/Button/ButtonColors";
+import { ButtonColors } from "../../types/enums/Button/ButtonColors";
 import { slides } from '../CustomerReviews/mock';
 import { SliderType } from '../../types/enums/Slider/SliderTypes';
 import Slider from '../../components/Slider/Slider';
@@ -21,13 +21,13 @@ const Discover: FC = () => {
         <section className={sectionClasses}>
             {isTablet && <div className={"container"}>{renderHeader()}</div>}
             <div className={"discover__carousel-container"}>
-                <Slider 
-                  slides={slides} 
-                  useControls = {!isTablet}
-                  infinite
-                  useDots={isTablet}
-                  variant={SliderType.simple}
-                  defaultIndex={0}/>
+                <Slider
+                    slides={slides}
+                    useControls
+                    useDots
+                    infinite
+                    variant={SliderType.simple}
+                    defaultIndex={0} />
             </div>
             <div className={contentClasses}>
                 {!isTablet && renderHeader()}
@@ -44,7 +44,6 @@ const Discover: FC = () => {
         <div className={"green-oval decoration"}/>
         <div className={"green-oval second decoration"}/>
     </div>;
-
 }
 
 export default Discover
