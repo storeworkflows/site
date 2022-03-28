@@ -9,6 +9,7 @@ const SliderDots: FC<ISliderDots> = ({ length, active, clickable, onClick }) => 
         <div className={`dot 
           ${index === active ? 'active' : ''} 
           ${index === active - 1 || index === active + 1 ? "active-neighbour" : ''}`}
+          key={index}
           onClick={() => clickable ? onClick(index) : null}></div>
       ))}
     </div>
