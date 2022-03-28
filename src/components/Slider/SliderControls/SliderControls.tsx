@@ -18,7 +18,7 @@ const SliderControls: FC<ISliderControls> = ({
       <Button 
         className="slider-control" 
         type={ButtonTypes.additional} 
-        color={ButtonColors.orange}
+        color={ButtonColors.green}
         icon="angle-left" 
         onClick={onClickPrev}
         disabled={prevDisabled}
@@ -27,7 +27,7 @@ const SliderControls: FC<ISliderControls> = ({
       <Button 
         className="slider-control" 
         type={ButtonTypes.additional} 
-        color={ButtonColors.orange}
+        color={ButtonColors.green}
         icon="angle-right" 
         onClick={onClickNext}
         disabled={nextDisabled}/>

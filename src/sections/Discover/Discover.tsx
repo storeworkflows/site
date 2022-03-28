@@ -17,6 +17,7 @@ const Discover: FC = () => {
           <Slider
             slides={slides}
             useControls
+            useDots
             infinite
             variant={SliderType.simple}
             defaultIndex={0} />
