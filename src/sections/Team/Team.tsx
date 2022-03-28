@@ -1,23 +1,22 @@
-import React, {FC, useEffect, useMemo, useRef, useState} from 'react';
+import React, {FC, useRef, useState} from 'react';
 
 import "./Team.scss"
 import {ITeam} from "../../types/interfaces/ITeam";
 import UserCard from "../../components/UserCard/UserCard";
 import {IUserCard} from "../../types/interfaces/IUserCard";
 import {UserCardType} from "../../types/enums/UserCardType";
-import {animateRemoving, getColorsArr} from "./utils";
+import {animateRemoving} from "./utils";
 import {MainColors} from "../../types/enums/MainColors";
-import userCard from "../../components/UserCard/UserCard";
 import classnames from "classnames";
 import {IUser} from "../../types/interfaces/IUser";
 import {IUserCardRef} from "../../types/interfaces/IUserCardRef";
+import {ButtonColors} from "../../types/enums/Button/ButtonColors";
 //import {scrollIntoView} from "../../components/UserCard/utils";
 
 
 const Team: FC<ITeam> = ({users}) => {
     const [prevId, setPrevId] = useState<string>("")
     const [selectedUserCard, setSelectedUser] = useState<IUserCard | null>(null);
-    const [colorArr, setColorArr] = useState<MainColors[]>([])
 
     const bigCardRef = useRef<IUserCardRef>(null);
 
@@ -35,9 +34,6 @@ const Team: FC<ITeam> = ({users}) => {
         onCardSelected(null)
     }
 
-    useEffect(() => {
-        setColorArr( getColorsArr(users.length))
-    }, [users])
 
     const renderSmallCard = (user: IUser, index: number) => {
         const currentId = user.id;
@@ -55,7 +51,8 @@ const Team: FC<ITeam> = ({users}) => {
             user = {user}
             key = {user.id}
             onButtonClick={onCardSelected}
-            color={colorArr[index]}
+            color={MainColors.blue}
+            buttonColor={ButtonColors.orange}
             disabled={isSelected}
         />
     }

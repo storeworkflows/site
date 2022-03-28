@@ -11,6 +11,6 @@ export const scrollIntoView = (el: HTMLElement | null | undefined) => {
     if(!el)
         return;
 
-    const y = el.getBoundingClientRect().top + window.scrollY -150;
+    const y = el.getBoundingClientRect().top + window.scrollY -100;
     window.scrollTo({top: y, behavior: 'smooth'});
 }

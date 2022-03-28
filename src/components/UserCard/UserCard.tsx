@@ -40,7 +40,7 @@ const UserCard = React.forwardRef<IUserCardRef, IUserCard>(({
 
     const userId = user.id
     useEffect(() => {
-        isBigCard && scrollIntoView(innerRef.current,)
+        isBigCard && scrollIntoView(innerRef.current)
     }, [userId])
 
     useEffect(() => setButtonBg(buttonColor || getRandomColor()), [])
@@ -55,7 +55,7 @@ const UserCard = React.forwardRef<IUserCardRef, IUserCard>(({
     )
 
     const imgType = isBigCard ? AvatarImgTypes.big : AvatarImgTypes.small
-    const btnText = isBigCard ? "Close" : "Details"
+    const btnText = isBigCard ? "Close" : "More"
 
     const currentDescription = isBigCard
         ? (description || shortDescription || " ")

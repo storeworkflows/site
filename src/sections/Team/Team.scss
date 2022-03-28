@@ -1,14 +1,33 @@
 .team-section {
-
+  overflow-x: hidden;
+  
   .user-cards {
     margin: 0 auto;
     width: 100%;
     max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+
+    display: flex;
+    flex-wrap: nowrap;
     gap: 1.5rem;
 
-    overflow-x: hidden;
+    div{
+      flex-grow: 1;
+      min-width: 15rem;
+
+    }
+
+    overflow-x: scroll;
+
+  }
+
+  .user-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .user-cards {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 
   .big-card{
@@ -56,6 +75,8 @@
 
   .team-section__header {
     width: 100%;
+
+    text-align: center;
   }
 }
 
@@ -98,34 +119,55 @@
   }
 }
 
-
-@media (min-width: 600px) {
+@media (min-width: 821px) {
   .team-section {
     .description {
       width: 70%;
     }
 
     .user-cards {
+      display: grid;
+      gap: 1.5rem;
+
       grid-template-columns: repeat(2, 1fr);
+
+      div{
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    .team-section__header {
+      text-align: left;
     }
   }
 }
 
 
-@media (min-width: 975px) {
-  .team-section .user-cards {
+@media (min-width: 991.98px) {
+  .team-section .user-cards{
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .team-section .user-cards {
+  .team-section .user-cards{
+     grid-template-columns: repeat(4, 1fr);
+     gap: 2rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  .team-section .user-cards{
     grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
   }
 }
 
 @media (min-width: 1700px) {
-  .team-section .user-cards {
+  .team-section .user-cards{
     grid-template-columns: repeat(5, 1fr);
+    gap: 3rem;
   }
 }
