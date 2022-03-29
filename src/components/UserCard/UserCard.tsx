@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useRef, useState} from 'react';
+import React, {FC, ForwardedRef, RefObject, useEffect, useImperativeHandle, useRef, useState} from 'react';
 import "./UserCard.scss"
 import Avatar from "../Avatar/Avatar";
 import {IUserCard} from "../../types/interfaces/IUserCard";
@@ -9,6 +9,7 @@ import classnames from "classnames";
 import {UserCardType} from "../../types/enums/UserCardType";
 import {AvatarImgTypes} from "../../types/enums/AvatarImgTypes";
 import {ButtonColors} from "../../types/enums/Button/ButtonColors";
+import {IUserCardRef} from "../../types/interfaces/IUserCardRef";
 
 const defaultProps = {
     color: MainColors.orange,
@@ -16,23 +17,31 @@ const defaultProps = {
     type: UserCardType.small
 };
 
-const UserCard: FC<IUserCard> = ({
+
+const UserCard = React.forwardRef<IUserCardRef, IUserCard>(({
     user,
     color,
     onButtonClick,
     buttonColor,
     type,
     className,
-    isIntoView
-}) => {
+    isIntoView,
+    disabled
+}, ref) => {
 
     const [buttonBg, setButtonBg] = useState<ButtonColors>(getRandomColor())
-    const cardRef = useRef<HTMLDivElement>(null);
     const isBigCard = type === UserCardType.big
 
+    const innerRef = useRef<HTMLDivElement>(null)
+
+    useImperativeHandle(ref, () => ({
+        current: innerRef.current
+    }));
+
+    const userId = user.id
     useEffect(() => {
-        (isBigCard || isIntoView) && scrollIntoView(cardRef.current)
-    }, [user, isIntoView])
+        isBigCard && scrollIntoView(innerRef.current)
+    }, [userId])
 
     useEffect(() => setButtonBg(buttonColor || getRandomColor()), [])
 
@@ -46,7 +55,7 @@ const UserCard: FC<IUserCard> = ({
     )
 
     const imgType = isBigCard ? AvatarImgTypes.big : AvatarImgTypes.small
-    const btnText = isBigCard ? "Close" : "Details"
+    const btnText = isBigCard ? "Close" : "More"
 
     const currentDescription = isBigCard
         ? (description || shortDescription || " ")
@@ -58,7 +67,7 @@ const UserCard: FC<IUserCard> = ({
             color: color,
             buttonColor: buttonBg
         };
-        onButtonClick && onButtonClick(toReturn, cardRef.current);
+        onButtonClick && onButtonClick(toReturn);
     }
 
     const renderContent = () => <>
@@ -68,10 +77,11 @@ const UserCard: FC<IUserCard> = ({
                 color={buttonBg}
                 className={"card-button"}
                 onClick={onClick}
+                disabled={disabled}
         />
     </>
 
-    return <div className={cardClasses} ref={cardRef}>
+    return <div className={cardClasses} ref={innerRef}>
         <Avatar img={img} alt={id} type={imgType}/>
         {isBigCard
             ? <div className={"content"}>
@@ -81,7 +91,7 @@ const UserCard: FC<IUserCard> = ({
         }
     </div>;
 
-}
+});
 
 UserCard.defaultProps = defaultProps;
 export default UserCard

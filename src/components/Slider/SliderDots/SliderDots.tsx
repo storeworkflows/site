@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import { ISliderDots } from "../../../types/interfaces/ISliderDots";
 import './SliderDots.scss'
-const SliderDots: FC<ISliderDots> = ({ length, active, clickable, onClick }) => {
+const SliderDots: FC<ISliderDots> = ({ length, active, clickable, variant, onClick }) => {
 
   return (
-    <div className="dots">
+    <div className={`dots dots--${variant}`}>
       {[...Array(length)].map((dot, index) => (
         <div className={`dot 
           ${index === active ? 'active' : ''} 

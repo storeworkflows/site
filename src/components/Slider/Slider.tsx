@@ -12,7 +12,7 @@ function getInactiveSlideWidth(slidesRefs: Array<HTMLDivElement | null>): number
 function getTransitionDistance(slideWidth: number, slideIndex: number, variant: SliderType): number {
   switch (variant) {
     case SliderType.round: return (slideWidth / 2) + slideWidth * -slideIndex;
-    case SliderType.square: return (slideWidth / 1.35) + slideWidth * -slideIndex;
+    case SliderType.square: return (slideWidth / 2) + slideWidth * -slideIndex;
     case SliderType.simple: return slideWidth * -slideIndex;
     default: return 0;
   }
@@ -38,7 +38,7 @@ const Slider: FC<ISlider> = (
     function handleResize() {
       setActiveSlide(defaultIndex)
     }
-    window.addEventListener('resize', handleResize)
+    //window.addEventListener('resize', handleResize)
   })
 
   const nextSlide = () => {
@@ -100,6 +100,7 @@ const Slider: FC<ISlider> = (
           length={length}
           active={currentSlide}
           clickable
+          variant={variant}
           onClick={setActiveSlide}
         />
         : null}

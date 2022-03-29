@@ -56,9 +56,10 @@
   }
   &--square {
     flex-direction: column-reverse;
-    width: calc(100%/2.5);
+    width: 50%;
     padding-inline: .5rem;
     gap:1rem;
+    transition: width .3s ease-in-out;
     .slide__frame {
       height: 70%;
       width: 100%;
@@ -138,7 +139,7 @@
 .slide__info-heading {
   @include Montserrat(600)
 }
-@media (min-width: 767.98px) {
+@media (width: 768px) {
   .slide{
     &--round{
       width: 40%;
@@ -164,6 +165,10 @@
         object-fit: contain;
       }
     }
+    &--square{
+      width: 30%;
+      
+    }
   }
   .slide--active{
     &.slide--round{
@@ -174,6 +179,9 @@
       .slide__info{
         width: 100%;
       }
+    }
+    &.slide--square{
+      width: 70%
     }
   }
 }
