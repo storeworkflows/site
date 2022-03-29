@@ -21,3 +21,13 @@ $dark: #0D0916;
   font-style: normal;
   font-weight: bold;
 }
+
+@mixin BlackCircle($diameter){
+  position: absolute;
+  content: "";
+  background: black;
+  min-width: $diameter;
+  height: $diameter;
+  z-index: -1;
+  border-radius: 50%;
+}
