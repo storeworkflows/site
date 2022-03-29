@@ -61,7 +61,11 @@ const UserCard = React.forwardRef<IUserCardRef, IUserCard>(({
         ? (description || shortDescription || " ")
         : (shortDescription || " ")
 
-    const onClick = () => {
+    const onClick = (isCardClicked?: boolean) => {
+        const isTablet = window.innerWidth < 821
+        if(isCardClicked && !isTablet)
+            return;
+
         const toReturn: IUserCard = {
             user: user,
             color: color,
@@ -76,12 +80,12 @@ const UserCard = React.forwardRef<IUserCardRef, IUserCard>(({
         <Button text={btnText}
                 color={buttonBg}
                 className={"card-button"}
-                onClick={onClick}
+                onClick={() => onClick()}
                 disabled={disabled}
         />
     </>
 
-    return <div className={cardClasses} ref={innerRef}>
+    return <div className={cardClasses} ref={innerRef} onClick={() => onClick(true)}>
         <Avatar img={img} alt={id} type={imgType}/>
         {isBigCard
             ? <div className={"content"}>

@@ -94,6 +94,20 @@
   }
 }
 
+@media (max-width: 821px) {
+  .user-card.small{
+    cursor: pointer;
+    transition: opacity 0.3s;
+    .card-button{
+      display: none;
+    }
+  }
+
+  .user-card.small:hover{
+    opacity: 0.8;
+  }
+}
+
 @media (max-width: 767.98px) {
   .user-card.big {
     flex-direction: column;
@@ -105,8 +119,8 @@
 
 
     img{
-      min-width: 12rem;
-      min-height: 12rem;
+      min-width: auto;
+      min-height: auto;
     }
 
     .content{
@@ -123,14 +137,6 @@
   }
 }
 
-@media (max-width: 575.98px) {
-  .user-card.big {
-    img{
-      min-width: 8rem;
-      min-height: 8rem;
-    }
-  }
-}
 
 @media (max-width: 500px) {
   .user-card.big {
