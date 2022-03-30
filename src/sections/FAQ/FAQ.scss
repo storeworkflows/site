@@ -3,12 +3,10 @@
 .faq {
   &__wrapper {
     background-image: url("../../assets/img/faq/background.png");
-    //height: 100vh;
-    //padding: 132px 10rem;
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    padding-bottom: 500px;
   }
 
   &__title {
