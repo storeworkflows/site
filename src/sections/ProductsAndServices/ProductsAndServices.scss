@@ -1,0 +1,10 @@
+@import "../../variables";
+#products {
+  padding-top: 3rem;
+  h2 {
+    text-align: center;
+    span.green {
+      color: $green;
+    }
+  }
+}

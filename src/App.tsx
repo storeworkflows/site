@@ -13,16 +13,18 @@ import {
   faYoutube
 } from '@fortawesome/free-brands-svg-icons'
 
-import Header from './sections/Header/Header';
+import Head from './sections/Head/Head';
 import CustomerReviews from './sections/CustomerReviews/CustomerReviews';
 
 import ContactUs from "./sections/ContactUs/ContactUs";
 import avatar from "./assets/img/avatar.webp"
 import Team from "./sections/Team/Team";
 import { IUser } from "./types/interfaces/IUser";
-import FAQ from './sections/FAQ';
+import FAQ from './sections/FAQ/FAQ';
 import Advantages from './sections/Advantages/Advantages';
 import Discover from "./sections/Discover/Discover";
+import ProductsAndServices from './sections/ProductsAndServices/ProductsAndServices';
+import Footer from "./sections/Footer/Footer";
 
 library.add(faAngleDown, faAngleUp, faAngleLeft, faAngleRight,
   faTwitter, faYoutube, faInstagram, faLinkedin, faFacebook, faLinkedinIn, faFacebookSquare)
@@ -51,13 +53,15 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Head/>
       <Discover />
       <Advantages />
       <Team users={arr} />
       <CustomerReviews />
+      <ProductsAndServices />
       <ContactUs />
       <FAQ/>
+      <Footer/>
     </div>
   );
 }

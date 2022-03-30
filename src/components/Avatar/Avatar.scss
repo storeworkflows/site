@@ -5,7 +5,8 @@
   object-fit: cover;
 
   &.big{
-    width: 50vh;
+    min-width: 20rem;
+    width: 20rem;
     height: 80vh;
 
     border-radius: 15px;
@@ -17,4 +18,5 @@
     width: 160px;
     height: 160px;
   }
+
 }

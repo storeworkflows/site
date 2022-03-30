@@ -1,50 +1,79 @@
-import React, {FC, useEffect, useMemo, useState} from 'react';
+import React, {FC, useRef, useState} from 'react';
 
 import "./Team.scss"
 import {ITeam} from "../../types/interfaces/ITeam";
 import UserCard from "../../components/UserCard/UserCard";
 import {IUserCard} from "../../types/interfaces/IUserCard";
 import {UserCardType} from "../../types/enums/UserCardType";
-import {getColorsArr} from "./utils";
+import {animateRemoving} from "./utils";
 import {MainColors} from "../../types/enums/MainColors";
+import classnames from "classnames";
+import {IUser} from "../../types/interfaces/IUser";
+import {IUserCardRef} from "../../types/interfaces/IUserCardRef";
+import {ButtonColors} from "../../types/enums/Button/ButtonColors";
+//import {scrollIntoView} from "../../components/UserCard/utils";
 
 
 const Team: FC<ITeam> = ({users}) => {
+    const [prevId, setPrevId] = useState<string>("")
     const [selectedUserCard, setSelectedUser] = useState<IUserCard | null>(null);
-    const [colorArr, setColorArr] = useState<MainColors[]>([])
 
-    const onCardSelected = (userCard: IUserCard) => setSelectedUser(userCard)
-    const onCardClosed = () => setSelectedUser(null)
+    const bigCardRef = useRef<IUserCardRef>(null);
 
-    useEffect(() => {
-        setColorArr( getColorsArr(users.length))
-    }, users)
+    const onCardSelected = (userCard: IUserCard | null) => {
+        const prevId = selectedUserCard ? selectedUserCard.user.id : "";
 
-    return <section className={"container"}>
-        <h1>Our Creative Team</h1>
-        <p className={"description"}>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+        setPrevId(prevId)
+        setSelectedUser(userCard)
+    }
+
+    const onCardClosed = async () => {
+        const bigCardEl = bigCardRef.current?.current;
+        await animateRemoving(bigCardEl)
+
+        onCardSelected(null)
+    }
+
+
+    const renderSmallCard = (user: IUser, index: number) => {
+        const currentId = user.id;
+
+        const isSelected = currentId === selectedUserCard?.user.id
+        const isPrevious = currentId === prevId
+
+        const className = classnames('small-card', {
+            "selected": isSelected,
+            "previous": isPrevious
+        })
+
+        return <UserCard
+            className={className}
+            user = {user}
+            key = {user.id}
+            onButtonClick={onCardSelected}
+            color={MainColors.blue}
+            buttonColor={ButtonColors.orange}
+            disabled={isSelected}
+        />
+    }
+
+    return <section className={"container team-section"} id={"team"}>
+        <h2 className={"team-section__header"} >Our Creative Team</h2>
+        <p className={"description"}>
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
         { selectedUserCard &&
             <UserCard
+                className={`big-card ${!prevId ? "appear": ""}`}
                 type = {UserCardType.big}
                 user = {selectedUserCard.user}
-                color={selectedUserCard.color}
+                color = {selectedUserCard.color}
                 buttonColor={selectedUserCard.buttonColor}
                 onButtonClick={onCardClosed}
+                ref = {bigCardRef}
             />
         }
         <div className={"user-cards"}>
-            {users.map((user, index) => {
-                if(selectedUserCard && user.id === selectedUserCard.user.id)
-                    return null;
-
-                const color: MainColors = colorArr[index];
-                return <UserCard
-                    user = {user}
-                    key = {user.id}
-                    onButtonClick={onCardSelected}
-                    color={color}
-                />
-            }) }
+            {users.map(renderSmallCard)}
         </div>
     </section>;
 

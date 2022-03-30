@@ -1,5 +1,6 @@
 import React ,{FC} from "react";
-import "./ContactUs.scss";
+import "./ContactUs.scss"
+import contactHuman from "../../assets/img/contactUs_human.png"
 
 import axios, {AxiosResponse} from "axios";
 
@@ -46,7 +47,7 @@ const ContactUs:FC = (): JSX.Element => {
         <section className="contact-us container">
             <div className="contact-us__wrap">
                 <div className="contact-us__image">
-                    {/*<img src="../../assets/img/contactUs_human.png" alt=""/>*/}
+                    <img src={contactHuman} alt=""/>
                 </div>
                 <div className="contact-us__form">
                     <h2>Contact Us</h2>

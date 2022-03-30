@@ -1,0 +1,120 @@
+.footer {
+  position: relative;
+
+  &__email {
+    grid-area: email;
+  }
+
+  &__phone {
+    grid-area: phone;
+  }
+
+  &__address {
+    grid-area: address;
+  }
+
+  &__social {
+    grid-area: social;
+    align-self: center;
+  }
+
+  & .nav {
+    padding: 30px 0 0 0;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    margin-bottom: 100px;
+  }
+
+  &__wrapper {
+    position: absolute;
+    background: rgba(34, 6, 94, 0.1);
+    backdrop-filter: blur(30px);
+    bottom: 0;
+    width: 100%;
+  }
+
+  &__container {
+    min-height: auto;
+    font-size: 14px;
+    display: grid;
+    align-items: center;
+    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+                "email phone"
+                "social address";
+  }
+
+  &__padding {
+    padding: 1rem 0;
+
+    &:nth-child(even) {
+      text-align: end;
+    }
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .footer {
+    .nav {
+      .nav-link {
+        width: 140px;
+        text-align: end;
+      }
+    }
+    &__navigation {
+      margin-left: 150px;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .footer {
+    .nav {
+      .nav-link {
+        width: fit-content;
+      }
+    }
+  }
+  .footer__navigation {
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 767.98px) {
+
+  .footer {
+    &__container {
+      grid-template-areas:
+          "social email"
+          "social address"
+          "social phone";
+    }
+
+    .nav {
+      flex-direction: row;
+      align-items: normal;
+      flex-wrap: nowrap;
+
+      .nav-link {
+        padding: .5rem;
+
+        a {
+          font-weight: 300;
+        }
+      }
+    }
+
+    &__padding {
+      padding: .5rem;
+    }
+
+    &__social {
+      align-self: end;
+    }
+
+    &__email {
+      text-align: end;
+    }
+  }
+}

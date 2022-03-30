@@ -1,37 +1,22 @@
-@import "../../variables";
+.contact-us {
 
-.contact-us{
-
-  &__wrap{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-  }
-  &__image {
-    height: 640px;
-    width: 432px;
-    flex: 0 1 auto;
-    background-image: url("../../assets/img/contactUs_human.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-
-  }
-  &__form {
-    max-width: 570px;
-    flex: 1 1 auto;
-    margin: 0 10px;
-
-    .field {
-      margin: 35px 0;
-      flex-grow: 1;
-    }
-    .buttons {
-      text-align: right;
-    }
-  }
+	&__wrap {
+		display: flex;
+		flex-flow: row;
+		justify-content: space-between;
+		& .contact-us__image {
+			img {
+				display: block;
+				width: auto;
+				@media (max-width: 998px){
+					max-height: 60%;
+					max-width: 300px;
+					transform: translateY(40%);
+				}
+			}
+		}
+		& .contact-us__form {
+			flex: .8 1 auto;
+		}
+	}
 }
-
-
-

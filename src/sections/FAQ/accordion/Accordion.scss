@@ -1,0 +1,105 @@
+@import "../../../variables";
+
+$transition: all .2s ease-out;
+
+.accordion {
+  display: inline-grid;
+  grid-template-columns: 8rem 1fr auto;
+  gap: 6px;
+  background: rgba(34, 6, 94, 0.1);
+  backdrop-filter: blur(30px);
+  border-radius: 15px;
+  margin-top: 20px;
+  padding: 20px 20px;
+  transition: 0.7s;
+  width: 100%;
+
+  &__count {
+    @include ChicaGogo();
+    font-size: 48px;
+    min-width: 5rem;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    color: var(--blue);
+    font-weight: bold;
+    transition: $transition;
+
+    &.--active {
+      font-size: 96px;
+    }
+  }
+
+  &__content {
+    align-self: center;
+  }
+
+  &__title {
+    color: $color-white;
+    @include Montserrat(500);
+    font-size: 24px;
+    line-height: 40px;
+    transition: $transition;
+    margin: 0;
+
+    &.--active {
+      color: $color-grean;
+      font-size: 36px;
+      @include Montserrat(700);
+    }
+  }
+
+  &__text {
+    max-height: 0;
+    overflow: hidden;
+    transition: $transition;
+  }
+
+  .button::before, .button.primary.green::before, .button.primary.orange::before {
+    border-radius: 50%;
+  }
+
+  .button {
+    padding: 10px 13px;
+  }
+
+  &__button {
+    align-self: flex-start;
+    margin: 0;
+    border-radius: 50%;
+
+    &-wrapper {
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .accordion {
+    grid-template-columns: 4rem 1fr auto;
+
+    &__count {
+      font-size: 48px;
+
+      &.--active {
+        font-size: 64px;
+      }
+    }
+
+    &__content {
+    }
+
+    &__title {
+      //font-size: 1rem;
+
+      &.--active {
+        font-size: 24px;
+      }
+    }
+
+    //&__text {
+    //  font-size: 0.8rem;
+    //}
+
+  }
+}

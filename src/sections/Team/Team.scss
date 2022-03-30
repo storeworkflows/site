@@ -1,20 +1,173 @@
-.user-cards{
-  margin: 3rem auto;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-.description{
-  width: 70%;
-  margin-bottom: 3rem;
-}
-
-
-@media (max-width: 767.98px){
-  .description{
+.team-section {
+  overflow-x: hidden;
+  
+  .user-cards {
+    margin: 0 auto;
     width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+
+    div{
+      flex-grow: 1;
+      min-width: 15rem;
+
+    }
+
+    overflow-x: scroll;
+
+  }
+
+  .user-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .user-cards {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .big-card{
+    &.appear{
+      animation: big-card-appear ;
+      animation-duration: 0.3s;
+      animation-timing-function: linear;
+     // animation-fill-mode: forwards;
+    }
+
+    &.disappear{
+      animation: big-card-disappear ;
+      animation-duration: 0.3s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .small-card{
+    overflow-x: hidden;
+
+    &.selected{
+      animation: small-card-disappear;
+      animation-duration: 0.2s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+
+    &.previous{
+      transform: scale(0.9);
+      opacity: 0.7;
+
+      animation: small-card-appear;
+      animation-duration: 0.2s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+
+  }
+
+  .description {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+
+  .team-section__header {
+    width: 100%;
+
+    text-align: center;
   }
 }
 
+
+
+@keyframes big-card-appear {
+  0% {
+    height: 0;
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes big-card-disappear {
+  100% {
+    height: 0;
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes small-card-appear {
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes small-card-disappear {
+
+  100%{
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+}
+
+@media (min-width: 821px) {
+  .team-section {
+    .description {
+      width: 70%;
+    }
+
+    .user-cards {
+      display: grid;
+      gap: 1.5rem;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      div{
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    .team-section__header {
+      text-align: left;
+    }
+  }
+}
+
+
+@media (min-width: 991.98px) {
+  .team-section .user-cards{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .team-section .user-cards{
+     grid-template-columns: repeat(4, 1fr);
+     gap: 2rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  .team-section .user-cards{
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 1700px) {
+  .team-section .user-cards{
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3rem;
+  }
+}

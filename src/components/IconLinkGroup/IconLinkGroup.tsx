@@ -7,6 +7,7 @@ import {MainColors} from "../../types/enums/MainColors";
 import {TargetAttr} from "../../types/enums/TargetAttr";
 import IconLink from "../IconLink/IconLink";
 import {Direction} from "../../types/enums/Direction";
+import classnames from "classnames";
 
 const defaultProps = {
     color: MainColors.green,
@@ -17,12 +18,17 @@ const defaultProps = {
 const IconLinkGroup: FC<IIconLinkGroup> = ({
                                      iconLinks,
                                      color,
-                                     target
+                                     target,
+                                               className
                                  }) => {
 
-    return <div className={"icon-link-group"}>
-        {iconLinks.map((el) =>
-            <IconLink iconLink={el} color={color} target={target}/>
+    const classes = classnames(
+        "icon-link-group", {
+            [`${className}`] : className
+        })
+    return <div className={classes}>
+        {iconLinks.map((el,index) =>
+            <IconLink key={index} iconLink={el} color={color} target={target}/>
         )}
     </div>
 }
