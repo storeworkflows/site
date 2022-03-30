@@ -14,16 +14,11 @@ const Logo = () => {
 
   }, []);
 
+  const logo = mobile ? <><span>S</span>Wf</> : <><span>Store</span>Workflows</>;
+
   return(
     <div className="logo">
-      {
-        mobile ? <a href="#">
-            <span>S</span>Wf
-          </a>
-          : <a href="#">
-            <span>Store</span>Workflows
-          </a>
-      }
+       <a href="#">{logo}</a>
     </div>
   )
 }

@@ -1,8 +1,10 @@
 import classnames from 'classnames';
-import React, {FC, useState, useRef} from 'react';
+import React, {FC, useRef, useState} from 'react';
+import Button from "../../../components/Button/Button";
 import './Accordion.scss';
 import {IAccordionProperties} from "../../../types/interfaces/IFaq";
-import Button from "../../../components/Button/Button";
+import {ButtonColors} from "../../../types/enums/Button/ButtonColors";
+import {ButtonTypes} from "../../../types/enums/Button/ButtonTypes";
 
 const Accordion: FC<IAccordionProperties> = ({
 																							 count,
@@ -37,10 +39,10 @@ const Accordion: FC<IAccordionProperties> = ({
 			</div>
 			<div className="accordion__button-wrapper">
 				<Button
-					//@ts-ignore
-					color={activeClass ? 'green' : 'orange'}
-					icon={active ? 'angle-up' : 'angle-down'}
 					onClick={clickHandler}
+					type={ButtonTypes.additional}
+					icon={active ? 'angle-up' : 'angle-down'}
+					color={active ? ButtonColors.violet : ButtonColors.green}
 					className={classnames('accordion__button', activeClass)}
 				>click</Button>
 			</div>
