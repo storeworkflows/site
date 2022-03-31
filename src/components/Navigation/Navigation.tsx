@@ -6,31 +6,21 @@ import Logo from "../Logo/Logo";
 
 
 const Navigation: FC<INavigation> = ({mobile,navLinks,className,position}): JSX.Element => {
+
 	const [isOpen, setIsOpen] = useState(false);
-	const handleOpen = useCallback(() => setIsOpen(!isOpen),[isOpen])
-	const closeMobileMenu = useCallback(() => setIsOpen(false),[isOpen])
 	const [resizeHeight, setResizeHeight] = useState(false);
 
+	const handleOpen = useCallback(() => setIsOpen(!isOpen),[isOpen])
+
+	console.log("render");
 
 	useEffect(() => {
-		const resizeHeight = () =>
-			setResizeHeight((isShrunk) => {
-				if (
-					(document.body.scrollTop > 200 ||
-						document.documentElement.scrollTop > 200)
-				) {
-					return true;
-				}
+		const resizeHeight = () => {
+			const documentScrollTop = document.documentElement.scrollTop;
+			const isScrolledDown = documentScrollTop > 150;
 
-				if (
-					isShrunk &&
-					document.body.scrollTop < 100 &&
-					document.documentElement.scrollTop < 100
-				) {
-					return false;
-				}
-				return isShrunk
-			})
+			setResizeHeight(isScrolledDown);
+		}
 
 		window.addEventListener("scroll", resizeHeight)
 		return () => window.removeEventListener("scroll", resizeHeight)
@@ -67,8 +57,8 @@ const Navigation: FC<INavigation> = ({mobile,navLinks,className,position}): JSX.
 			<ul  className={navLinksClasses}>
 				{
 					navLinks.map((nav,index)=>(
-						<li key={index} className="nav-link" onClick={closeMobileMenu}>
-							<a href={nav.href}>{nav.title}</a>
+						<li key={index} className="nav-link" >
+							<a href={nav.href} onClick={handleOpen}>{nav.title}</a>
 						</li>
 					))
 				}
