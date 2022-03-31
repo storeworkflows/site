@@ -139,7 +139,12 @@
 .slide__info-heading {
   @include Montserrat(600)
 }
-@media (width: 768px) {
+
+@media (min-width: 575.98px) {
+  
+}
+
+@media (max-width: 769px) {
   .slide{
     &--round{
       width: 40%;
@@ -167,7 +172,12 @@
     }
     &--square{
       width: 30%;
-      
+      .slide__info{
+        overflow: hidden;
+      }
+      .slide__info-paragraph, .slide__info-heading{
+        width: 60ch;
+      }
     }
   }
   .slide--active{
@@ -184,4 +194,17 @@
       width: 70%
     }
   }
+}
+
+@media (min-width: 991.98px) {
+  
+}
+
+@media (min-width: 1199.98px) {
+}
+@media (min-width: 1400px) {
+ 
+}
+@media (min-width: 1600px) {
+  
 }
