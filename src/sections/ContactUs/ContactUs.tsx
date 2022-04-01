@@ -1,4 +1,4 @@
-import React ,{FC} from "react";
+import React, {FC} from "react";
 import "./ContactUs.scss"
 import contactHuman from "../../assets/img/contactUs_human.png"
 
@@ -17,12 +17,12 @@ const instance = axios.create({
     }
 });
 
-const ContactUs:FC = (): JSX.Element => {
+const ContactUs: FC = (): JSX.Element => {
 
-    const handleSubmit = (values:IFormValues) => {
-        const {firstName,lastName,businessemail,message} = values
+    const handleSubmit = (values: IFormValues) => {
+        const {firstName, lastName, businessemail, message} = values
 
-        const data:IPostData = {
+        const data: IPostData = {
             data: {
                 name: `${businessemail}`,
                 notes: `${firstName} ${lastName}: ${message}`,
@@ -31,28 +31,29 @@ const ContactUs:FC = (): JSX.Element => {
         }
 
         return instance.post<IFormValues, AxiosResponse, IPostData>('/api/1.0/tasks', data)
-            .then(res=>{
-            const response = res.data;
-        }).catch((error)=>{
-            if (axios.isAxiosError(error)) {
-                console.log('error message: ', error.message);
-                //@ts-ignore
-                console.log('error: ', error.response.data.errors);
-                return error.message;
-            }
-        })
+            .then(res => {
+                const response = res.data;
+            }).catch((error) => {
+                if (axios.isAxiosError(error)) {
+                    console.log('error message: ', error.message);
+                    //@ts-ignore
+                    console.log('error: ', error.response.data.errors);
+                    return error.message;
+                }
+            })
     }
 
     return (
         <section className="contact-us container">
-            <div className="contact-us__wrap">
-                <div className="contact-us__image">
-                    <img src={contactHuman} alt=""/>
-                </div>
-                <div className="contact-us__form">
-                    <h2>Contact Us</h2>
-                    <ContactForm onSubmit={handleSubmit} />
-                </div>
+            <img
+                className="contact-us__image"
+                src={contactHuman}
+                alt="contact-us-image"
+            />
+            <h2 className={"contact-us__header"}>Contact Us</h2>
+
+            <div className="contact-us__form">
+                <ContactForm onSubmit={handleSubmit}/>
             </div>
         </section>
     );

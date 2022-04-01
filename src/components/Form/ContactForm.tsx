@@ -60,9 +60,8 @@ const ContactForm: FC<IContactForm> = ({onSubmit}): JSX.Element=>{
                             placeholder="Your massage:"
                         />
                     </div>
-                    <div style={{textAlign: "right"}}>
-                        <Button text={"Send"} disabled={submitting}/>
-                    </div>
+                    <Button className={"form-button"} text={"Send"} disabled={submitting}/>
+
                 </form>
             )}
         />
