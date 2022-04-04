@@ -139,47 +139,13 @@ const addAnimationTo = (elToMove: ICardsToMove, delay: number, moveDuration: num
     })
 }
 
-export interface IAddCardAnimation{
-    currentCard?: HTMLDivElement | null,
-    cardContainer: HTMLDivElement | null,
-    prevId: string,
-    currentId: string,
-    usersArr: IUser[]
-}
-export const animateRemoving = async (
-    { currentCard, currentId, cardContainer, usersArr, prevId}: IAddCardAnimation
-) => {
 
-    if (!cardContainer)
+export const animateRemoving = async ( elem: HTMLDivElement | null | undefined ) => {
+    if (!elem)
         return;
 
-    let cardsArr = Array.from(cardContainer.children as HTMLCollectionOf<HTMLElement>);
-    let bigCard = cardContainer.parentElement?.querySelector(".big-card");
-    console.log(bigCard)
+    elem.classList.add("disappear");
+    await new Promise(r => setTimeout(r, 300))
 
-    const toMove = getIndexesToMove(usersArr, currentId, prevId);
-    let moveDuration = 300;
-    let delay = 50;
-    let numberOfMovingEl = toMove?.indexes ? toMove.indexes.length : 0;
-
-    toMove && addAnimationTo(toMove, delay, moveDuration, cardsArr);
-
-    currentCard?.classList.add("disappear");
-    bigCard?.classList.remove("appear");
-    !currentId && bigCard?.classList.add("disappear");
-
-    const awaitMoving = numberOfMovingEl * delay + moveDuration  + 200;
-    const awaitMs = awaitMoving > 300 ? awaitMoving : 300
-
-    await new Promise(r => setTimeout(r, awaitMs))
-
-    currentCard?.classList.remove("disappear");
-    bigCard?.classList.remove("disappear");
-
-    let classToRemove = `move-${toMove?.isMoveLeft ? "left" : "right"}`;
-    toMove?.indexes.forEach((i) => {
-        cardsArr[i].classList.remove(classToRemove)
-        cardsArr[i].style.animationDelay = "0s"
-    })
-
+    elem.classList.remove("disappear");
 }

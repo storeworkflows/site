@@ -8,9 +8,8 @@
   pointer-events: none;
   align-items: center;
   &--round {
-
   }
-  &--square{
+  &--square {
     padding-top: 10%;
     justify-content: space-around;
   }
@@ -21,22 +20,23 @@
   height: 40px;
 }
 @media (hover: none) {
-  .controls{
+  .controls {
     visibility: hidden;
   }
 }
-@media(min-width: 1600px){
-  .controls{
-    background: 
-      linear-gradient(
-        90deg, rgba(12,8,20,1) 0%, 
-        rgba(12,8,20,0.8) 5%, 
-        rgba(255,255,255,0) 10%,
-        rgba(255,255,255,0) 90%, 
-        rgba(12,8,20,0.8) 95%,
-        rgba(12,8,20,1) 100%);
-  &--simple{
-    background: none;
-  }
+@media (min-width: 1600px) {
+  .controls {
+    background: linear-gradient(
+      90deg,
+      rgba(12, 8, 20, 1) 0%,
+      rgba(12, 8, 20, 0.8) 5%,
+      rgba(255, 255, 255, 0) 10%,
+      rgba(255, 255, 255, 0) 90%,
+      rgba(12, 8, 20, 0.8) 95%,
+      rgba(12, 8, 20, 1) 100%
+    );
+    &--simple {
+      background: none;
+    }
   }
 }

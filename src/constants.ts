@@ -62,7 +62,7 @@ export const navLinks: INavLink[]  = [
     },
     {
         title: "FAQ",
-        href: "#"
+        href: "#faq"
     },
     {
         title: "Team",

@@ -7,11 +7,10 @@ export const getRandomColor = () : ButtonColors => {
     return colors[randomNumber];
 }
 
-export const scrollIntoView = (el: HTMLDivElement | null) => {
-    const scrollIntoViewOptions: ScrollIntoViewOptions = {
-        block: "nearest",
-        inline: "nearest",
-        behavior: "smooth"
-    }
-    el?.scrollIntoView(scrollIntoViewOptions);
+export const scrollIntoView = (el: HTMLElement | null | undefined) => {
+    if(!el)
+        return;
+
+    const y = el.getBoundingClientRect().top + window.scrollY -100;
+    window.scrollTo({top: y, behavior: 'smooth'});
 }

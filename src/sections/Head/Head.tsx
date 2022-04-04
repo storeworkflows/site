@@ -12,25 +12,39 @@ import Navigation from "../../components/Navigation/Navigation";
 
 const Head: FC = (): JSX.Element => {
 
-	const [mobile, setMobile] = useState(false);
+	const [isMobileNav, setIsMobileNav] = useState(window.innerWidth <= 1200);
+	const [isMobileHeader, setIsMobileHeader] = useState(window.innerWidth <= 992)
 	const handleResize = () => {
-		(window.innerWidth > 1200) ? setMobile(false) : setMobile(true);
+		let currentWidth = window.innerWidth;
+		setIsMobileHeader(currentWidth <= 992);
+		setIsMobileNav(currentWidth <= 1200);
 	}
+
 	useEffect(() => {
 		window.addEventListener('resize', handleResize);
 		return () => window.removeEventListener('resize', handleResize);
 	}, []);
 
-	return <React.Fragment>
+	const renderHeader = () => <h1 className="header__container__tittle">
+		Digitize
+		{isMobileHeader && <br/>}
+		Store Workflows
+		{isMobileHeader && <br/>}
+		on ServiceNow
+	</h1>
+
+	return <>
 		<div className="header__nav">
-			<Navigation mobile={mobile} navLinks={navLinks} />
+			<Navigation mobile={isMobileNav} navLinks={navLinks} />
 		</div>
 		<section className="header__container container" id={"head"}>
-
-			<h1 className="header__container__tittle">Digitize Store Workflows on ServiceNow</h1>
-			<p className="header__container__subtittle">Retail operations can be complicated and difficult to track. With
+			<img src={badger} alt="badger" className={"badger"}/>
+			{renderHeader()}
+			<p className="header__container__subtittle">
+				Retail operations can be complicated and difficult to track. With
 				StoreWorkflows, you can boost productivity and increase accountability by digitizing workflows on the
-				ServiceNow platform.</p>
+				ServiceNow platform.
+			</p>
 			<div className="header__container__actions">
 				<Button text={"Let`s talk"} className={"head-button"}/>
 				<Button
@@ -40,16 +54,16 @@ const Head: FC = (): JSX.Element => {
 					className={"head-button"}
 				/>
 			</div>
+
 			<IconLinkGroup
 				iconLinks={socialLinks}
 				color={MainColors.green}
 				className="header__container__socials"
 			/>
-			<img src={badger} alt="badger" className={"badger"}/>
 			<div className="circle"/>
-			<div className={"elliptic"}/>
+			<div className="elliptic"/>
 		</section>
-	</React.Fragment>
+	</>
 };
 
 export default Head;

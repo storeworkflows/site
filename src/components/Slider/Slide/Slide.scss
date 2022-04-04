@@ -140,29 +140,33 @@
   @include Montserrat(600)
 }
 
-@media (min-width: 575.98px) {
-  
-}
 
-@media (max-width: 769px) {
+
+@media (min-width: 767.98px) and (max-width: 991.98px) {
   .slide{
+    overflow: visible;
     &--round{
-      width: 40%;
+      width: 45%;
       flex-direction: column;
       .slide__frame{
         width: 100%;
-        height: 63%;
+        height: 65%;
         align-items: center;
         justify-content: center;
       }
       .slide__info{
-        height: 37%;
+        overflow: visible;
+        height: 35%;
         width: 100%;
         text-align: center;
         justify-content: flex-start;
         align-items: center;
         padding: 0;
         gap: 0;
+        &-paragraph{
+          width: 500px;
+          font-size: 10pt;
+        }
       }
       .slide__frame-image{
         width: 100%;
@@ -182,7 +186,7 @@
   }
   .slide--active{
     &.slide--round{
-      width: 60%;
+      width: 55%;
       .slide__frame{
         width: 100%;
       }
@@ -195,7 +199,75 @@
     }
   }
 }
-
+@media (max-width: 575.98px) {
+  .slide{
+    overflow: visible;
+    &--round{
+      width: 45%;
+      flex-direction: column;
+      .slide__frame{
+        height: 45%;
+        align-items: center;
+        justify-content: center;
+      }
+      .slide__info{
+        height: 55%;
+        overflow: visible;
+        text-align: center;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
+        gap: 0;
+        .slide__info-heading{
+          font-size: 18pt;
+          width: 300px
+        }
+        .slide__info-paragraph{
+          width: 100%;
+          font-size: 9pt;
+          width: 300px;
+        }
+      }
+      .slide__frame-image{
+        width: 100%;
+        height: fit-content;
+        object-fit: contain;
+      }
+    }
+    &--square{
+      .slide__frame{
+        height: 55%;
+      }
+      .slide__info{
+        height: 45%;
+        overflow: visible;
+        gap: 0;
+        .slide__info-heading{
+          font-size: 18pt;
+          width: 300px;
+          margin-block: 1rem;
+        }
+        .slide__info-paragraph{
+          width: 100%;
+          font-size: 9pt;
+          width: 300px;
+        }
+      }
+    }
+  }
+  .slide--active{
+    &.slide--round{
+      width: 55%;
+      .slide__frame{
+        width: 100%;
+      }
+      .slide__info{
+        width: 100%;
+      }
+    }
+    
+  }
+}
 @media (min-width: 991.98px) {
   
 }

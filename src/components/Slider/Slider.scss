@@ -25,13 +25,24 @@
   transition: transform 0.3s ease-out 0s;
   
 }
+
 @media (min-width: 767.98px) {
   .slider{
     &--round{
-     
+     height: 700px;
     }
     &--square{
       height: 40rem;
+    }
+  }
+}
+@media (max-width: 575.98px) {
+  .slider{
+    &--round{
+      height: 550px;
+    }
+    &--square{
+      height: 400px;
     }
   }
 }
