@@ -16,16 +16,19 @@ const defaultProps = {
 const IconLink: FC<IIconLinkComponent> = ({
                              iconLink,
                              color,
-                             target
+                             target,
+                            disabled
 }) => {
 
     const {icon, link} = iconLink
     const iconLinkClasses = classnames(
         'icon-link',
-        { [`${color}`]: true }
+        { [`${color}`]: true, "disabled": disabled }
     )
 
-    return <a href={link} className={iconLinkClasses} target={target}>
+    const linkToOpen = disabled ? "#" : link;
+
+    return <a href={linkToOpen} className={iconLinkClasses} target={target}>
         <Icon icon={icon} size={"lg"}/>
     </a>
 }

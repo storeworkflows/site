@@ -1,15 +1,29 @@
 
+.icon-link {
+  --mainColor: #009D52;
 
-.icon-link{
-  --mainColor: var(--green);
+  &:hover {
+    --mainColor: #0FC16C;
+  }
 
-  &.blue{
+  &:active {
+    --mainColor: #008042;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    --mainColor: #28553F;
+    cursor: auto;
+  }
+
+  &.blue {
     --mainColor: var(--blue);
   }
 
-  &.orange{
+  &.orange {
     --mainColor: var(--orange);
   }
+
 
   color: var(--mainColor);
   border: var(--mainColor) solid 4px;
