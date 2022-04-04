@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.scss";
-import {navLinks, socialLinks} from "../../constants";
-import {MainColors} from "../../types/enums/MainColors";
+import { navLinks, socialLinks } from "../../constants";
+import { MainColors } from "../../types/enums/MainColors";
 import Navigation from "../../components/Navigation/Navigation";
 import IconLinkGroup from "../../components/IconLinkGroup/IconLinkGroup";
 
@@ -12,14 +12,14 @@ const Footer = () => {
 		<div className="footer">
 			<div className='footer__wrapper'>
 				<footer className="container">
-					<Navigation className="footer__navigation" mobile={false} navLinks={navLinks} position="bottom"/>
+					<Navigation className="footer__navigation" mobile={false} navLinks={navLinks} position="bottom" />
 					<div className="footer__container">
-						<div className="footer__email footer__padding">E-mail</div>
-						<div className="footer__phone footer__padding">Phone number</div>
+						<div className="footer__email footer__padding">E-mail: mail@storeworkflows.com</div>
+						<div className="footer__phone footer__padding">Phone: +38(099)123-54-58</div>
 						<div className="footer__social footer__padding">
-							<IconLinkGroup iconLinks={socialLinks} color={MainColors.green}/>
+							<IconLinkGroup iconLinks={socialLinks} color={MainColors.green} />
 						</div>
-						<div className="footer__address footer__padding">Office Address</div>
+						<div className="footer__address footer__padding">Ukraine, Kyiv, Sportyvna square 1A, Gulliver BC, Tower B</div>
 					</div>
 				</footer>
 			</div>

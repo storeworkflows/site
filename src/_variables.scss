@@ -9,10 +9,15 @@ $orange: #FF5C00;
 $green: #009D52;
 $dark: #0D0916;
 
-
+$screen-sm: 575.98px;
+$screen-md: 767.98px;
+$screen-lg: 991.98px;
+$screen-xl: 1199.98px;
+$screen-xxl: 1400px;
+$screen-xxxl: 1600px;
 // Text
 @mixin Montserrat($weight){
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: $weight;
 }

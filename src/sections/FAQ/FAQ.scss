@@ -17,3 +17,11 @@
     font-weight: 700;
   }
 }
+@media (max-width: $screen-sm){
+  .faq{
+    &__wrapper{
+      background-size: auto;
+      padding-bottom: 80vh;
+    }
+  }
+}

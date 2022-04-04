@@ -1,4 +1,6 @@
+@import "../../_variables";
 .footer {
+  @include Montserrat(100);
   position: relative;
 
   &__email {
@@ -84,6 +86,7 @@
 @media (max-width: 767.98px) {
 
   .footer {
+    font-weight: 100;
     &__container {
       grid-template-areas:
           "social email"
@@ -100,7 +103,7 @@
         padding: .5rem;
 
         a {
-          font-weight: 300;
+          font-weight: 100;
         }
       }
     }
@@ -115,6 +118,42 @@
 
     &__email {
       text-align: end;
+    }
+  }
+}
+@media(max-width: 575.98px){
+  .footer{
+    .nav{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    &__container{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+      "social"  
+      "email"
+      "phone"
+      "address";
+      gap: 0.5rem;
+    }
+    &__email{
+      text-align: start;
+    }
+    &__padding {
+      padding: 1rem 0;
+  
+      &:nth-child(even) {
+        text-align: start;
+      }
+    }
+    &__navigation{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
     }
   }
 }
