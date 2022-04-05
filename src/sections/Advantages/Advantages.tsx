@@ -11,11 +11,8 @@ const Advantages: FC = () => {
     return <div className={"advantages-wrapper full-width-wrapper"} id={"advantages"}>
         <section className={"advantages-section container"}>
             <h2>Our Advantages</h2>
-            <p>
-                <img src={paw} alt={"paw"} className={"paw-img"}/>
-                <List listOptions={advantages} className={"advantage-list"}/>
-
-            </p>
+            <img src={paw} alt={"paw"} className={"paw-img"}/>
+            <List listOptions={advantages} className={"advantage-list"}/>
         </section>
     </div>;
 
