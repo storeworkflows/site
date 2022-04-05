@@ -37,6 +37,8 @@ const Head: FC = (): JSX.Element => {
 		<div className="header__nav">
 			<Navigation mobile={isMobileNav} navLinks={navLinks} />
 		</div>
+		<div className={"bg-container"}>
+			<div className="circle"/>
 		<section className="header__container container" id={"head"}>
 			<img src={badger} alt="badger" className={"badger"}/>
 			{renderHeader()}
@@ -60,9 +62,8 @@ const Head: FC = (): JSX.Element => {
 				color={MainColors.green}
 				className="header__container__socials"
 			/>
-			<div className="circle"/>
-			<div className="elliptic"/>
 		</section>
+		</div>
 	</>
 };
 
