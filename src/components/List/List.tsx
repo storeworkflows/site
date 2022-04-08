@@ -11,7 +11,7 @@ const List: FC<IList> = ({listOptions, className}) => {
     return <ol className={classes}>
         {listOptions.map((text, index) => {
             const classes = classnames({"with-zero": index<9})
-            return <><li key={index} className={classes}>{text}</li><br/></>
+            return <li key={index} className={classes}>{text}</li>
         })}
     </ol>;
 

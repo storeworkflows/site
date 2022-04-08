@@ -13,6 +13,7 @@ export interface IIconLinkComponent {
     color?: MainColors,
     iconLink: IIconLink,
     target?: TargetAttr
+    disabled?: boolean
 }
 
 export interface IIconLinkGroup {
