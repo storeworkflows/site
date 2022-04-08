@@ -12,8 +12,6 @@ const Navigation: FC<INavigation> = ({mobile,navLinks,className,position}): JSX.
 
 	const handleOpen = useCallback(() => setIsOpen(!isOpen),[isOpen])
 
-	console.log("render");
-
 	useEffect(() => {
 		const resizeHeight = () => {
 			const documentScrollTop = document.documentElement.scrollTop;

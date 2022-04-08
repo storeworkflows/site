@@ -19,8 +19,8 @@
 
     position: relative;
     align-items: center;
+    margin: 2rem 0 2rem 96px;
     padding: 1rem 0;
-    margin-left: 96px;
   }
 
   li::before {
@@ -47,6 +47,10 @@
   }
 
   @media (max-width: 1300px){
+    li{
+      margin: 1rem 0 1rem 96px;
+    }
+
     li::before {
       width: 64px;
       padding: 0.5rem 0 0;
