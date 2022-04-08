@@ -94,18 +94,18 @@
   }
 }
 
-@media (max-width: 821px) {
+@media (max-width: 821px){
   .user-card.small{
     cursor: pointer;
-    transition: opacity 0.3s;
+   // transition: opacity 0.3s;
     .card-button{
       display: none;
     }
   }
 
-  .user-card.small:hover{
-    opacity: 0.8;
-  }
+  //.user-card.small:hover{
+  //  opacity: 0.8;
+  //}
 }
 
 @media (max-width: 767.98px) {
@@ -138,9 +138,10 @@
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 575.98px) {
   .user-card.big {
 
+    height: auto;
     padding: 1rem;
     .content{
       .user-name{
@@ -155,7 +156,7 @@
 }
 
 
-@media (max-width: 1300px){
+@media (max-width: 1199.98px){
   .user-card {
    // padding: 2.5rem 2.75rem 1.5rem;
 
@@ -166,7 +167,7 @@
   }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1199.98px) {
   .user-card.big {
     height: 45rem;
     padding: 4rem 6rem 4rem 5rem;

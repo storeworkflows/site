@@ -149,3 +149,31 @@ export const animateRemoving = async ( elem: HTMLDivElement | null | undefined )
 
     elem.classList.remove("disappear");
 }
+
+export const isOverflow = (component?: HTMLDivElement | null) => {
+    if(!component)
+        return
+
+    const fullWidth = window.innerWidth;
+    const cardRect = component.getBoundingClientRect();
+    const cardX = cardRect.x;
+    const cardWidth = cardRect.width
+
+    const isOverLeft = cardX < -cardWidth
+    const isOverRight = cardX > fullWidth
+
+    return isOverLeft || isOverRight
+}
+
+export const scrollCardInCenter = (cardEl: HTMLDivElement, containerEl: HTMLDivElement) => {
+    const halfWidth = window.innerWidth / 2;
+
+    const cardRect =  cardEl.getBoundingClientRect();
+    const halfCardWidth = cardRect.width / 2;
+    const visibleMiddle = halfWidth - halfCardWidth;
+
+    containerEl.scrollBy({
+        left: cardRect.x - visibleMiddle ,
+        behavior: 'smooth'
+    });
+}

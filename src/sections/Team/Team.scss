@@ -30,40 +30,6 @@
     scrollbar-width: none;  /* Firefox */
   }
 
-  .big-card{
-    &.appear{
-      animation: big-card-appear ;
-      animation-duration: 0.3s;
-      animation-timing-function: linear;
-     // animation-fill-mode: forwards;
-    }
-
-    &.disappear{
-      animation: big-card-disappear ;
-      animation-duration: 0.3s;
-      animation-timing-function: linear;
-      animation-fill-mode: forwards;
-    }
-  }
-
-  .small-card{
-    overflow-x: hidden;
-
-    &.selected{
-      animation: small-card-disappear;
-      animation-duration: 0.2s;
-      animation-timing-function: linear;
-      animation-fill-mode: forwards;
-    }
-
-    &.previous{
-      animation: small-card-appear;
-      animation-duration: 0.2s;
-      animation-timing-function: linear;
-    }
-
-  }
-
   .description {
     width: 100%;
     margin-bottom: 4rem;
@@ -119,7 +85,74 @@
   }
 }
 
-@media (min-width: 821px) {
+@keyframes make-visible {
+
+  0%{
+    opacity: 0;
+  }
+  90%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes make-invisible {
+
+  0%{
+    opacity: 1;
+  }
+  10%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 767.98px){
+  .team-section{
+    .big-card{
+      overflow: hidden;
+
+      &.appear{
+        animation: big-card-appear ;
+        animation-duration: 0.3s;
+        animation-timing-function: linear;
+        // animation-fill-mode: forwards;
+      }
+
+      &.disappear{
+        animation: big-card-disappear ;
+        animation-duration: 0.3s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    .small-card{
+      overflow-x: hidden;
+
+      &.selected{
+        animation: small-card-disappear;
+        animation-duration: 0.2s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+      }
+
+      &.previous{
+        animation: small-card-appear;
+        animation-duration: 0.2s;
+        animation-timing-function: linear;
+      }
+
+    }
+  }
+
+}
+
+@media (min-width: 991.98px) {
   .team-section {
     .description {
       width: 70%;
@@ -169,5 +202,117 @@
   .team-section .user-cards{
     grid-template-columns: repeat(5, 1fr);
     gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 991.98px){
+  .team-section {
+    overflow-x: visible;
+
+    .big-card{
+
+      .content .user-description{
+        min-height: 0px;
+      }
+    }
+
+    .small-card.selected{
+      padding: 2rem 1.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .user-cards {
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1.5rem;
+      overflow-x: scroll;
+      width: 100vw;
+        position: relative;
+        left: calc(-50vw + 50%);
+      max-width: none;
+
+      align-items: start;
+
+      .user-card{
+        margin: 0;
+        transition: height 0.3s linear;
+        padding: 2rem 2rem 1.5rem;
+        min-width: 14rem;
+      }
+
+      .user-card:nth-of-type(1){
+        margin-left: 2rem;
+      }
+
+      .user-card:last-child{
+        margin-right: 2rem;
+      }
+    }
+
+
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .team-section {
+    .shadow-container{
+      width: 100vw;
+      height: fit-content;
+      position: relative;
+      left: calc(-50vw + 50%);
+    }
+    .shadow-container:before{
+      content: " ";
+      display: block;
+      height: 100%;
+      width: 2px;
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: 50;
+      box-shadow: 1rem 0 3rem 1.5rem #04000d;
+    }
+    .shadow-container:after{
+      content: " ";
+      display: block;
+      height: 100%;
+      width: 2px;
+      top: 0;
+      right: 0;
+      position: absolute;
+      z-index: 50;
+      box-shadow: -1rem 0 3rem 1.5rem #04000d;
+    }
+
+    .user-cards .user-card  {
+      min-width: 16.5rem;
+      max-height: 25rem;
+      transition: max-height 0.5s linear;
+
+      .avatar-img{
+        min-height: 10rem;
+      }
+
+      &.selected{
+        max-height: 50rem;
+      }
+    }
+  }
+
+}
+
+@keyframes make-full-height {
+
+  0%{
+    max-height: 50%;
+  }
+
+  70%{
+    max-height: 80%;
+  }
+
+  100%{
+    max-height: 100%;
   }
 }
