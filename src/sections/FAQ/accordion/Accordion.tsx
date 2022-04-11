@@ -46,6 +46,8 @@ const Accordion: FC<IAccordionProperties> = ({
 					className={classnames('accordion__button', activeClass)}
 				>click</Button>
 			</div>
+
+			<p className={classnames('accordion__mobile__text', activeClass)}>{content}</p>
 		</article>
 	);
 };

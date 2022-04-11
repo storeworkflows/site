@@ -7,10 +7,10 @@ import {IUserCard} from "../../types/interfaces/IUserCard";
 import {UserCardType} from "../../types/enums/UserCardType";
 import {animateRemoving, isOverflow, scrollCardInCenter} from "./utils";
 import {MainColors} from "../../types/enums/MainColors";
-import classnames from "classnames";
 import {IUser} from "../../types/interfaces/IUser";
 import {IUserCardRef} from "../../types/interfaces/IUserCardRef";
 import {ButtonColors} from "../../types/enums/Button/ButtonColors";
+import classnames from "classnames";
 
 
 
