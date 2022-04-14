@@ -11,7 +11,7 @@ const Slide = forwardRef<HTMLDivElement,ISlide> (({slide, variant, active}, ref)
       </div>
       <div className="slide__info">
         <h3 className="slide__info-heading">{slide.header}</h3>
-        <p className="slide__info-paragraph">{slide.text}</p>
+        <p className="slide__info-paragraph slide__info-paragraph--quote">{slide.text}</p>
       </div>
     </div>
   )
