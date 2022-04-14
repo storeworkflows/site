@@ -53,6 +53,11 @@ $transition: all .2s ease-out;
     max-height: 0;
     overflow: hidden;
     transition: $transition;
+
+  }
+
+  &__mobile__text{
+   display: none;
   }
 
   .button::before, .button.primary.green::before, .button.primary.orange::before {
@@ -76,17 +81,24 @@ $transition: all .2s ease-out;
 
 @media (max-width: 767.98px) {
   .accordion {
-    grid-template-columns: 4rem 1fr auto;
+
+    grid-template-columns: 3rem 4fr auto;
+    gap: 1rem;
 
     &__count {
-      font-size: 48px;
+      padding-top: 0.5rem;
+      font-size: 42px;
+      align-self: start;
+      justify-self: start;
+      min-width: 2rem;
 
-      &.--active {
-        font-size: 64px;
+      &.--active{
+        font-size: 42px
       }
     }
 
     &__content {
+      align-self: start;
     }
 
     &__title {
@@ -97,9 +109,21 @@ $transition: all .2s ease-out;
       }
     }
 
-    //&__text {
-    //  font-size: 0.8rem;
-    //}
+    &__text {
+        display: none;
+    }
+
+    &__mobile__text {
+      display: block;
+      max-height: 0;
+      overflow: hidden;
+
+      &.--active{
+        max-height: 100vh;
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+    }
 
   }
 }

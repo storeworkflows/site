@@ -26,7 +26,8 @@ const UserCard = React.forwardRef<IUserCardRef, IUserCard>(({
     type,
     className,
     isIntoView,
-    disabled
+    disabled,
+    showDetailedDescription
 }, ref) => {
 
     const [buttonBg, setButtonBg] = useState<ButtonColors>(getRandomColor())
@@ -38,15 +39,16 @@ const UserCard = React.forwardRef<IUserCardRef, IUserCard>(({
         current: innerRef.current
     }));
 
-    const userId = user.id
-    useEffect(() => {
-        isBigCard && scrollIntoView(innerRef.current)
-    }, [userId])
-
-    useEffect(() => setButtonBg(buttonColor || getRandomColor()), [])
 
     const {id, firstName, secondName, img, shortDescription, description} = user
     const name = secondName ? `${firstName} ${secondName}` : firstName
+
+    useEffect(() => {
+        isBigCard && scrollIntoView(innerRef.current)
+    }, [id])
+
+    useEffect(() => setButtonBg(buttonColor || getRandomColor()), [])
+
 
     const cardClasses = classnames(
         'user-card', [`${color}`], [`${type}`], {
@@ -57,7 +59,7 @@ const UserCard = React.forwardRef<IUserCardRef, IUserCard>(({
     const imgType = isBigCard ? AvatarImgTypes.big : AvatarImgTypes.small
     const btnText = isBigCard ? "Close" : "More"
 
-    const currentDescription = isBigCard
+    const currentDescription = isBigCard || showDetailedDescription
         ? (description || shortDescription || " ")
         : (shortDescription || " ")
 
@@ -71,7 +73,7 @@ const UserCard = React.forwardRef<IUserCardRef, IUserCard>(({
             color: color,
             buttonColor: buttonBg
         };
-        onButtonClick && onButtonClick(toReturn);
+        onButtonClick && onButtonClick(toReturn, innerRef);
     }
 
     const renderContent = () => <>
