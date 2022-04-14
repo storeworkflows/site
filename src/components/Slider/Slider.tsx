@@ -35,11 +35,9 @@ const Slider: FC<ISlider> = (
   const slideRefs = useRef<(HTMLDivElement | null)[]>([])
   useEffect(() => {
 
-    function handleResize() {
-      setActiveSlide(defaultIndex)
-    }
+     setActiveSlide(defaultIndex)
     //window.addEventListener('resize', handleResize)
-  })
+  }, [defaultIndex])
 
   const nextSlide = () => {
     const slideIndex: number = currentSlide === length - 1 ? 0 : currentSlide + 1
