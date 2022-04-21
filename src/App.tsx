@@ -56,9 +56,9 @@ function App() {
       <Head/>
       <Discover />
       <Advantages />
-      <Team users={arr} />
-      <CustomerReviews />
       <ProductsAndServices />
+      <CustomerReviews />
+      <Team users={arr} />
       <ContactUs />
       <FAQ/>
       <Footer/>
