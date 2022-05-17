@@ -37,7 +37,7 @@ const Slider: FC<ISlider> = (
 
      setActiveSlide(defaultIndex)
     //window.addEventListener('resize', handleResize)
-  }, [defaultIndex])
+  }, [])
 
   const nextSlide = () => {
     const slideIndex: number = currentSlide === length - 1 ? 0 : currentSlide + 1
