@@ -48,7 +48,7 @@ const ContactUs: FC = (): JSX.Element => {
             <img
                 className="contact-us__image"
                 src={contactHuman}
-                alt="contact-us-image"
+                alt="contact-us"
             />
             <h2 className={"contact-us__header"}>Contact Us</h2>
 
