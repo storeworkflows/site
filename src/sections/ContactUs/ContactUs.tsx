@@ -9,9 +9,12 @@ import {IPostData} from "../../types/interfaces/IPostData";
 import {IFormValues} from "../../types/interfaces/IFormValues";
 
 
-const token = '1/1201472437093173:891f86e59c48144f242d26887b76062f'
+const token = process.env.ASANA_URI || ''
+const baseUrl = process.env.ASANA_URL || ''
+const projectId = process.env.ASANA_PROJECT || ''
+
 const instance = axios.create({
-    baseURL: 'https://app.asana.com',
+    baseURL: baseUrl,
     headers: {
         'Authorization': `Bearer ${token}`,
     }
@@ -26,7 +29,7 @@ const ContactUs: FC = (): JSX.Element => {
             data: {
                 name: `${businessemail}`,
                 notes: `${firstName} ${lastName}: ${message}`,
-                projects: ["1201970176498989"],
+                projects: [projectId],
             }
         }
 
