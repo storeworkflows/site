@@ -1,18 +1,19 @@
 import React, {FC} from "react";
 import "./ContactUs.scss"
 import contactHuman from "../../assets/img/contactUs_human.png"
-
 import axios, {AxiosResponse} from "axios";
 
 import ContactForm from "../../components/Form/ContactForm";
 import {IPostData} from "../../types/interfaces/IPostData";
 import {IFormValues} from "../../types/interfaces/IFormValues";
 
-
-const token = process.env.ASANA_URI || ''
-const baseUrl = process.env.ASANA_URL || ''
-const projectId = process.env.ASANA_PROJECT || ''
-
+console.log(process.env)
+const token = process.env.REACT_APP_ASANA_TOKEN || ''
+const baseUrl = process.env.REACT_APP_ASANA_URI || ''
+const projectId = process.env.REACT_APP_ASANA_PROJECT || ''
+console.log('token', token)
+console.log('baseUrl', baseUrl)
+console.log('projectId', projectId)
 const instance = axios.create({
     baseURL: baseUrl,
     headers: {
