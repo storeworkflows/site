@@ -7,13 +7,10 @@ import ContactForm from "../../components/Form/ContactForm";
 import {IPostData} from "../../types/interfaces/IPostData";
 import {IFormValues} from "../../types/interfaces/IFormValues";
 
-console.log(process.env)
+
 const token = process.env.REACT_APP_ASANA_TOKEN || ''
 const baseUrl = process.env.REACT_APP_ASANA_URI || ''
 const projectId = process.env.REACT_APP_ASANA_PROJECT || ''
-console.log('token', token)
-console.log('baseUrl', baseUrl)
-console.log('projectId', projectId)
 const instance = axios.create({
     baseURL: baseUrl,
     headers: {
