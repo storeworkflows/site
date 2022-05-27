@@ -30,6 +30,7 @@ const Head: FC = (): JSX.Element => {
 		{isMobileHeader && <br/>}
 		Store Workflows
 		{isMobileHeader && <br/>}
+		<br />
 		on ServiceNow
 	</h1>
 
