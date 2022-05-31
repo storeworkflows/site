@@ -1,6 +1,6 @@
 import React, {FC} from "react";
 import "./ContactUs.scss"
-import contactHuman from "../../assets/img/contactUs_human.png"
+import contactUsBadger from "../../assets/img/contact_us.png"
 import axios, {AxiosResponse} from "axios";
 
 import ContactForm from "../../components/Form/ContactForm";
@@ -48,7 +48,7 @@ const ContactUs: FC = (): JSX.Element => {
         <section className="contact-us container">
             <img
                 className="contact-us__image"
-                src={contactHuman}
+                src={contactUsBadger}
                 alt="contact-us"
             />
             <h2 className={"contact-us__header"}>Contact Us</h2>

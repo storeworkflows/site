@@ -24,7 +24,7 @@ const Slider: FC<ISlider> = (
     useDots,
     useControls,
     infinite,
-    defaultIndex
+    defaultIndex=0
   }) => {
   const [currentSlide, setCurrentSlide] = useState(defaultIndex)
   const [transitionDistance, setTransirionDistance] = useState(0)
